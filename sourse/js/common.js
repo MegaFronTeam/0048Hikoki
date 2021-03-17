@@ -1,12 +1,9 @@
-
 const JSCCommon = {
-
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
 	menuMobile: document.querySelector(".menu-mobile--js"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 
 	modalCall() {
-
 		$(".link-modal").fancybox({
 			arrows: false,
 			infobar: false,
@@ -18,13 +15,6 @@ const JSCCommon = {
 					CLOSE: "Закрыть",
 					NEXT: "Вперед",
 					PREV: "Назад",
-					// PLAY_START: "Start slideshow",
-					// PLAY_STOP: "Pause slideshow",
-					// FULL_SCREEN: "Full screen",
-					// THUMBS: "Thumbnails",
-					// DOWNLOAD: "Download",
-					// SHARE: "Share",
-					// ZOOM: "Zoom"
 				},
 			},
 			beforeLoad: function () {
