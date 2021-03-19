@@ -1,0 +1,23 @@
+mixin sArticals()
+	// start sArticals
+	+b.SECTION.sArticals.d-none.d-lg-block.section#sArticals&attributes(attributes)
+		.container
+			+b.section-title
+				.row.align-items-center
+					.col
+						h2.mb-0 Это интересно
+					.col-auto
+						+e.all-links(href='#')
+							span Все статьи
+							+icon('chevron-right')
+			+e.row.row
+				+itemNews("1")
+				+itemNews("2")
+				+itemNews("3")
+	// end sArticals
+
+mixin itemNews(i ,t="Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой")
+	+e.col.col-lg-4.col-sm-6&attributes(attributes)
+		+e.img-wrap(href="#")
+			img(loading="lazy" src=`img/@2x/artical-${i}.jpg` alt="")
+		+e.title(href="#")=t

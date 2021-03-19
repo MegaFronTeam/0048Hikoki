@@ -1,5 +1,5 @@
 const JSCCommon = {
-	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
+	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js, .burger--js")),
 	menuMobile: document.querySelector(".menu-mobile--js"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 
@@ -243,8 +243,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
-	let screenName;
-	screenName = document.body.dataset.bg;
+	let screenName = '01-1440.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -270,41 +269,127 @@ function eventHandler() {
 	whenResize();
 
 
-	let defaultSl = {
-		spaceBetween: 0,
-		lazy: {
-			loadPrevNext: true,
-		},
-		watchOverflow: true,
-		spaceBetween: 0,
-		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
-	}
-
-	const swiper4 = new Swiper('.sBanners__slider--js', {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-
-	});
+	// let defaultSl = {
+	// 	spaceBetween: 0,
+	// 	lazy: {
+	// 		loadPrevNext: true,
+	// 	},
+	// 	watchOverflow: true,
+	// 	spaceBetween: 0,
+	// 	loop: true,
+	// 	navigation: {
+	// 		nextEl: '.swiper-button-next',
+	// 		prevEl: '.swiper-button-prev',
+	// 	},
+	// 	pagination: {
+	// 		el: ' .swiper-pagination',
+	// 		type: 'bullets',
+	// 		clickable: true,
+	// 		// renderBullet: function (index, className) {
+	// 		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+	// 		// }
+	// 	},
+	// }
+	//
+	// const swiper4 = new Swiper('.sBanners__slider--js', {
+	// 	// slidesPerView: 5,
+	// 	...defaultSl,
+	// 	slidesPerView: 'auto',
+	// 	freeMode: true,
+	// 	loopFillGroupWithBlank: true,
+	// 	touchRatio: 0.2,
+	// 	slideToClickedSlide: true,
+	// 	freeModeMomentum: true,
+	//
+	// });
 	// modal window
 
+	//luckyone js
+	let defaultSl = {
+		loop: true,
+		loopedSlides: 5, //looped slides should be the same
+		lazy: {
+			loadPrevNextAmount: 5,
+			loadPrevNext: true,
+		},
+	};
+
+	let greenLine = document.querySelector(".green-line--js");
+	function calcGreenLineHeight() {
+		document.documentElement.style.setProperty('--green-line-h', `${greenLine.offsetHeight}px`);
+	}
+	window.addEventListener('resize', calcGreenLineHeight, { passive: true });
+	window.addEventListener('scroll', calcGreenLineHeight, { passive: true });
+	calcGreenLineHeight();
+	//
+	let galleryTop = new Swiper('.gallery-top', {
+		...defaultSl,
+		spaceBetween: 30,
+		slidesPerView: 1,
+
+		//
+		navigation: {
+			nextEl: $(this).find('.swiper-next'),
+			prevEl: $(this).find('.swiper-prev'),
+		},
+		//
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			type: 'bullets',
+			clickable: true,
+		},
+	});
+	//
+	$(".sCatalog").each(function () {
+		let sliderCatalog = new Swiper($(this).find(".sCatalog__slider--js"), {
+			...defaultSl,
+			spaceBetween: 30,
+			slidesPerView: 'auto',
+			navigation: {
+				nextEl: $(this).find('.swiper-next'),
+				prevEl: $(this).find('.swiper-prev'),
+			},
+		});
+
+	});
+	function makeDDGroup(qSelecorts){
+		for (let parentSelect of qSelecorts){
+			let parent = document.querySelector(parentSelect);
+
+			if (parent){
+				// childHeads, kind of funny))
+				let ChildHeads = parent.querySelectorAll('.dd-head-js');
+
+				$(ChildHeads).click(function (){
+					let clickedHead = this;
+
+					$(ChildHeads).each(function (){
+						if (this === clickedHead){
+							//parent element gain toggle class, style head change via parent
+							$(this.parentElement).toggleClass('active');
+							$(this.parentElement).find('.dd-content-js').slideToggle(function (){
+								$(this).toggleClass('active');
+							});
+						}
+						else{
+							$(this.parentElement).removeClass('active');
+							$(this.parentElement).find('.dd-content-js').slideUp(function (){
+								$(this).removeClass('active');
+							});
+						}
+					});
+				});
+
+			}
+
+		}
+	}
+	makeDDGroup(['.footer-dd-group-js']);
+
+	//end luckyone js
+
+	// todo
+	//1 clean js file
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

@@ -1,0 +1,27 @@
+// start .sSeo
+.sSeo {
+	--sPB: 60px;
+	@include media-breakpoint-up(md){
+		--sPB: 72px;
+	}
+	@include media-breakpoint-up(xl){
+		--sPB: 96px;
+	}
+
+	h2{
+		font-size: 20px;
+		line-height: (24/20);
+		margin-bottom: 12px;
+	}
+
+	p{
+		font-size: 14px;
+		line-height: 1.6;
+	}
+
+	& > *:last-child{
+		margin-bottom: 0;
+	}
+
+
+} // end.sSeo

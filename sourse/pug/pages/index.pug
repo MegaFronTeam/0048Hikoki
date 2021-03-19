@@ -3,6 +3,11 @@ extends layout/main.pug
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
+include ../blocks/sCategory/_sCategory.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sArticals/_sArticals.pug
+include ../blocks/sNewsBox/_sNewsBox.pug
+include ../blocks/sSeo/_sSeo.pug
 
 block variables
 	- let  mainPage= null 
@@ -12,42 +17,15 @@ block title
 	- let  title= 'title'
 	title= title
 block pagecontent
-
-	+mob-mnu()
+	//-+mob-mnu()
 	+header()
+	+greenLine()
 	+top-nav()
-	+soc()
-	+in-c("checkbox", "text") 
-	//- +pic('f8af7db0d56028b5cc1c7dfc78ec06e8.jpg')
-	img(src="img/@2x/avif/f8af7db0d56028b5cc1c7dfc78ec06e8.avif", alt="")
-	+b.tabs--js 
-		+e.caption.d-flex 
-			+e.btn.btn.btn-warning.active  btn1
-			+e.btn.btn.btn-warning btn 2
-			+e.btn.btn.btn-warning btn 3
-			+e.btn.btn.btn-warning btn 4
-		+e.wrap 
-			+e.content.active content 1
-			+e.content content 2
-			+e.content content 3
-			+e.content content 4
-	+b.tabs--js 
-		+e.caption.d-flex 
-			+e.btn.btn.btn-success.active  btn  2 1
-			+e.btn.btn.btn-success btn 2  2
-			+e.btn.btn.btn-success btn 2  3
-			+e.btn.btn.btn-success btn  2 4
-		+e.wrap 
-			+e.content.active content 1
-			+e.content content 2
-			+e.content content 3
-			+e.content content 4
-
-	+topLine() 
 	+headerBlock()
-	+sForm()
-	+sContact()
+	+sCategory()
+	+sCatalogHit()
+	+sCatalogNew()
+	+sArticals()
+	+sNewsBox()
+	+sSeo()
 	+footer()
-
-
-	

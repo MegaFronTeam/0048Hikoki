@@ -1,0 +1,161 @@
+// start .sCatalog
+.sCatalog {
+	.section-title {
+		padding-bottom: rem(20);
+	}
+
+	&__slider-wrappper {
+
+	}
+
+	&__slide {
+		width: 223px;
+		@include media-breakpoint-up(sm){
+			width: calc((100% / 2) - (30px * 1 / 2));
+		}
+		@include media-breakpoint-up(md){
+			width: calc((100% / 3) - (30px * 2 / 3));
+		}
+		@include media-breakpoint-up(lg){
+			width: calc((100% / 4) - (30px * 3 / 4));
+		}
+		height: auto;
+	}
+
+	&__slider-wrappper {
+		position: relative;
+	}
+
+	&__col {
+		margin-bottom: 30px;
+	}
+}
+
+// end.sCatalog
+
+.prod-item {
+	background-color: $light;
+	min-height: 100%;
+	text-align: center;
+	line-height: (22/18);
+	@include mt;
+	border: 1px solid $gray-310;
+
+	//
+	display: flex;
+	flex-direction: column;
+
+	&__img-wrap {
+		position: relative;
+		padding: 20px;
+		background-color: $white;
+	}
+	&__box{
+		flex-grow: 1;
+		padding: 12px 16px;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	//
+	&__img-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img {
+			height: auto;
+			width: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+
+	//
+	&__code{
+		font-size: 12px;
+		line-height: (14/12);
+		color: $gray-570;
+		margin-bottom: 8px;
+	}
+	&__title {
+		display: block;
+		margin-bottom: rem(12);
+
+		font-size: 14px;
+		line-height: 1.4;
+	}
+
+	&__price--old {
+		margin-top: auto;
+		text-decoration-line: line-through;
+		text-transform: uppercase;
+
+		color: $red;
+		font-size: 12px;
+		line-height: (14/12);
+	}
+
+	&__price--new {
+		font-size: 16px;
+		text-transform: uppercase;
+		margin-bottom: rem(12);
+	}
+
+	&__btn {
+		@extend .btn;
+		@extend .btn-primary;
+		display: block;
+		width: 100%;
+	}
+
+	&__labels {
+		display: flex;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	&__label-link {
+		@extend .btn;
+		@extend .btn-outline-light;
+		padding: 0;
+		width: rem(30px);
+		height: rem(30px);
+		display: flex;
+		justify-content: center;
+		margin-left: rem(5);
+
+		.icon {
+			font-size: rem(18);
+			color: transparent;
+			stroke: $primary;
+			stroke-width: 1px;
+		}
+
+		.icon-like {
+			font-size: rem(16);
+		}
+	}
+
+	&__badge {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 12px;
+
+		text-transform: uppercase;
+		color: $white;
+		font-weight: bold;
+		font-size: 10px;
+		line-height: 1.2;
+		letter-spacing: 0.1em;
+		border-radius: 20px;
+		padding: 4px 7px;
+
+		&.bg-red{
+			background-color: $danger;
+		}
+	}
+}

@@ -7,174 +7,786 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/css/swiper.min.css" rel="stylesheet"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
 	</head>
 	<body>
 		<div class="main-wrapper">
-			<div class="menu-mobile menu-mobile--js d-lg-none">
-				<div class="toggle-menu-mobile toggle-menu-mobile--js on"><span></span>
-				</div>
-				<div class="menu-mobile__inner">
-					<ul class="navMenu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#sContact" itemprop="url">Главная</a>
-						</li>
-						<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Услуги  </a>
-						</li>
-						<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Подбор септика   </a>
-						</li>
-						<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Акции </a>
-						</li>
-						<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url"> О компании  </a>
-						</li>
-						<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url"> Доставка и оплата </a>
-						</li>
-						<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url"> Клиентам  </a>
-						</li>
-						<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url"> Наши работы   </a>
-						</li>
-						<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#sContact" itemprop="url">Контакты </a>
-						</li>
-					</ul>
-					<div class="text-right"></div>
-				</div>
-			</div>
-			<!--  мобильное меню-->
 			<!-- start header-->
 			<header class="header" id="header">
 			</header>
 			<!-- end header-->
-			<!-- start top-nav-->
-			<div class="top-nav block-with-lazy">
-				<div class="container">
-					<div class="row">
-						<div class="col-auto d-lg-none">
-							<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+			<div class="green-line green-line--js d-none d-md-block">
+				<div class="green-line__container container">
+					<div class="green-line__row row align-items-center">
+						<div class="col-auto align-self-stretch">
+							<div class="green-line__dd-btn green-line__dd-btn--loc">
+								<svg class="icon icon-location ">
+									<use xlink:href="img/svg/sprite.svg#location"></use>
+								</svg><span>Москва</span>
+								<svg class="icon icon-chevron-down ">
+									<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+								</svg>
+								<div class="city-dd">
+									<div class="city-dd__search-row row">
+										<div class="col">
+											<div class="city-dd__input-wrap form-group">
+												<label><span class="city-dd__input-title">Выбирете свой город</span><input class="city-dd__input form-control" name="city" type="text" placeholder=""/>
+												</label>
+											</div>
+											<!-- +e.input-wrap-->
+										</div>
+										<div class="col-auto">
+											<button class="city-dd__btn" type="button">Искать
+											</button>
+										</div>
+									</div>
+									<div class="city-dd__cont">
+										<ul>
+											<li><a class="city-dd__link text-primary" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link text-dark" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link text-dark" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link text-dark" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link text-dark" href="#">Нижний Новгород</a>
+											</li>
+										</ul>
+										<ul>
+											<li><a class="text-primary" href="#">Москва</a></li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Санкт-Петербург</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Нижний Новгород</a>
+											</li>
+											<li><a class="city-dd__link" href="#">Москва</a>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="col d-none d-lg-block">
-							<ul class="navMenu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#sContact" itemprop="url">Главная</a>
+						<div class="col-auto me-auto me-xl-0 align-self-stretch">
+							<div class="green-line__dd-btn">
+								<svg class="icon icon-tel ">
+									<use xlink:href="img/svg/sprite.svg#tel"></use>
+								</svg><span>8 495 215-50-63</span>
+								<svg class="icon icon-chevron-down ">
+									<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+								</svg>
+								<div class="tell-dd"><a class="tell-dd__link" href="tel:88003331892">8 800 333-18-92</a><a class="tell-dd__link" href="tel:88003331892">8 800 333-18-92</a><a class="tell-dd__order-btn" href="#">Заказать звонок</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto ms-auto me-auto d-xl-block d-none">
+							<div class="green-line__shedule">
+								<div class="green-line__s-img"><img loading="lazy" src="img/svg/clock.svg" alt=""/>
+								</div>
+								<div class="green-line__s-txt"><span>пн. - пт. 09:00 - 20:00</span><span>сб. - вс. 09:00 - 18:00</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto"><a class="green-line__icon-link" href="#">
+							<svg class="icon icon-bars ">
+								<use xlink:href="img/svg/sprite.svg#bars"></use>
+							</svg></a>
+						</div>
+						<div class="col-auto"><a class="green-line__icon-link" href="#">
+							<svg class="icon icon-heart ">
+								<use xlink:href="img/svg/sprite.svg#heart"></use>
+							</svg></a>
+						</div>
+						<div class="col-auto align-self-stretch">
+							<div class="green-line__dd-btn green-line__dd-btn--lc">
+								<div class="green-line__user">
+									<svg class="icon icon-user ">
+										<use xlink:href="img/svg/sprite.svg#user"></use>
+									</svg>
+								</div><span>Николай</span>
+								<div class="lc-dd"><a class="lc-dd__link" href="#">Мои заказы</a><a class="lc-dd__link" href="#">Избранное</a><a class="lc-dd__link" href="#">Профиль</a><a class="lc-dd__log-btn" href="#">
+									<svg class="icon icon-exit ">
+										<use xlink:href="img/svg/sprite.svg#exit"></use>
+									</svg><span>Выйти</span></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto"><a class="green-line__cart" href="#"><span class="green-line__cart-icon">
+							<svg class="icon icon-cart ">
+								<use xlink:href="img/svg/sprite.svg#cart"></use>
+							</svg><span class="green-line__number">99</span></span><span class="green-line__cart-txt">Корзина</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- start top-nav-->
+			<div class="top-nav block-with-lazy">
+				<div class="top-nav__container container">
+					<div class="row align-items-center">
+						<div class="top-nav__burger-col col-auto d-lg-none">
+							<div class="burger burger--js"><span></span>
+							</div>
+						</div>
+						<div class="top-nav__logo-col col-auto"><a class="top-nav__logo" href="#"><img loading="lazy" src="img/svg/logo.svg" alt=""/></a>
+						</div>
+						<div class="col align-self-stretch d-none d-lg-block">
+							<ul class="top-nav__menu">
+								<li class="top-nav__item">
+									<div class="top-nav__link">
+										<div class="burger"><span></span>
+										</div>
+										<div class="ms-10">Каталог</div>
+									</div>
+									<div class="catalog-dd">
+										<ul class="catalog-dd__list">
+											<li><span>Аккумуляторный инструмент</span>
+												<div class="catalog-dd__sub-dd">
+													<div class="catalog-dd__content"><a href="#">Дрели-шуруповерты </a><a href="#">Ударные дрели-шуруповерты</a><a href="#">Ударные шуруповерты</a><a href="#">Ударные гайковерты</a><a href="#">Перфораторы SDS+</a><a href="#">Перфораторы SDS-Max</a><a href="#">Перфораторы SDS-Max</a><a href="#">УШМ</a><a href="#">Пилы</a><a href="#">Многофункциональные устройства</a><a href="#">Отвертка</a>
+													</div>
+												</div>
+											</li>
+											<li><span>Сетевой электроинструмент</span>
+												<div class="catalog-dd__sub-dd">
+													<div class="catalog-dd__content"><a href="#">Дрели-шуруповерты 11</a><a href="#">Ударные дрели-шуруповерты</a><a href="#">Ударные шуруповерты</a><a href="#">Ударные гайковерты</a><a href="#">Перфораторы SDS+</a><a href="#">Перфораторы SDS-Max</a><a href="#">Перфораторы SDS-Max</a><a href="#">УШМ</a><a href="#">Пилы</a><a href="#">Многофункциональные устройства</a><a href="#">Отвертка</a>
+													</div>
+												</div>
+											</li>
+											<li><span>Садовая техника</span>
+												<div class="catalog-dd__sub-dd">
+													<div class="catalog-dd__content"><a href="#">Дрели-шуруповерты 22</a><a href="#">Ударные дрели-шуруповерты</a><a href="#">Ударные шуруповерты</a><a href="#">Ударные гайковерты</a><a href="#">Перфораторы SDS+</a><a href="#">Перфораторы SDS-Max</a><a href="#">Перфораторы SDS-Max</a><a href="#">УШМ</a><a href="#">Пилы</a><a href="#">Многофункциональные устройства</a><a href="#">Отвертка</a>
+													</div>
+												</div>
+											</li>
+											<li><span>Алмазная резка</span>
+												<div class="catalog-dd__sub-dd">
+													<div class="catalog-dd__content"><a href="#">Дрели-шуруповерты 33</a><a href="#">Ударные дрели-шуруповерты</a><a href="#">Ударные шуруповерты</a><a href="#">Ударные гайковерты</a><a href="#">Перфораторы SDS+</a><a href="#">Перфораторы SDS-Max</a><a href="#">Перфораторы SDS-Max</a><a href="#">УШМ</a><a href="#">Пилы</a><a href="#">Многофункциональные устройства</a><a href="#">Отвертка</a>
+													</div>
+												</div>
+											</li>
+											<li><span>Ручной инструмент</span>
+												<div class="catalog-dd__sub-dd">
+													<div class="catalog-dd__content"><a href="#">Дрели-шуруповерты 44</a><a href="#">Ударные дрели-шуруповерты</a><a href="#">Ударные шуруповерты</a><a href="#">Ударные гайковерты</a><a href="#">Перфораторы SDS+</a><a href="#">Перфораторы SDS-Max</a><a href="#">Перфораторы SDS-Max</a><a href="#">УШМ</a><a href="#">Пилы</a><a href="#">Многофункциональные устройства</a><a href="#">Отвертка</a>
+													</div>
+												</div>
+											</li>
+											<li><span>Аксессуары</span>
+												<div class="catalog-dd__sub-dd">
+													<div class="catalog-dd__content"><a href="#">Дрели-шуруповерты 55</a><a href="#">Ударные дрели-шуруповерты</a><a href="#">Ударные шуруповерты</a><a href="#">Ударные гайковерты</a><a href="#">Перфораторы SDS+</a><a href="#">Перфораторы SDS-Max</a><a href="#">Перфораторы SDS-Max</a><a href="#">УШМ</a><a href="#">Пилы</a><a href="#">Многофункциональные устройства</a><a href="#">Отвертка</a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
 								</li>
-								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Услуги  </a>
+								<li class="top-nav__item"><a class="top-nav__link" href="#">Оплата и доставка</a>
 								</li>
-								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Подбор септика   </a>
+								<li class="top-nav__item"><a class="top-nav__link" href="#">Сервис</a>
 								</li>
-								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Акции </a>
+								<li class="top-nav__item"><a class="top-nav__link" href="#">Акции</a>
 								</li>
-								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url"> О компании  </a>
-								</li>
-								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url"> Доставка и оплата </a>
-								</li>
-								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url"> Клиентам  </a>
-								</li>
-								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url"> Наши работы   </a>
-								</li>
-								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#sContact" itemprop="url">Контакты </a>
+								<li class="top-nav__item"><a class="top-nav__link" href="#">Контакты</a>
 								</li>
 							</ul>
+						</div>
+						<div class="col-auto">
+							<div class="top-nav__search">
+								<svg class="icon icon-zoom ">
+									<use xlink:href="img/svg/sprite.svg#zoom"></use>
+								</svg>
+								<div class="top-nav__search-txt d-none d-xl-block">Поиск
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- end top-nav-->
-			<div class="soc"><a class="soc__item" href="#" target="_blank">
-				<svg class="icon icon-fb ">
-					<use xlink:href="img/svg/sprite.svg#fb"></use>
-				</svg></a><a class="soc__item" href="#" target="_blank">
-				<svg class="icon icon-instagram ">
-					<use xlink:href="img/svg/sprite.svg#instagram"></use>
-				</svg></a><a class="soc__item" href="#" target="_blank">
-				<svg class="icon icon-telegram ">
-					<use xlink:href="img/svg/sprite.svg#telegram"></use>
-				</svg></a>
-			</div>
-			<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox"/> 
-			</label><img src="img/@2x/avif/f8af7db0d56028b5cc1c7dfc78ec06e8.avif" alt="">
-			<div class="tabs tabs--js"> 
-				<div class="tabs__caption d-flex"> 
-					<div class="tabs__btn btn btn-warning active"> btn1
-					</div>
-					<div class="tabs__btn btn btn-warning">btn 2
-					</div>
-					<div class="tabs__btn btn btn-warning">btn 3
-					</div>
-					<div class="tabs__btn btn btn-warning">btn 4
-					</div>
-				</div>
-				<div class="tabs__wrap"> 
-					<div class="tabs__content active">content 1
-					</div>
-					<div class="tabs__content">content 2
-					</div>
-					<div class="tabs__content">content 3
-					</div>
-					<div class="tabs__content">content 4
-					</div>
-				</div>
-			</div>
-			<div class="tabs tabs--js"> 
-				<div class="tabs__caption d-flex"> 
-					<div class="tabs__btn btn btn-success active"> btn  2 1
-					</div>
-					<div class="tabs__btn btn btn-success">btn 2  2
-					</div>
-					<div class="tabs__btn btn btn-success">btn 2  3
-					</div>
-					<div class="tabs__btn btn btn-success">btn  2 4
-					</div>
-				</div>
-				<div class="tabs__wrap"> 
-					<div class="tabs__content active">content 1
-					</div>
-					<div class="tabs__content">content 2
-					</div>
-					<div class="tabs__content">content 3
-					</div>
-					<div class="tabs__content">content 4
-					</div>
-				</div>
-			</div>
-			<!-- start topLine-->
-			<section class="topLine section" id="topLine">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>topLine</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</section>
-			<!-- end topLine-->
 			<!-- start headerBlock-->
 			<div class="headerBlock section" id="headerBlock">
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>headerBlock ds dfsdfdsfsd</h2>
+					<div class="headerBlock__slider-wrap">
+						<div class="swiper-container gallery-top">
+							<div class="swiper-wrapper">
+								<div class="headerBlock__slide swiper-slide bg-wrap"><a class="headerBlock__slide-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/header-slide-1.png" alt=""/></a>
+								</div>
+								<div class="headerBlock__slide swiper-slide bg-wrap"><a class="headerBlock__slide-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/header-slide-1.png" alt=""/></a>
+								</div>
+								<div class="headerBlock__slide swiper-slide bg-wrap"><a class="headerBlock__slide-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/header-slide-1.png" alt=""/></a>
+								</div>
+								<div class="headerBlock__slide swiper-slide bg-wrap"><a class="headerBlock__slide-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/header-slide-1.png" alt=""/></a>
+								</div>
+								<div class="headerBlock__slide swiper-slide bg-wrap"><a class="headerBlock__slide-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/header-slide-1.png" alt=""/></a>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+						<div class="swiper-prev d-none d-xl-flex">
+							<svg class="icon icon-chevron-left ">
+								<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+							</svg>
+						</div>
+						<div class="swiper-next d-none d-xl-flex">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg>
+						</div>
 					</div>
-					<div class="row"></div>
 				</div>
 			</div>
 			<!-- end headerBlock-->
-			<!-- start sForm-->
-			<section class="sForm section" id="sForm">
+			<!-- start sCategory-->
+			<section class="sCategory section" id="sCategory">
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>sForm</h2>
+					<div class="section-title">
+						<h2>Популярные категории</h2>
 					</div>
-					<div class="row"></div>
+					<div class="row"><a class="sCategory__col col-md-3 col-sm-4 col-6" href="#"><span class="sCategory__img-wrap"><img class="res-i lazy" loading="lazy" src="img/@2x/category-1.png" alt=""/></span><span class="sCategory__title">Бензопилы</span></a><a class="sCategory__col col-md-3 col-sm-4 col-6" href="#"><span class="sCategory__img-wrap"><img class="res-i lazy" loading="lazy" src="img/@2x/category-2.png" alt=""/></span><span class="sCategory__title">Воздуходувы</span></a><a class="sCategory__col col-md-3 col-sm-4 col-6" href="#"><span class="sCategory__img-wrap"><img class="res-i lazy" loading="lazy" src="img/@2x/category-3.png" alt=""/></span><span class="sCategory__title">Травокосилки</span></a><a class="sCategory__col col-md-3 col-sm-4 col-6 d-none d-lg-block" href="#"><span class="sCategory__img-wrap"><img class="res-i lazy" loading="lazy" src="img/@2x/category-4.png" alt=""/></span><span class="sCategory__title">Садовые тракторы</span></a><a class="sCategory__col col-md-3 col-sm-4 col-6 d-none d-lg-block" href="#"><span class="sCategory__img-wrap"><img class="res-i lazy" loading="lazy" src="img/@2x/category-5.png" alt=""/></span><span class="sCategory__title">Воздуходувы</span></a>
+						<!----><a class="sCategory__col col-md-3 col-sm-4 col-6" href="#"><span class="sCategory__img-wrap"><img class="res-i lazy" loading="lazy" src="img/@2x/category-6.png" alt=""/></span><span class="sCategory__title">Бензопилы</span></a><a class="sCategory__col col-md-3 col-sm-4 col-6" href="#"><span class="sCategory__img-wrap"><img class="res-i lazy" loading="lazy" src="img/@2x/category-7.png" alt=""/></span><span class="sCategory__title">Воздуходувы</span></a><a class="sCategory__col col-md-3 col-sm-4 col-6" href="#"><span class="sCategory__img-wrap"><img class="res-i lazy" loading="lazy" src="img/@2x/category-8.png" alt=""/></span><span class="sCategory__title">Травокосилки</span></a><a class="sCategory__col col-md-3 col-sm-4 col-6 d-none d-lg-block" href="#"><span class="sCategory__img-wrap"><img class="res-i lazy" loading="lazy" src="img/@2x/category-9.png" alt=""/></span><span class="sCategory__title">Садовые тракторы</span></a><a class="sCategory__col col-md-3 col-sm-4 col-6 d-none d-lg-block" href="#"><span class="sCategory__img-wrap"><img class="res-i lazy" loading="lazy" src="img/@2x/category-10.png" alt=""/></span><span class="sCategory__title">Воздуходувы</span></a>
+					</div>
+					<div class="text-center">
+						<button class="sCategory__btn-more" type="button">
+							<svg class="icon icon-plus ">
+								<use xlink:href="img/svg/sprite.svg#plus"></use>
+							</svg>
+						</button>
+					</div>
 				</div>
 			</section>
-			<!-- end sForm-->
-			<!-- start sContact-->
-			<section class="sContact section" id="sContact">
+			<!-- start sCatalog-->
+			<div class="sCatalog section" id="sCatalog">
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>sContact</h2>
+					<div class="section-title">
+						<h2>Хиты продаж</h2>
 					</div>
-					<div class="row"></div>
+					<div class="sCatalog__slider-wrappper">
+						<div class="sCatalog__slider sCatalog__slider--js swiper-container">
+							<div class="swiper-wrapper">
+								<div class="sCatalog__slide swiper-slide">
+									<div class="prod-item">
+										<div class="prod-item__img-wrap">
+											<div class="prod-item__badge bg-red">Новинка
+											</div><a class="prod-item__img-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/hit-1.jpg" alt=""/></a>
+										</div>
+										<div class="prod-item__box">
+											<div class="prod-item__code">VB3616DA
+											</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+											<div class="prod-item__price prod-item__price--old">18 500 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">16 500 ₽
+											</div>
+										</div><a class="prod-item__btn" href="#">Купить</a>
+									</div>
+								</div>
+								<div class="sCatalog__slide swiper-slide">
+									<div class="prod-item">
+										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/hit-2.jpg" alt=""/></a>
+										</div>
+										<div class="prod-item__box">
+											<div class="prod-item__code">CB18DBL
+											</div><a class="prod-item__title" href="#">Cordless Band Saw</a>
+											<div class="prod-item__price prod-item__price--old">18 500 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">16 500 ₽
+											</div>
+										</div><a class="prod-item__btn" href="#">Купить</a>
+									</div>
+								</div>
+								<div class="sCatalog__slide swiper-slide">
+									<div class="prod-item">
+										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/hit-2.jpg" alt=""/></a>
+										</div>
+										<div class="prod-item__box">
+											<div class="prod-item__code">CD3605DA
+											</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+											<div class="prod-item__price prod-item__price--old">18 500 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">16 500 ₽
+											</div>
+										</div><a class="prod-item__btn" href="#">Купить</a>
+									</div>
+								</div>
+								<div class="sCatalog__slide swiper-slide">
+									<div class="prod-item">
+										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/hit-2.jpg" alt=""/></a>
+										</div>
+										<div class="prod-item__box">
+											<div class="prod-item__code">CD3605DA
+											</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+											<div class="prod-item__price prod-item__price--old">18 500 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">16 500 ₽
+											</div>
+										</div><a class="prod-item__btn" href="#">Купить</a>
+									</div>
+								</div>
+								<div class="sCatalog__slide swiper-slide">
+									<div class="prod-item">
+										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/hit-2.jpg" alt=""/></a>
+										</div>
+										<div class="prod-item__box">
+											<div class="prod-item__code">VB3616DA
+											</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+											<div class="prod-item__price prod-item__price--old">18 500 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">16 500 ₽
+											</div>
+										</div><a class="prod-item__btn" href="#">Купить</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-prev">
+							<svg class="icon icon-chevron-left ">
+								<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+							</svg>
+						</div>
+						<div class="swiper-next">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- start sCatalog-->
+			<div class="sCatalog section" id="sCatalog">
+				<div class="container">
+					<div class="section-title">
+						<h2>Новинки</h2>
+					</div>
+					<div class="sCatalog__slider-wrappper">
+						<div class="sCatalog__slider sCatalog__slider--js swiper-container">
+							<div class="swiper-wrapper">
+								<div class="sCatalog__slide swiper-slide">
+									<div class="prod-item">
+										<div class="prod-item__img-wrap">
+											<div class="prod-item__badge bg-red">Новинка
+											</div><a class="prod-item__img-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/hit-1.jpg" alt=""/></a>
+										</div>
+										<div class="prod-item__box">
+											<div class="prod-item__code">VB3616DA
+											</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+											<div class="prod-item__price prod-item__price--old">18 500 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">16 500 ₽
+											</div>
+										</div><a class="prod-item__btn" href="#">Купить</a>
+									</div>
+								</div>
+								<div class="sCatalog__slide swiper-slide">
+									<div class="prod-item">
+										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/hit-2.jpg" alt=""/></a>
+										</div>
+										<div class="prod-item__box">
+											<div class="prod-item__code">CB18DBL
+											</div><a class="prod-item__title" href="#">Cordless Band Saw</a>
+											<div class="prod-item__price prod-item__price--old">18 500 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">16 500 ₽
+											</div>
+										</div><a class="prod-item__btn" href="#">Купить</a>
+									</div>
+								</div>
+								<div class="sCatalog__slide swiper-slide">
+									<div class="prod-item">
+										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/hit-2.jpg" alt=""/></a>
+										</div>
+										<div class="prod-item__box">
+											<div class="prod-item__code">CD3605DA
+											</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+											<div class="prod-item__price prod-item__price--old">18 500 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">16 500 ₽
+											</div>
+										</div><a class="prod-item__btn" href="#">Купить</a>
+									</div>
+								</div>
+								<div class="sCatalog__slide swiper-slide">
+									<div class="prod-item">
+										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/hit-2.jpg" alt=""/></a>
+										</div>
+										<div class="prod-item__box">
+											<div class="prod-item__code">CD3605DA
+											</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+											<div class="prod-item__price prod-item__price--old">18 500 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">16 500 ₽
+											</div>
+										</div><a class="prod-item__btn" href="#">Купить</a>
+									</div>
+								</div>
+								<div class="sCatalog__slide swiper-slide">
+									<div class="prod-item">
+										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/hit-2.jpg" alt=""/></a>
+										</div>
+										<div class="prod-item__box">
+											<div class="prod-item__code">VB3616DA
+											</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+											<div class="prod-item__price prod-item__price--old">18 500 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">16 500 ₽
+											</div>
+										</div><a class="prod-item__btn" href="#">Купить</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-prev">
+							<svg class="icon icon-chevron-left ">
+								<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+							</svg>
+						</div>
+						<div class="swiper-next">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- start sArticals-->
+			<section class="sArticals d-none d-lg-block section" id="sArticals">
+				<div class="container">
+					<div class="section-title">
+						<div class="row align-items-center">
+							<div class="col">
+								<h2 class="mb-0">Это интересно</h2>
+							</div>
+							<div class="col-auto"><a class="section-title__all-links" href="#"><span>Все статьи</span>
+								<svg class="icon icon-chevron-right ">
+									<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+								</svg></a>
+							</div>
+						</div>
+					</div>
+					<div class="sArticals__row row">
+						<div class="sArticals__col col-lg-4 col-sm-6"><a class="sArticals__img-wrap" href="#"><img loading="lazy" src="img/@2x/artical-1.jpg" alt=""/></a><a class="sArticals__title" href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
+						</div>
+						<div class="sArticals__col col-lg-4 col-sm-6"><a class="sArticals__img-wrap" href="#"><img loading="lazy" src="img/@2x/artical-2.jpg" alt=""/></a><a class="sArticals__title" href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
+						</div>
+						<div class="sArticals__col col-lg-4 col-sm-6"><a class="sArticals__img-wrap" href="#"><img loading="lazy" src="img/@2x/artical-3.jpg" alt=""/></a><a class="sArticals__title" href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
+						</div>
+					</div>
 				</div>
 			</section>
-			<!-- end sContact-->
-			<footer class="footer"></footer>
+			<!-- end sArticals-->
+			<!-- start sNewsBox-->
+			<section class="sNewsBox section" id="sNewsBox">
+				<div class="container">
+					<div class="sNewsBox__box">
+						<div class="sNewsBox__head">
+							<div class="row align-items-center">
+								<div class="col">
+									<h2 class="mb-0">Новости</h2>
+								</div>
+								<div class="col-auto"><a class="sNewsBox__all-links" href="#"><span>Все статьи</span>
+									<svg class="icon icon-chevron-right ">
+										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+						<div class="sNewsBox__items"><a class="sNewsBox__item" href="#"><span class="sNewsBox__date">01 Января, 2020</span><span class="sNewsBox__txt">Варианты подарков на Новый Год? Конечно же инструмент и аксессуары от HiKOKI!</span><span class="sNewsBox__ball">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg></span></a><a class="sNewsBox__item" href="#"><span class="sNewsBox__date">19 Декабря, 2019</span><span class="sNewsBox__txt">New power tools catalogue 2020 – 2021 now available.</span><span class="sNewsBox__ball">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg></span></a><a class="sNewsBox__item" href="#"><span class="sNewsBox__date">11 Декабря, 2019</span><span class="sNewsBox__txt">New AC brushless web page now available.</span><span class="sNewsBox__ball">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg></span></a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sNewsBox-->
+			<!-- start sSeo-->
+			<section class="sSeo section" id="sSeo">
+				<div class="container">
+					<h2>Заголовок SEO текста</h2>
+					<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+				</div>
+			</section>
+			<!-- end sSeo-->
+			<footer class="footer">
+				<div class="footer__head">
+					<div class="container">
+						<div class="footer__head-row row align-items-center">
+							<div class="col-md-4"><a class="footer__logo" href="#"><img loading="lazy" src="img/svg/logo.svg" alt=""/></a>
+							</div>
+							<div class="col-md-auto ps-md-0">
+								<div class="footer__green-row row align-items-center">
+									<div class="col-sm-auto"><a class="footer__g-item" href="#"><span class="footer__g-icon"><img loading="lazy" src="img/@2x/green-item-1.png" alt=""/></span><span class="footer__g-txt">Глобальная сеть</span></a>
+									</div>
+									<div class="col-sm-auto"><a class="footer__g-item" href="#"><span class="footer__g-icon"><img loading="lazy" src="img/@2x/green-item-2.png" alt=""/></span><span class="footer__g-txt">Карта сайта </span></a>
+									</div>
+									<div class="col-sm-auto"><a class="footer__g-item" href="#"><span class="footer__g-icon"><img loading="lazy" src="img/@2x/green-item-3.png" alt=""/></span><span class="footer__g-txt">Контакты</span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__body footer-dd-group-js">
+					<div class="container">
+						<div class="footer__b-row row">
+							<div class="col-sm-6 col-md-4 col-lg-3">
+								<div class="footer__b-item">
+									<div class="footer__b-head dd-head-js">Каталог продукции
+									</div>
+									<div class="footer__b-content dd-content-js"><a class="footer__b-link" href="#">Новинки</a><a class="footer__b-link" href="#">Аккумуляторный инструмент</a><a class="footer__b-link" href="#">Электроинструмент</a><a class="footer__b-link" href="#">Садовая техника</a><a class="footer__b-link" href="#">Аксессуары</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-4 col-lg-3">
+								<div class="footer__b-item">
+									<div class="footer__b-head dd-head-js">Hikoki
+									</div>
+									<div class="footer__b-content dd-content-js"><a class="footer__b-link" href="#">О компании</a><a class="footer__b-link" href="#">Где мы находимся</a><a class="footer__b-link" href="#">Общая информация</a><a class="footer__b-link" href="#">Контакты</a><a class="footer__b-link" href="#">Сертификаты</a><a class="footer__b-link" href="#">Новости</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-4 col-lg-3">
+								<div class="footer__b-item">
+									<div class="footer__b-head dd-head-js">Где купить?
+									</div>
+									<div class="footer__b-content dd-content-js"><a class="footer__b-link" href="#">Где купить?</a><a class="footer__b-link" href="#">Интернет магазины</a>
+									</div>
+								</div>
+								<div class="footer__b-item d-none d-md-block d-lg-none">
+									<div class="footer__b-head dd-head-js">Сервис
+									</div>
+									<div class="footer__b-content dd-content-js"><a class="footer__b-link" href="#">Сервисы по ремонту инструмента</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-4 col-lg-3 d-md-none d-lg-block">
+								<div class="footer__b-item">
+									<div class="footer__b-head dd-head-js">Сервис
+									</div>
+									<div class="footer__b-content dd-content-js"><a class="footer__b-link" href="#">Сервисы по ремонту инструмента</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bot">
+					<div class="container">
+						<div class="footer__bot-row row align-items-center">
+							<div class="col-lg">
+								<div class="footer__bot-links"><a class="footer__bot-link" href="#">Условия использования</a><a class="footer__bot-link" href="#">Конфиденциальность</a><a class="footer__bot-link" href="#">История обновлений</a><a class="footer__bot-link" href="#">Информация о файлах cookie</a>
+								</div>
+							</div>
+							<div class="col-lg-auto d-none d-lg-block">
+								<div class="footer__all-rights">© Koki Holdings Co., Ltd. All rights reserved.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__sm-all-r">
+					<div class="container text-center">
+						<div class="footer__all-rights">© Koki Holdings Co., Ltd. All rights reserved.
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
 		<!--  start modals-->
 		<div class="modal-win" id="modal-call" style="display: none">
@@ -200,7 +812,6 @@
 		</div>
 		<!-- #modal-call-->
 		<!-- end modals-->
-		<link href="libs/swiper/css/swiper.min.css" rel="stylesheet"/>
 		<link href="libs/@fancyapps/fancybox/jquery.fancybox.min.css" rel="stylesheet"/>
 		<!-- modal libs-->
 		<script src="libs/jquery/jquery.min.js"></script>

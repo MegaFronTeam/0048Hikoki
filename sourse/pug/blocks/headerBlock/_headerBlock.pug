@@ -2,9 +2,20 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
+			+e.slider-wrap
+				.swiper-container.gallery-top
+					.swiper-wrapper
+						+headerBlockSlide()
+						+headerBlockSlide()
+						+headerBlockSlide()
+						+headerBlockSlide()
+						+headerBlockSlide()
+					.swiper-pagination
+				+arrow('d-none d-xl-flex')
 
-			.row
-						
 	// end headerBlock
+
+mixin headerBlockSlide()
+	+e.slide.swiper-slide.bg-wrap
+		+e.slide-link(href='#')
+			img.swiper-lazy(src="#" data-src="img/@2x/header-slide-1.png", alt="")

@@ -1,2 +1,56 @@
 mixin footer()
-	footer.footer
+  +b.FOOTER.footer
+    +e.head
+      .container
+        +e.head-row.row.align-items-center
+          .col-md-4
+            +e.logo(href="#")
+              img(loading="lazy" src="img/svg/logo.svg" alt="")
+          .col-md-auto.ps-md-0
+            +e.green-row.row.align-items-center
+              +greenItem(1, 'Глобальная сеть')
+              +greenItem(2, 'Карта сайта ')
+              +greenItem(3, 'Контакты')
+      //-
+    +e.body.footer-dd-group-js
+      .container
+        +e.b-row.row
+          .col-sm-6.col-md-4.col-lg-3
+            +footerBodyItem('Каталог продукции', ['Новинки','Аккумуляторный инструмент','Электроинструмент','Садовая техника','Аксессуары'])
+          .col-sm-6.col-md-4.col-lg-3
+            +footerBodyItem('Hikoki', ['О компании','Где мы находимся','Общая информация','Контакты','Сертификаты','Новости'])
+          .col-sm-6.col-md-4.col-lg-3
+            +footerBodyItem('Где купить?', ['Где купить?','Интернет магазины'])
+            +footerBodyItem('Сервис', ['Сервисы по ремонту инструмента'], 'd-none d-md-block d-lg-none')
+          .col-sm-6.col-md-4.col-lg-3.d-md-none.d-lg-block
+            +footerBodyItem('Сервис', ['Сервисы по ремонту инструмента'])
+    +e.bot
+      .container
+        +e.bot-row.row.align-items-center
+          .col-lg
+            +e.bot-links
+              +e.bot-link(href='#') Условия использования
+              +e.bot-link(href='#') Конфиденциальность
+              +e.bot-link(href='#') История обновлений
+              +e.bot-link(href='#') Информация о файлах cookie
+          .col-lg-auto.d-none.d-lg-block
+            +e.all-rights © Koki Holdings Co., Ltd. All rights reserved.
+    +e.sm-all-r
+      .container.text-center
+        +e.all-rights © Koki Holdings Co., Ltd. All rights reserved.
+
+
+mixin footerBodyItem(title, items, addClasses="")
+  +e.b-item(class=addClasses)
+    +e.b-head.dd-head-js=title
+    +e.b-content.dd-content-js
+      - for (let item of items)
+        +e.b-link(href="#")=item
+
+
+mixin greenItem(imgNum, txt)
+  .col-sm-auto
+    +e.g-item(href='#')
+      +e.g-icon
+        img(loading="lazy" src=`img/@2x/green-item-${imgNum}.png` alt="")
+      +e.g-txt=txt

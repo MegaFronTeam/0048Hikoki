@@ -1,30 +1,152 @@
 mixin mob-mnu()
-	-
-		//- let path = require('path');
-		//- let fs = require('fs');
-		//- var requestURL = 'top-nav.json';
-		//- var request = new XMLHttpRequest();
-		//- request.open('GET', requestURL);
-		//- request.responseType = 'json';
-		//- let dataJson = JSON.parse(json);
-	//- h1= dataJson['lala'] 
 	+b.menu-mobile--js.d-lg-none
 		+b.toggle-menu-mobile--js.on
 			span
 		+e.inner
-		
 			+mnu()
 			.text-right
 	//  мобильное меню
+
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
-		.container
-			.row
-				.col-auto.d-lg-none
-					+b.toggle-menu-mobile--js
+		+e.container.container
+			.row.align-items-center
+				+e.burger-col.col-auto.d-lg-none
+					+b.burger--js
 						span
-				.col.d-none.d-lg-block
-					+mnu()
+				+e.logo-col.col-auto
+					+e.logo(href="#")
+						img(loading="lazy" src="img/svg/logo.svg" alt="")
+				.col.align-self-stretch.d-none.d-lg-block
+					+e.UL.menu
+						+e.LI.item
+							+e.link
+								+b.burger
+									span
+								.ms-10 Каталог
+							+catalogDD()
+						+e.LI.item: +e.link(href="#") Оплата и доставка
+						+e.LI.item: +e.link(href="#") Сервис
+						+e.LI.item: +e.link(href="#") Акции
+						+e.LI.item: +e.link(href="#") Контакты
+				.col-auto
+					+e.search
+						+icon('zoom')
+						+e.search-txt.d-none.d-xl-block Поиск
+					//-dd here
 					
 	// end top-nav
+mixin greenLine()
+	+b.green-line--js.d-none.d-md-block
+		+e.container.container
+			+e.row.row.align-items-center
+				.col-auto.align-self-stretch
+					+e.dd-btn--loc
+						+icon('location')
+						span Москва
+						+icon('chevron-down')
+						+cityDD()
+				.col-auto.me-auto.me-xl-0.align-self-stretch
+					+e.dd-btn
+						+icon('tel')
+						span 8 495 215-50-63
+						+icon('chevron-down')
+						+telDD()
+				.col-auto.ms-auto.me-auto.d-xl-block.d-none
+					+e.shedule
+						+e.s-img
+							img(loading='lazy' src="img/svg/clock.svg" alt="")
+						+e.s-txt
+							span пн. - пт. 09:00 - 20:00
+							span сб. - вс. 09:00 - 18:00
+				.col-auto
+					+e.icon-link(href='#')
+						+icon('bars')
+				.col-auto
+					+e.icon-link(href='#')
+						+icon('heart')
+				.col-auto.align-self-stretch
+					+e.dd-btn--lc
+						+e.user
+							+icon('user')
+						span Николай
+						+lcDD()
+				.col-auto
+					+e.cart(href='#')
+						+e.cart-icon
+							+icon('cart')
+							+e.number 99
+						+e.cart-txt Корзина
+mixin cityDD()
+	+b.city-dd
+		+e.search-row.row
+			.col
+				+input('', 'text', 'Выбирете свой город', 'city')
+			.col-auto
+				+e.BUTTON.btn(type="button") Искать
+		+e.cont
+			ul
+				li: +e.link(href="#").text-primary Москва
+				li: +e.link(href="#").text-dark Санкт-Петербург
+				li: +e.link(href="#").text-dark Нижний Новгород
+				li: +e.link(href="#").text-dark Москва
+				li: +e.link(href="#").text-dark Нижний Новгород
+			ul
+				li: a(href="#").text-primary Москва
+				- for (var x = 0; x < 20; x++)
+					li: +e.link(href="#") Санкт-Петербург
+					li: +e.link(href="#") Нижний Новгород
+					li: +e.link(href="#") Москва
+					li: +e.link(href="#") Нижний Новгород
+					li: +e.link(href="#") Москва
+mixin telDD()
+	+b.tell-dd
+		+e.link(href="tel:88003331892") 8 800 333-18-92
+		+e.link(href="tel:88003331892") 8 800 333-18-92
+		+e.order-btn(href='#') Заказать звонок
+mixin lcDD()
+	+b.lc-dd
+		+e.link(href='#') Мои заказы
+		+e.link(href='#') Избранное
+		+e.link(href='#') Профиль
+		+e.log-btn(href="#")
+			+icon('exit')
+			span Выйти
+
+mixin catalogDD()
+	+b.catalog-dd
+		ul.catalog-dd__list
+			li
+				span Аккумуляторный инструмент
+				+catalogSubDD()
+			li
+				span Сетевой электроинструмент
+				+catalogSubDD('11')
+			li
+				span Садовая техника
+				+catalogSubDD('22')
+			li
+				span Алмазная резка
+				+catalogSubDD('33')
+			li
+				span Ручной инструмент
+				+catalogSubDD('44')
+			li
+				span Аксессуары
+				+catalogSubDD('55')
+
+mixin catalogSubDD(diff="")
+	+e.sub-dd
+		+e.content
+			a(href='#')=`Дрели-шуруповерты ${diff}`
+			a(href='#') Ударные дрели-шуруповерты
+			a(href='#') Ударные шуруповерты
+			a(href='#') Ударные гайковерты
+			a(href='#') Перфораторы SDS+
+			a(href='#') Перфораторы SDS-Max
+			a(href='#') Перфораторы SDS-Max
+			a(href='#') УШМ
+			a(href='#') Пилы
+			a(href='#') Многофункциональные устройства
+			a(href='#') Отвертка

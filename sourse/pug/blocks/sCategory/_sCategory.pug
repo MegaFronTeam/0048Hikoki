@@ -1,0 +1,28 @@
+mixin sCategory()
+	// start sCategory
+	+b.SECTION.sCategory.section#sCategory&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Популярные категории
+			.row
+				+categoryItem("1","Бензопилы", '')
+				+categoryItem("2","Воздуходувы", '')
+				+categoryItem("3","Травокосилки", '')
+				+categoryItem("4","Садовые тракторы", 'd-none d-lg-block')
+				+categoryItem("5","Воздуходувы", 'd-none d-lg-block')
+				//
+				+categoryItem("6","Бензопилы", '')
+				+categoryItem("7","Воздуходувы", '')
+				+categoryItem("8","Травокосилки", '')
+				+categoryItem("9","Садовые тракторы", 'd-none d-lg-block')
+				+categoryItem("10","Воздуходувы", 'd-none d-lg-block')
+			.text-center
+				+e.btn-more(type="button")
+					+icon("plus")
+
+mixin categoryItem(i,t, addClasses='')
+	+e.col.col-md-3.col-sm-4.col-6(href="#" class=addClasses)
+		+e.img-wrap
+			img.res-i.lazy(loading="lazy" src=`img/@2x/category-${i}.png` alt="")
+		+e.title=t
+		//-white-chevron-right

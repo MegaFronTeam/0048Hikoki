@@ -1,43 +1,195 @@
 .footer {
-		
-	margin-top: auto;
+  background-color: $light;
+  &__head{
+    padding: 18.5px 0;
+    border-bottom: 1px solid $gray-310;
+  }
+  &__head-row{
+    & > *{
+      margin-bottom: 24px;
+    }
+    margin-bottom: -24px;
+  }
+  &__logo{
+    display: block;
+    width: 153px;
+    img{
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
 
-// 
-@include media-breakpoint-up(xl) {}
+    @include media-breakpoint-up(xl){
+      margin-right: 15px;
+    }
+  }
+  //green-row
+  &__green-row{
+    @include roww(24px);
 
-@include media-breakpoint-up(lg) {}
+    & > *{
+      margin-bottom: 12px;
+    }
+    margin-bottom: -12px;
+  }
+  &__g-item{
+    display: flex;
+    align-items: center;
 
-@include media-breakpoint-up(md) {}
+    color: $body-color;
+    &:hover{
+      color: $primary;
+    }
+  }
+  &__g-icon{
+    width: 19px;
+    height: 19px;
+    margin-right: 4px;
 
-@include media-breakpoint-up(sm) {}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+      width: auto;
+      height: auto;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+  &__g-txt{
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  //
+  &__body{
+    border-bottom: 1px solid $gray-310;
 
-@include media-breakpoint-up(xs) {}
+    padding: 24px 0 15px;
+    @include media-breakpoint-up(md){
+      padding: 36px 0;
+    }
+  }
+  &__b-row{
+    @include media-breakpoint-up(md){
+      margin-bottom: -30px;
+    }
+  }
+  &__b-item{
+    margin-bottom: 12px;
+    @include media-breakpoint-up(sm){
+      margin-bottom: 30px;
+    }
+  }
+  &__b-head{
+    display: flex;
 
+    @include media-breakpoint-up(sm){
+      display: block;
+      pointer-events: none!important;
+    }
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.4;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $gray-310;
+    //margin-bottom: 12px;
 
-// 
-@include media-breakpoint-between(md, xl) {}
+    &:after{
+      display: block;
+      content: '';
+      @include media-breakpoint-up(sm){
+        content: none;
+      }
+      margin-left: auto;
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      background-image: url(../img/svg/plus.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  &__b-content{
+    padding-top: 12px;
 
+    display: none;
+    &.active{
+      display: block;
+    }
 
-// 
-@include media-breakpoint-only(xs) {}
+    @include media-breakpoint-up(sm){
+      display: block!important;
+    }
+  }
+  &__b-link{
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+    color: $body-color;
 
-@include media-breakpoint-only(sm) {}
+    margin-bottom: 12px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  //
+  &__bot{
+    padding: 17px 0;
+  }
+  &__bot-row{
+    @include roww(0);
+  }
+  &__bot-links{
+    @include media-breakpoint-up(lg){
+      display: flex;
+      align-items: center;
+    }
 
-@include media-breakpoint-only(md) {}
+  }
+  &__bot-link{
+    margin-bottom: 6px;
+    @include media-breakpoint-up(lg){
+      margin-bottom: 0;
+    }
 
-@include media-breakpoint-only(lg) {}
+    display: flex;
+    font-size: 10px;
+    line-height: 1.4;
 
-@include media-breakpoint-only(xl) {}
+    color: $body-color;
+    &:hover{
+      color: $primary;
+    }
 
+    &:after{
+      flex-shrink: 0;
+      @include media-breakpoint-up(lg){
+        content: '';
+      }
+      width: 1px;
+      background-color: $gray-310;
+      margin: 0 12px;
+    }
 
-// 
-@include media-breakpoint-down(xl) {}
-
-@include media-breakpoint-down(lg) {}
-
-@include media-breakpoint-down(md) {}
-
-@include media-breakpoint-down(sm) {}
-
-@include media-breakpoint-down(xs) {}
+    &:last-child{
+      &:after{
+        background-color: transparent;
+      }
+    }
+  }
+  &__all-rights{
+    font-size: 10px;
+    line-height: 1.4;
+  }
+  &__sm-all-r{
+    border-top: 1px solid $gray-310;
+    padding: 14px 0;
+  }
+  &__all-rights{
+    font-size: 10px;
+    line-height: 1.4;
+  }
+  &__{}
+  &__{}
+  &__{}
 }

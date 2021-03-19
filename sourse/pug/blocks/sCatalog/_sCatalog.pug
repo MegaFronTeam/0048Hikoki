@@ -1,0 +1,89 @@
+mixin sCatalog(data)
+	// start sCatalog
+	+b.SECTION.sCatalog.section#sCatalog&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Хиты продаж
+	// end sCatalog
+
+mixin sCatalogHit()
+	// start sCatalog
+	+b.sCatalog.section#sCatalog&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Хиты продаж
+			+e.slider-wrappper
+				+e.slider--js.swiper-container
+					.swiper-wrapper
+						+e.slide.swiper-slide
+							+item-prod('1', 'slider', 'VB3616DA')
+								+e.badge.bg-red Новинка
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider', 'CB18DBL', 'Cordless Band Saw')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider', 'CD3605DA')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider', 'CD3605DA')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider')
+				+arrow()
+
+mixin sCatalogNew()
+	// start sCatalog
+	+b.sCatalog.section#sCatalog&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Новинки
+			+e.slider-wrappper
+				+e.slider--js.swiper-container
+					.swiper-wrapper
+						+e.slide.swiper-slide
+							+item-prod('1', 'slider', 'VB3616DA')
+								+e.badge.bg-red Новинка
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider', 'CB18DBL', 'Cordless Band Saw')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider', 'CD3605DA')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider', 'CD3605DA')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider')
+				+arrow()
+
+mixin item-prod(i, slider, code='VB3616DA', t="MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender")
+	+b.prod-item&attributes(attributes)
+		+e.DIV.img-wrap
+			block
+			+e.A.img-link(href="#")
+				if !slider
+					img(loading="lazy" src=`img/@2x/hit-${i}.jpg`, alt="")
+				else
+					img.swiper-lazy(src="#" data-src=`img/@2x/hit-${i}.jpg`, alt="")
+		+e.box
+			+e.code=code
+			+e.title(href="#")= t
+			+e.price--old 18 500 ₽
+			+e.price--new 16 500 ₽
+		+e.btn(href="#") Купить
+
+mixin item-prod-multiBlock(i, slider ,t="Триммер бензиновый  Husqvarna 122C", imgPath, btnBackground='#F35321')
+	+b.prod-item&attributes(attributes)
+		//+icon(imgPath)
+		+e.content
+			+e.DIV.img-wrap
+				block
+				+e.labels
+					+e.label-link.active(type="button")
+						+icon("compare")
+					+e.label-link(type="button")
+						+icon("like-alt")
+				a(href="#")
+					if !slider
+						img(loading="lazy" src=`img/@2x/${i}`, alt="")
+					else
+						img.swiper-lazy(src="#" data-src=`img/@2x/${i}`, alt="")
+			+e.title
+				a(href="#")= t
+			+e.price--old 15 990 ₽
+			+e.price--new 11 490 ₽
+			+e.btn(href="#" style="background:" + btnBackground + ";") Купить
