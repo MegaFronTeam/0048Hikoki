@@ -4,6 +4,13 @@
 		padding-bottom: rem(20);
 	}
 
+	.swiper-container{
+		padding: 1px;
+		margin: -1px;
+		@include media-breakpoint-down(sm){
+			overflow: visible!important;
+		}
+	}
 	&__slider-wrappper {
 
 	}
@@ -28,6 +35,14 @@
 
 	&__col {
 		margin-bottom: 30px;
+	}
+
+	&.sCatalog--familiar{
+		.sCatalog__slide{
+			@include media-breakpoint-up(lg){
+				width: calc((100% / 3) - (30px * 2 / 3))!important;
+			}
+		}
 	}
 }
 

@@ -409,7 +409,8 @@ function eventHandler() {
 
 	makeDDGroup(['.footer-dd-group-js']); //end luckyone js
 	// todo
-	//1 clean js file
+	// 1 clean js file
+	// 2 search, cart, mob menu pp
 }
 
 ;

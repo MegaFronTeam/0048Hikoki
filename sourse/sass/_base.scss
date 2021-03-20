@@ -110,6 +110,20 @@ body {
 	& > *:last-child{
 		margin-bottom: 0;
 	}
+
+
+	&.light{
+		background-color: $light;
+		margin-bottom: 30px;
+		padding: 0;
+		&:after{
+			padding-bottom: 18.5px;
+		}
+
+		h2, h1{
+			padding: 0 20px 20px 20px;
+		}
+	}
 }
 
 
@@ -587,5 +601,64 @@ a{
 		top: 0;
 		left: 0;
 		object-fit: cover;
+	}
+}
+
+.breadcrumb{
+	list-style: none;
+
+	padding: 0;
+	@include media-breakpoint-up(md){
+		padding: 0 0 12px;
+	}
+	margin: 0;
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	.breadcrumb-item{
+		margin-bottom: 12px;
+
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 14px;
+		display: flex;
+		align-items: center;
+
+		a{
+			color: $black;
+			&:hover{
+				color: $primary;
+			}
+		}
+
+		&:after{
+			content: '';
+			margin: 0 11px;
+			width: 6px;
+			height: 10px;
+
+			background-image: url(../img/svg/bc-chevron-right.svg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		&:last-child{
+			a{
+				color: $primary;
+			}
+			&:after{
+				content: none;
+			}
+		}
+	}
+}
+
+h2{
+	font-size: 16px;
+	@include media-breakpoint-up(sm){
+		font-size: 24px;
 	}
 }

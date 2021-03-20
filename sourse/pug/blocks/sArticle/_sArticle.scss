@@ -1,0 +1,122 @@
+// start .sArticle
+.sArticle {
+	--sPT: 12px;
+	--sPB: 60px;
+	@include media-breakpoint-up(md){
+		--sPT: 24px;
+		--sPB: 72px;
+	}
+
+	@include media-breakpoint-up(xl){
+		--sPB: 96px;
+	}
+
+	&__row{
+		& > *{
+			margin-bottom: 24px;
+		}
+		margin-bottom: -24px;
+
+		padding-bottom: 24px;
+		@include media-breakpoint-up(md){
+			padding-bottom: 36px;
+		}
+		@include media-breakpoint-up(xl){
+			padding-bottom: 48px;
+		}
+	}
+	&__baner{
+		@extend .accept-ratio-frame-nh;
+		padding-top: (360/750) * 100%;
+
+		margin-bottom: 24px;
+		@include media-breakpoint-up(md){
+			margin-bottom: 36px;
+		}
+	}
+	&__date{
+		font-size: 14px;
+		line-height: (17/14);
+		color: rgba(51, 51, 51, 0.5);
+		margin-bottom: 12px;
+	}
+	&__content{
+		h2{
+			font-size: 16px;
+			@include media-breakpoint-up(md){
+				font-size: 20px;
+			}
+			line-height: 1.4;
+			margin-bottom: 24px;
+		}
+		p{
+			margin-bottom: 24px;
+		}
+
+		& > *:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__box{
+		border-top: 4px solid $primary;
+		border-right: 1px solid $gray-310;
+		border-bottom: 1px solid $gray-310;
+		border-left: 1px solid $gray-310;
+
+		padding: 24px 20px;
+	}
+	&__b-item{
+		display: block;
+
+		padding-bottom: 24px;
+		margin-bottom: 24px;
+		border-bottom: 1px solid $gray-310;
+
+		&:last-child{
+			padding: 0;
+			margin: 0;
+			border: none;
+		}
+
+		&:hover{
+			& > *{
+				color: $primary;
+			}
+		}
+	}
+	&__b-date{
+		@include mt();
+		display: block;
+		font-size: 14px;
+		line-height: (17/14);
+		color: rgba(51, 51, 51, 0.5);
+		margin-bottom: 12px;
+	}
+	&__b-txt{
+		@include mt();
+		display: block;
+		font-size: 14px;
+		line-height: 1.4;
+		color: $body-color;
+		margin-bottom: 12px;
+	}
+	&__ball{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		background-color: $primary;
+
+		.icon{
+			font-size: 8px;
+			color: transparent;
+			stroke: $white;
+			stroke-width: 2px;
+		}
+	}
+	&__{}
+	&__{}
+} // end.sArticle

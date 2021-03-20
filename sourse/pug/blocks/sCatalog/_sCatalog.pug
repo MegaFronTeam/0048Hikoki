@@ -26,7 +26,7 @@ mixin sCatalogHit()
 							+item-prod('2', 'slider', 'CD3605DA')
 						+e.slide.swiper-slide
 							+item-prod('2', 'slider')
-				+arrow()
+				+arrow('d-none d-lg-flex')
 
 mixin sCatalogNew()
 	// start sCatalog
@@ -48,7 +48,7 @@ mixin sCatalogNew()
 							+item-prod('2', 'slider', 'CD3605DA')
 						+e.slide.swiper-slide
 							+item-prod('2', 'slider')
-				+arrow()
+				+arrow('d-none d-lg-flex')
 
 mixin item-prod(i, slider, code='VB3616DA', t="MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender")
 	+b.prod-item&attributes(attributes)
@@ -87,3 +87,24 @@ mixin item-prod-multiBlock(i, slider ,t="Триммер бензиновый  Hu
 			+e.price--old 15 990 ₽
 			+e.price--new 11 490 ₽
 			+e.btn(href="#" style="background:" + btnBackground + ";") Купить
+
+mixin sCatalogFromArticle()
+	// start sCatalog
+	+b.sCatalog--familiar#sCatalog&attributes(attributes)
+		+b.section-title
+			h2 Товары из статьи
+		+e.slider-wrappper
+			+e.slider--js.swiper-container
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						+item-prod('1', 'slider', 'VB3616DA')
+							+e.badge.bg-red Новинка
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'CB18DBL', 'Cordless Band Saw')
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'CD3605DA')
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'CD3605DA')
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider')
+			+arrow('d-none d-lg-flex')
