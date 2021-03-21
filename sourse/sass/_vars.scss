@@ -657,12 +657,13 @@ $form-label-font-style: null !default;
 $form-label-font-weight: null !default;
 $form-label-color: null !default;
 
-$input-padding-y: 14.5px;
-$input-padding-x: 28px;
+// for loc pp
+$input-padding-y: 11px;//14.5px
+$input-padding-x: 20px;//28
 $input-font-family: $input-btn-font-family !default;
-$input-font-size: 14px !default;
+$input-font-size: 14px !default; //14px
 $input-font-weight: $font-weight-base !default;
-$input-line-height: (17/14) !default;
+$input-line-height: 1.2 !default;// (17/14)
 
 $input-padding-y-sm: $input-btn-padding-y-sm !default;
 $input-padding-x-sm: $input-btn-padding-x-sm !default;

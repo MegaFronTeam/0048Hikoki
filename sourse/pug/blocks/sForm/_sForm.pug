@@ -2,8 +2,26 @@ mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sForm
-				
+			+b.section-title
+				h2 Форма обратной связи
 			.row
+				.col-xl-6.ms-xl-auto
+					+form-wrap
+						+e.inputs
+							+input('', 'textarea', 'Ваше сообщение', 'message')
+							+input('', 'text', 'ФИО*', 'full-name')
+							+input('', 'tel', 'Телефон*')
+							+input('', 'email', 'E-mail*')
+						+e.foot
+							+e.f-row.row
+								.col-md
+									+e.policy
+										| Нажимая кнопку «Отправить», вы соглашаетесь
+										|
+										br
+										| с
+										|
+										a(href='#') Политикой конфиденциальности.
+								.col-md-auto.text-center.text-md-start
+									+e.BUTTON.btn(type="submit") Отправить
 	// end sForm

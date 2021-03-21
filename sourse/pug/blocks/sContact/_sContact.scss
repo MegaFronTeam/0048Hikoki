@@ -1,29 +1,98 @@
+// start .sContact
+.sContact {
+	--sPT: 12px;
+	@include media-breakpoint-up(md){
+		--sPT: 24px;
+		--sPB: 18px;
+	}
+	@include media-breakpoint-up(xl){
+		--sPB: 24px;
+	}
 
-	// start .sContact
-	.sContact {
-		 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	.section-title{
 
+	}
+	&__row{
+
+		@include media-breakpoint-up(lg){
+			@include roww(30px);
+
+			& > *{
+				margin-bottom: 36.5px;
+			}
+			margin-bottom: -36.5px;
+		}
+	}
+	&__item{
+		&.map-inside{
+			min-height: 100%;
+
+			margin-bottom: 48px;
+			@include media-breakpoint-up(lg){
+				margin-bottom: 0;
+				display: flex;
+				flex-direction: column;
+
+			}
+		}
+	}
+	&__header{
+		background: $body-color;
+		color: $white;
+		padding: 16.5px 20px 14.5px;
+	}
+	//
+	&__table{
+		border: 1px solid $gray-310;
+	}
+	&__tab-row{
+		@include roww(0);
+		border-bottom: 1px solid $gray-310;
+		&:last-child{
+			border-bottom: none;
+		}
+
+		& > *:last-child{
+			border-right: none;
+		}
+
+		//col
+		& > *{
+			padding: 16px 20px;
+			font-size: 14px;
+			line-height: 1.2;
+		}
+	}
+	&__gray-col{
+		background-color: $light;
+		border-right: 1px solid $gray-310;
+	}
+	&__white-col{}
+	//
+	&__map{
+		flex-grow: 1;
+		position: relative;
+		min-height: 320px;
+		@include media-breakpoint-up(sm){
+			min-height: 436px;
+		}
+
+		& > *{
+			position: absolute!important;
+			top: 0!important;
+			left: 0!important;
+			bottom: unset!important;
+			right: unset!important;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+	&__btn-outline{
+		@extend .btn;
+		@extend .btn-outline-primary;
+		width: 100%;
+	}
+	&__{}
+	&__{}
+	&__{}
 } // end.sContact
