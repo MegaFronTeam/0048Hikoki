@@ -9,14 +9,14 @@
 		margin-bottom: -48px;
 		padding-bottom: 24px;
 		@include media-breakpoint-up(md){
-			@include roww(42px);
+			@include roww(52px);
 			& > *{
 				margin-bottom: 60px;
 			}
 			margin-bottom: -60px;
 			padding-bottom: 48px;
 		}
-		@include media-breakpoint-up(xl){
+		@include media-breakpoint-up(lg){
 			@include roww(35px);
 			& > *{
 				margin-bottom: 72px;
@@ -51,8 +51,11 @@
 		@extend .accept-ratio-frame;
 		padding-top: 100%;
 
-		margin-bottom: 12px;
+		margin-bottom: 10px;
 		@include media-breakpoint-up(md){
+			margin-bottom: 23px;
+		}
+		@include media-breakpoint-up(xl){
 			margin-bottom: 28px;
 		}
 	}

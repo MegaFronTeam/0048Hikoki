@@ -1,15 +1,29 @@
 // start .sForm
 .sForm {
 	--sPB: 60px;
+	--sTPB: 24px;
 	@include media-breakpoint-up(md){
 		--sPB: 72px;
+		--sTPB: 36px;
 	}
 	@include media-breakpoint-up(xl){
 		--sPB: 96px;
+		--sTPB: 0px;
 	}
 	//
 	.section-title{
-
+		&:before{
+			margin-bottom: 20px;
+		}
+		h2{
+			font-size: 20px;
+			font-weight: bold;
+		}
+	}
+	&__row{
+		@include media-breakpoint-up(xl){
+			margin-top: -26px;
+		}
 	}
 
 	.form-wrap{
@@ -45,12 +59,18 @@
 		}
 		&__input-title{
 			flex-shrink: 0;
-			width: 100px;
 			padding-right: 10px;
 			padding-top: 12px;
 
 			font-size: 14px;
 			line-height: (17/14);
+
+			@include media-breakpoint-up(md){
+				width: 123px;
+			}
+			@include media-breakpoint-up(xl){
+				width: 100px;
+			}
 		}
 		&__{}
 
@@ -75,6 +95,13 @@
 		&__btn{
 			@extend .btn;
 			@extend .btn-primary;
+
+			@include media-breakpoint-up(md){
+				width: 262px;
+			}
+			font-size: 14px;
+			line-height: (20/14);
+
 		}
 	}
 	//

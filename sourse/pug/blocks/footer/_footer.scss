@@ -1,7 +1,10 @@
 .footer {
   background-color: $light;
   &__head{
-    padding: 18.5px 0;
+    padding: 18.5px 0 23.5px 0;
+    @include media-breakpoint-up(md){
+      padding: 18.5px 0;
+    }
     border-bottom: 1px solid $gray-310;
   }
   &__head-row{
@@ -73,6 +76,23 @@
     @include media-breakpoint-up(md){
       margin-bottom: -30px;
     }
+
+    & > *{
+      &:last-child{
+        .footer__b-item{
+          @include media-breakpoint-down(sm) {
+            margin-bottom: 0 !important;
+          }
+        }
+        .footer__b-head{
+          @include media-breakpoint-down(sm){
+            border-bottom: none!important;
+            margin-bottom: 0!important;
+            padding-bottom: 0!important;
+          }
+        }
+      }
+    }
   }
   &__b-item{
     margin-bottom: 12px;
@@ -83,15 +103,16 @@
   &__b-head{
     display: flex;
 
+    padding-bottom: 15px;
+    border-bottom: 1px solid $gray-310;
     @include media-breakpoint-up(sm){
+      padding-bottom: 12px;
       display: block;
       pointer-events: none!important;
     }
     font-weight: bold;
     font-size: 14px;
     line-height: 1.4;
-    padding-bottom: 12px;
-    border-bottom: 1px solid $gray-310;
     //margin-bottom: 12px;
 
     &:after{
@@ -134,21 +155,28 @@
   }
   //
   &__bot{
-    padding: 17px 0;
+    padding: 13px 0 5px;
+    @include media-breakpoint-up(sm){
+      padding: 17px 0;
+    }
   }
   &__bot-row{
     @include roww(0);
   }
   &__bot-links{
-    @include media-breakpoint-up(lg){
+    @include media-breakpoint-up(md){
       display: flex;
       align-items: center;
+      justify-content: center;
+    }
+    @include media-breakpoint-up(lg){
+      justify-content: flex-start;
     }
 
   }
   &__bot-link{
     margin-bottom: 6px;
-    @include media-breakpoint-up(lg){
+    @include media-breakpoint-up(md){
       margin-bottom: 0;
     }
 
@@ -163,7 +191,7 @@
 
     &:after{
       flex-shrink: 0;
-      @include media-breakpoint-up(lg){
+      @include media-breakpoint-up(md){
         content: '';
       }
       width: 1px;
@@ -173,7 +201,7 @@
 
     &:last-child{
       &:after{
-        background-color: transparent;
+        content: none;
       }
     }
   }

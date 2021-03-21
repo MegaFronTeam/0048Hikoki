@@ -50,7 +50,7 @@ mixin sCatalogNew()
 							+item-prod('2', 'slider')
 				+arrow('d-none d-lg-flex')
 
-mixin item-prod(i, slider, code='VB3616DA', t="MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender")
+mixin item-prod(i, slider, code='VB3616DA', t="MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender", hasOldPrice=true)
 	+b.prod-item&attributes(attributes)
 		+e.DIV.img-wrap
 			block
@@ -62,8 +62,11 @@ mixin item-prod(i, slider, code='VB3616DA', t="MULTI VOLT (36V) Cordless Portabl
 		+e.box
 			+e.code=code
 			+e.title(href="#")= t
-			+e.price--old 18 500 ₽
-			+e.price--new 16 500 ₽
+			if hasOldPrice
+				+e.price--old 18 500 ₽
+				+e.price--new 16 500 ₽
+			else
+				+e.price--new 22 600 ₽
 		+e.btn(href="#") Купить
 
 mixin item-prod-multiBlock(i, slider ,t="Триммер бензиновый  Husqvarna 122C", imgPath, btnBackground='#F35321')

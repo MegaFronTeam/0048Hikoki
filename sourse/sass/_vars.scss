@@ -259,6 +259,11 @@ $spacers: (0: 0,
   4: $spacer * 1.5,
   5: $spacer * 3,
   10: 10px,
+  12: 12px,
+  24: 24px,
+  36: 36px,
+  48: 48px,
+  60: 60px,
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
@@ -307,7 +312,9 @@ $paragraph-margin-bottom: 1rem !default;
 // adapting to different screen sizes, for use in media queries.
 
 // scss-docs-start grid-breakpoints
-$grid-breakpoints: (xs: 0,
+$grid-breakpoints: (
+  xs: 0,
+  xsm: 360px,
   sm: 576px,
   md: 768px,
   lg: 992px,
@@ -325,7 +332,7 @@ $grid-breakpoints: (xs: 0,
 
 // scss-docs-start container-max-widths
 $container-max-widths: (sm: 540px,
-  md: 720px,
+  md: 740px,
   lg: 960px,
   xl: 1170px) !default;
 // scss-docs-end container-max-widths

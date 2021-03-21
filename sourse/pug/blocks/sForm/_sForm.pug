@@ -2,9 +2,9 @@ mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
-			+b.section-title
+			+b.section-title.long
 				h2 Форма обратной связи
-			.row
+			+e.row.row
 				.col-xl-6.ms-xl-auto
 					+form-wrap
 						+e.inputs
@@ -13,7 +13,7 @@ mixin sForm()
 							+input('', 'tel', 'Телефон*')
 							+input('', 'email', 'E-mail*')
 						+e.foot
-							+e.f-row.row
+							+e.f-row.row.align-items-center
 								.col-md
 									+e.policy
 										| Нажимая кнопку «Отправить», вы соглашаетесь

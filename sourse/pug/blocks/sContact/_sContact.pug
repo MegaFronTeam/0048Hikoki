@@ -3,7 +3,7 @@ mixin sContact()
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
 		.container
 			block
-			+b.section-title.light
+			+b.section-title.light.long
 				h2 Контакты
 			+e.row.row
 				+contactItem('Режим работы')
@@ -35,11 +35,12 @@ mixin sContact()
 						+tableRow('Корр. счет', '30101810345250000745')
 						+tableRow('БИК', '044525745')
 						+tableRow('Юр. адрес:', '')
-							| 127474, г. Москва,
-							br
-							| ш. Дмитровское, д.62, строение 5,
-							br
-							| этаж 1, помещение X, комната 1
+							.pb-12
+								| 127474, г. Москва,
+								br
+								| ш. Дмитровское, д.62, строение 5,
+								br
+								| этаж 1, помещение X, комната 1
 					+e.btn-outline(href='#') Скачать реквизиты
 	// end sContact
 

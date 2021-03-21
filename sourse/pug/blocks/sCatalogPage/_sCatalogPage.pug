@@ -1,0 +1,221 @@
+mixin sCatalogPage(data)
+	// start sCatalogPage
+	+b.SECTION.sCatalogPage.section#sCatalogPage&attributes(attributes)
+		+e.container.container
+			block
+			+b.section-title
+				h2 Каталог
+			+e.row.row.pb-48.pb-md-60
+				+catalogPageItem(1, 'AC Brushless', 'col-xl-3')
+				+catalogPageItem(2, 'MultiVolt', 'col-xl-3')
+				+catalogPageItem(3, 'Сетевой электроинструмент', 'col-xl-3')
+				+catalogPageItem(4, 'Аккумуляторный инструмент', 'col-xl-3')
+				+catalogPageItem(1, 'AC Brushless', 'col-xl-3')
+				+catalogPageItem(2, 'MultiVolt', 'col-xl-3')
+				+catalogPageItem(3, 'Сетевой электроинструмент', 'col-xl-3')
+				+catalogPageItem(4, 'Аккумуляторный инструмент', 'col-xl-3')
+				+catalogPageItem(1, 'AC Brushless', 'col-xl-3')
+				+catalogPageItem(2, 'MultiVolt', 'col-xl-3')
+				+catalogPageItem(3, 'Сетевой электроинструмент', 'col-xl-3')
+				+catalogPageItem(4, 'Аккумуляторный инструмент', 'col-xl-3')
+			+b.sSeo#sSeo
+				h2 Заголовок SEO текста
+				p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+	// end sCatalogPage
+
+mixin catalogPageItem(imgNum, name, bootClasses="")
+	.col-md-6.col-lg-4(class=bootClasses)
+		+e.item(href='#')
+			+e.i-img
+				img(loading="lazy" src=`img/@2x/catalog-${imgNum}.jpg` alt="")
+			+e.i-name=name
+
+mixin sCatalogPage2(data)
+	// start sCatalogPage
+	+b.SECTION.sCatalogPage.section#sCatalogPage&attributes(attributes)
+		+e.container.container
+			block
+			+b.section-title.light.long
+				h2 AC Brushless
+			+e.main-row.row
+				.col-lg-3
+					+b.cat-aside.cat-aside-dd-js
+						+e.box
+							+e.header AC Brushless
+							+e.items
+								+asideItem('Дрели-шуруповерты')
+								+asideItem('Ударные дрели-шуруповерты')
+								+asideItem('Ударные шуруповерты')
+				.col-lg-9
+					+b.green-seo
+						h2 Заголовок SEO текста
+						p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+					+e.row.row.pb-48.pb-md-60
+						+catalogPageItem(1, 'AC Brushless')
+						+catalogPageItem(2, 'MultiVolt')
+						+catalogPageItem(3, 'Сетевой электроинструмент')
+						+catalogPageItem(4, 'Аккумуляторный инструмент')
+						+catalogPageItem(1, 'AC Brushless')
+						+catalogPageItem(2, 'MultiVolt')
+						+catalogPageItem(3, 'Сетевой электроинструмент')
+						+catalogPageItem(4, 'Аккумуляторный инструмент')
+						+catalogPageItem(1, 'AC Brushless')
+						//-+catalogPageItem(2, 'MultiVolt')
+						//-+catalogPageItem(3, 'Сетевой электроинструмент')
+						//-+catalogPageItem(4, 'Аккумуляторный инструмент')
+					+b.sSeo#sSeo
+						h2 Заголовок SEO текста
+						p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+
+mixin asideItem(name, activeClass='')
+	+e.item(class=activeClass)
+		+e.i-head.dd-head-js
+			+e.name=name
+			+e.plus
+		+e.content.dd-content-js(class=activeClass)
+			if block
+				block
+			else
+				+e.links
+					+e.link(href="#") Screw-driving / Drilling
+					+e.link(href="#") Hammer-drilling
+					+e.link(href="#") Screw-driving
+					+e.link(href="#") Fastening
+					+e.link(href="#") Grinding
+					+e.link(href="#") Cutting
+					+e.link(href="#") Sawing / Planing
+					+e.link(href="#") Cleaning
+					+e.link(href="#") Nailing
+					+e.link(href="#") Landscaping
+					+e.link(href="#") Miscellaneous
+
+mixin sCatalogPage3(data)
+	// start sCatalogPage
+	+b.SECTION.sCatalogPage.section#sCatalogPage&attributes(attributes)
+		+e.container.container
+			block
+			+b.section-title.light.long
+				h2 Ударные дрели-шуруповерты
+			+e.main-row.row
+				.col-lg-3
+					+b.cat-aside.cat-aside-dd-js
+						+e.box
+							+e.header AC Brushless
+							+e.items
+								+asideItem('Дрели-шуруповерты')
+								+asideItem('Ударные дрели-шуруповерты')
+								+asideItem('Ударные шуруповерты')
+						+FiltersBlock()
+						+filterBtnsBar()
+				.col-lg-9
+					+e.options
+						+e.o-row.row.align-items-center
+							.col
+								+e.select
+									+input('Цена по возрастанию', 'select')
+							.col-auto
+								+e.o-sub-row.row
+									.col-auto
+										+e.icon-btn
+											+icon('6-dots')
+									.col-auto
+										+e.icon-btn.active
+											+icon('9-dots')
+					+sqprodItemsRow()
+					+pugin('pb-48 pb-md-60')
+					+b.sSeo#sSeo
+						h2 Заголовок SEO текста
+						p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+
+mixin sqprodItemsRow(addClasses)
+	+e.row.row.pb-48.pb-md-60(class=addClasses)
+		.col-xsm-6.col-md-4
+			+item-prod('1', false, 'VB3616DA')
+				+e.badge.bg-red Новинка
+		.col-xsm-6.col-md-4
+			+item-prod('2', false, 'CB18DBL', 'Cordless Band Saw')
+		.col-xsm-6.col-md-4
+			+item-prod('2', false, 'CB18DBL', 'MULTI VOLT(36V) Cordless Metal Cutting Saw', false)
+		.col-xsm-6.col-md-4
+			+item-prod('1', false, 'VB3616DA')
+				+e.badge.bg-red Новинка
+		.col-xsm-6.col-md-4
+			+item-prod('2', false, 'CB18DBL', 'Cordless Band Saw')
+		.col-xsm-6.col-md-4
+			+item-prod('2', false, 'CB18DBL', 'MULTI VOLT(36V) Cordless Metal Cutting Saw', false)
+		block
+
+mixin filterBtnsBar()
+	+b.filter-bar-btns.d-flex.d-lg-none.pb-60
+		+e.filter-btn
+			+icon('filter-bar-icon')
+			span ФИЛЬТР парамтеров
+			.filter-number 3
+		+e.cross-btn.d-none.d-sm-flex
+			+icon('cross')
+mixin FiltersBlock()
+	+b.filter-bl
+		+e.pop-up-controll-panel.d-flex.d-lg-none
+			+e.back-btn
+				+icon('angle-left')
+				span Назад
+			+e.discard-filters-btn
+				+icon('cross')
+				span сбросить фильтры
+		+form-wrap()
+			.check-box-filter-group
+				+e.headline Фильтр
+				+in-c06("checkbox", 'Самоходные', 'no-my-city')(class="filter-checkbox disabled")
+				+in-c06("checkbox", 'Аккумуляторные', 'no-my-city')(class="filter-checkbox ")
+				+in-c06("checkbox", 'Бензольные', 'no-my-city')(class="filter-checkbox ")
+			.radio-filter-group
+				+e.headline Фильтр
+				+in-r('type-radio-group')(class="filter-radio disabled")
+					span.check-box-cont
+						span.circle
+						span.txt-cont Самоходные
+				+in-r('type-radio-group')(class="filter-radio")
+					span.check-box-cont
+						span.circle
+						span.txt-cont Аккумуляторные
+				+in-r('type-radio-group', true)(class="filter-radio")
+					span.check-box-cont
+						span.circle
+						span.txt-cont Бензольные
+			.price-filter-group
+				+e.headline Цена
+				+range("1", "999999")
+			.check-box-alt-filter-group
+				+e.headline Фильтр
+				+in-c06("checkbox", 'Самоходные', 'no-my-city')(class="filter-checkbox-alt disabled")
+				+in-c06("checkbox", 'Аккумуляторные', 'no-my-city')(class="filter-checkbox-alt ")
+				+in-c06("checkbox", 'Бензольные', 'no-my-city')(class="filter-checkbox-alt ")
+			.accept-filters-btn-cont.d-block.d-lg-none
+				.accept-filters-btn применить фильтры
+mixin range(c1, c2)
+	.range-wrap.price_slider_amount
+		.label-cont
+			label.left-inp
+				+e.text.SPAN от
+				+b.INPUT.range-result--minus.minus(type="text")
+			.dash-dark -
+			label.right-inp
+				+e.text-right.SPAN до
+				+b.INPUT.range-result--plus.plus(type="text")
+		input.range-slider.slider-js(type='text'  data-min= c1  data-max= c2)
+mixin in-c06(typ="checkbox", text, name= typ )
+	+b.LABEL.custom-input&attributes(attributes)
+		+e.INPUT.input(type= typ , name= name)
+		+e.SPAN.lab
+		if block
+			block
+		else
+			+e.SPAN.text= text
+mixin in-r(name='radio-btn-group', checked=false)
+	+b.LABEL.custom-radio&attributes(attributes)
+		if checked
+			+e.INPUT.radio-input(type="radio", name = name, checked)
+			block
+		else
+			+e.INPUT.radio-input(type="radio", name = name)
+			block

@@ -227,7 +227,84 @@ const JSCCommon = {
 		let now = new Date();
 		let currentYear = document.querySelector(el);
 		if (currentYear) currentYear.innerText = now.getFullYear();
-	}
+	},
+	//taken from good planet
+	customRange() {
+		$(".range-wrap").each(function () {
+			let _this = $(this);
+			var $d3 = _this.find(".slider-js");
+
+			var slider = $d3.ionRangeSlider({
+				skin: "round",
+				type: "double",
+				grid: false,
+				grid_snap: false,
+				hide_min_max: true,
+				hide_from_to: true,
+				onStart: function (data) {
+					_this.find('.minus').val(data.from);
+					_this.find('.plus').val(data.to);
+				},
+				onChange: function (data) {
+					_this.find('.minus').val(data.from);
+					_this.find('.plus').val(data.to);
+				},
+				onFinish: function (data) {
+					_this.find('.minus').val(data.from);
+					_this.find('.plus').val(data.to);
+				},
+				onUpdate: function (data) {
+					_this.find('.minus').val(data.from);
+					_this.find('.plus').val(data.to);
+				}
+			});
+			var $d3_instance = slider.data("ionRangeSlider");
+			$(this).on('change  input  cut  copy  paste', '.minus', function () {
+				var th = $(this);
+				var data = th.val();
+				var min = +data;
+				// th.val(data + ' т')
+				console.log(1);
+				$d3_instance.update({
+					from: min,
+				})
+			});
+
+			$(this).on('change  input  cut  copy  paste', '.plus', function () {
+				var th = $(this);
+				var data = th.val();
+				var max = +data;
+
+				//max => new val of max inp
+				//min => value of the min inp
+
+				let min = Number(document.querySelector('.range-result.range-result--minus.minus').value);
+				if (min >= max) {
+					min = 0;
+					$d3_instance.update({
+						from: min,
+						to: max,
+					});
+				}
+				else {
+					$d3_instance.update({
+						to: max,
+					});
+				}
+			});
+			// $d3.on("change", function () {
+			// 	var $inp = $(this);
+			// 	var from = $inp.prop("value"); // reading input value
+			// 	var from2 = $inp.data("from"); // reading input data-from attribute
+
+			// 	_this.find('range-result--minus').val(from); // FROM value
+			// 	_this.find('range-result--plus').val(from); // FROM value
+			// });
+
+
+		})
+	},
+	//taken from good planet
 };
 const $ = jQuery;
 
@@ -240,10 +317,11 @@ function eventHandler() {
 	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
+	JSCCommon.customRange();
 
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
-	let screenName = '01-1440.png';
+	let screenName = '02-1-1440.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -384,7 +462,29 @@ function eventHandler() {
 
 		}
 	}
-	makeDDGroup(['.footer-dd-group-js']);
+	makeDDGroup(['.footer-dd-group-js', '.cat-aside-dd-js']);
+
+	//filter custom pop-up
+	$('.filter-bar-btns .filter-bar-btns__filter-btn').click(function () {
+		$('body').addClass('stop-scrolling');
+		$('.filter-bl').addClass('filter-visiable');
+	});
+	$('.filter-bl__back-btn').click(function () {
+		closeFilterPopUp();
+	});
+	function closeFilterPopUp() {
+		$('body').removeClass('stop-scrolling');
+		$('.filter-bl').removeClass('filter-visiable');
+	}
+	function closeFiltersOnResize() {
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			closeFilterPopUp();
+		}
+	}
+	window.addEventListener('resize', closeFiltersOnResize, {
+		passive: true,
+	});
+	//
 
 	//end luckyone js
 

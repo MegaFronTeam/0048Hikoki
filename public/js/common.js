@@ -95,7 +95,7 @@ var JSCCommon = {
 		});
 	},
 	mobileMenu: function mobileMenu() {
-		var _this = this;
+		var _this2 = this;
 
 		if (!this.menuMobileLink) return;
 		this.toggleMenu();
@@ -104,12 +104,12 @@ var JSCCommon = {
 
 			var link = event.target.closest(".navMenu__link"); // (1)
 
-			if (!container || link) _this.closeMenu();
+			if (!container || link) _this2.closeMenu();
 		}, {
 			passive: true
 		});
 		window.addEventListener('resize', function () {
-			if (window.matchMedia("(min-width: 992px)").matches) _this.closeMenu();
+			if (window.matchMedia("(min-width: 992px)").matches) _this2.closeMenu();
 		}, {
 			passive: true
 		});
@@ -245,7 +245,82 @@ var JSCCommon = {
 		var now = new Date();
 		var currentYear = document.querySelector(el);
 		if (currentYear) currentYear.innerText = now.getFullYear();
-	}
+	},
+	//taken from good planet
+	customRange: function customRange() {
+		$(".range-wrap").each(function () {
+			var _this = $(this);
+
+			var $d3 = _this.find(".slider-js");
+
+			var slider = $d3.ionRangeSlider({
+				skin: "round",
+				type: "double",
+				grid: false,
+				grid_snap: false,
+				hide_min_max: true,
+				hide_from_to: true,
+				onStart: function onStart(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				},
+				onChange: function onChange(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				},
+				onFinish: function onFinish(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				},
+				onUpdate: function onUpdate(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				}
+			});
+			var $d3_instance = slider.data("ionRangeSlider");
+			$(this).on('change  input  cut  copy  paste', '.minus', function () {
+				var th = $(this);
+				var data = th.val();
+				var min = +data; // th.val(data + ' т')
+
+				console.log(1);
+				$d3_instance.update({
+					from: min
+				});
+			});
+			$(this).on('change  input  cut  copy  paste', '.plus', function () {
+				var th = $(this);
+				var data = th.val();
+				var max = +data; //max => new val of max inp
+				//min => value of the min inp
+
+				var min = Number(document.querySelector('.range-result.range-result--minus.minus').value);
+
+				if (min >= max) {
+					min = 0;
+					$d3_instance.update({
+						from: min,
+						to: max
+					});
+				} else {
+					$d3_instance.update({
+						to: max
+					});
+				}
+			}); // $d3.on("change", function () {
+			// 	var $inp = $(this);
+			// 	var from = $inp.prop("value"); // reading input value
+			// 	var from2 = $inp.data("from"); // reading input data-from attribute
+			// 	_this.find('range-result--minus').val(from); // FROM value
+			// 	_this.find('range-result--plus').val(from); // FROM value
+			// });
+		});
+	} //taken from good planet
+
 };
 var $ = jQuery;
 
@@ -257,10 +332,11 @@ function eventHandler() {
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
-	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile(); 
+	JSCCommon.animateScroll();
+	JSCCommon.customRange(); // JSCCommon.CustomInputFile(); 
 
 	var x = window.location.host;
-	var screenName = '01-1440.png';
+	var screenName = '02-1-1440.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -407,7 +483,31 @@ function eventHandler() {
 		}
 	}
 
-	makeDDGroup(['.footer-dd-group-js']); //end luckyone js
+	makeDDGroup(['.footer-dd-group-js', '.cat-aside-dd-js']); //filter custom pop-up
+
+	$('.filter-bar-btns .filter-bar-btns__filter-btn').click(function () {
+		$('body').addClass('stop-scrolling');
+		$('.filter-bl').addClass('filter-visiable');
+	});
+	$('.filter-bl__back-btn').click(function () {
+		closeFilterPopUp();
+	});
+
+	function closeFilterPopUp() {
+		$('body').removeClass('stop-scrolling');
+		$('.filter-bl').removeClass('filter-visiable');
+	}
+
+	function closeFiltersOnResize() {
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			closeFilterPopUp();
+		}
+	}
+
+	window.addEventListener('resize', closeFiltersOnResize, {
+		passive: true
+	}); //
+	//end luckyone js
 	// todo
 	// 1 clean js file
 	// 2 search, cart, mob menu pp

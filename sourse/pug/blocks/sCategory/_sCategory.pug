@@ -4,7 +4,7 @@ mixin sCategory()
 		.container
 			+b.section-title
 				h2 Популярные категории
-			.row
+			+e.row.row
 				+categoryItem("1","Бензопилы", '')
 				+categoryItem("2","Воздуходувы", '')
 				+categoryItem("3","Травокосилки", '')
@@ -21,7 +21,7 @@ mixin sCategory()
 					+icon("plus")
 
 mixin categoryItem(i,t, addClasses='')
-	+e.col.col-md-3.col-sm-4.col-6(href="#" class=addClasses)
+	+e.col.col-lg-3.col-sm-4.col-6(href="#" class=addClasses)
 		+e.img-wrap
 			img.res-i.lazy(loading="lazy" src=`img/@2x/category-${i}.png` alt="")
 		+e.title=t

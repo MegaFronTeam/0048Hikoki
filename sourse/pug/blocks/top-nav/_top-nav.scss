@@ -1,7 +1,10 @@
 .top-nav {
 	border-bottom: 1px solid $gray-310;
 
-	padding: 19px 0;
+	padding: 14px 0;
+	@include media-breakpoint-up(sm){
+		padding: 19px 0;
+	}
 	@include media-breakpoint-up(lg){
 		padding: 0;
 	}
@@ -21,7 +24,11 @@
 	}
 	&__logo{
 		display: block;
-		width: 153px;
+
+		width: 127px;
+		@include media-breakpoint-up(md){
+			width: 153px;
+		}
 		img{
 			width: auto;
 			height: auto;
@@ -82,6 +89,12 @@
 		align-items: center;
 	}
 	&__search{
+		&.muted-down-md{
+			@include media-breakpoint-down(md){
+				pointer-events: none;
+				opacity: 0;
+			}
+		}
 		display: flex;
 		align-items: center;
 

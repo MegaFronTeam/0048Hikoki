@@ -1,13 +1,21 @@
 // start .headerBlock
 .headerBlock {
 	--sPT: 0;
-	--sPB: 12px;
+	--sPB: 1px;
+	@include media-breakpoint-up(md){
+		--sPB: 4px;
+	}
+	@include media-breakpoint-up(xl){
+		--sPB: 12px;
+	}
+
 	.container{
 		@include media-breakpoint-down(xl){
 			max-width: 100% !important;
 			padding: 0!important;
 		}
 	}
+
 	&__slider-wrap{
 		.swiper-wrapper{
 
@@ -18,7 +26,11 @@
 		.swiper-pagination{
 			position: absolute;
 			z-index: 2;
-			bottom: 25px!important;
+
+			bottom: 13px!important;
+			@include media-breakpoint-up(md){
+				bottom: 25px!important;
+			}
 			left: 0;
 		}
 	}
