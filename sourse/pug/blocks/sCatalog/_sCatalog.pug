@@ -69,28 +69,6 @@ mixin item-prod(i, slider, code='VB3616DA', t="MULTI VOLT (36V) Cordless Portabl
 				+e.price--new 22 600 ₽
 		+e.btn(href="#") Купить
 
-mixin item-prod-multiBlock(i, slider ,t="Триммер бензиновый  Husqvarna 122C", imgPath, btnBackground='#F35321')
-	+b.prod-item&attributes(attributes)
-		//+icon(imgPath)
-		+e.content
-			+e.DIV.img-wrap
-				block
-				+e.labels
-					+e.label-link.active(type="button")
-						+icon("compare")
-					+e.label-link(type="button")
-						+icon("like-alt")
-				a(href="#")
-					if !slider
-						img(loading="lazy" src=`img/@2x/${i}`, alt="")
-					else
-						img.swiper-lazy(src="#" data-src=`img/@2x/${i}`, alt="")
-			+e.title
-				a(href="#")= t
-			+e.price--old 15 990 ₽
-			+e.price--new 11 490 ₽
-			+e.btn(href="#" style="background:" + btnBackground + ";") Купить
-
 mixin sCatalogFromArticle()
 	// start sCatalog
 	+b.sCatalog--familiar#sCatalog&attributes(attributes)

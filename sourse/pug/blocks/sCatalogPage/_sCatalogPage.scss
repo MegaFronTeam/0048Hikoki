@@ -128,7 +128,14 @@
 		@include roww(24px);
 	}
 	&__icon-btn{
+		&.active{
+			.icon{
+				color: $primary;
+			}
+		}
+
 		.icon{
+			@include mt();
 			font-size: 19px;
 			color: $gray-310;
 		}

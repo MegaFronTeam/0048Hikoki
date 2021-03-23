@@ -176,3 +176,78 @@
 		}
 	}
 }
+//
+.long-item{
+	border: 1px solid $gray-310;
+
+	&__row{
+		@include roww(0);
+	}
+	&__img-col{
+		width: 262px;
+		padding: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__img{
+		@extend .accept-ratio-frame;
+		padding-top: (180/222) * 100%;
+	}
+	&__content-col{
+		background-color: $light;
+		padding: 20px 20px 20px 30px;
+	}
+	&__tag{
+		display: inline-flex;
+		background: $danger;
+		border-radius: 20px;
+		padding: 4px 8px;
+
+		font-weight: bold;
+		font-size: 10px;
+		line-height: (12/10);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: $white;
+
+		margin-bottom: 24px;
+	}
+	&__code{
+		font-size: 12px;
+		line-height: (14/12);
+		color: rgba(51, 51, 51, 0.5);
+		margin-bottom: 8px;
+	}
+	&__title{
+		font-size: 14px;
+		line-height: (20/14);
+		margin-bottom: 40px;
+
+		display: flex;
+		align-items: center;
+		color: $primary;
+	}
+	&__lower-row{
+		margin-top: auto;
+	}
+	&__price--old{
+		font-size: 12px;
+		line-height: (14/12);
+		text-decoration-line: line-through;
+		color: $danger;
+		margin-bottom: 4px;
+	}
+	&__price--new{
+		font-size: 16px;
+		line-height: (19/16);
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-primary;
+
+		min-width: 220px;
+	}
+	&__{}
+	&__{}
+}
