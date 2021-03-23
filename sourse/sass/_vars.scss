@@ -22,6 +22,7 @@ $gray-300: #dee2e6 !default;
 $gray-310: #D2D2D2;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
+$gray-520: #A5AFB4;
 $gray-570: #7A8A93;
 $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
@@ -76,7 +77,7 @@ $colors: ("blue": $blue,
 
 // scss-docs-start theme-color-variables
 $primary: $green !default;
-$secondary: $gray-600 !default;
+$secondary: $gray-310 !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
@@ -699,7 +700,7 @@ $input-focus-color: $input-color !default;
 $input-focus-width: $input-btn-focus-width !default;
 $input-focus-box-shadow: none;
 
-$input-placeholder-color: $gray-600 !default;
+$input-placeholder-color: $gray-520 !default;
 $input-plaintext-color: $body-color !default;
 
 $input-height-border: $input-border-width * 2 !default;
