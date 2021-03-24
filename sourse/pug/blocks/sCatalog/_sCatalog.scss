@@ -184,7 +184,8 @@
 		@include roww(0);
 	}
 	&__img-col{
-		width: 262px;
+		width: 262px!important;
+		flex-shrink: 0;
 		padding: 20px;
 		display: flex;
 		align-items: center;
@@ -196,22 +197,46 @@
 	}
 	&__content-col{
 		background-color: $light;
-		padding: 20px 20px 20px 30px;
+
+		--pad-l: 15px;
+		padding: 12px var(--pad-l, 15px) 0;
+		@include media-breakpoint-up(md){
+			padding: 20px 20px 20px 30px;
+		}
 	}
 	&__tag{
-		display: inline-flex;
-		background: $danger;
-		border-radius: 20px;
-		padding: 4px 8px;
+		@include media-breakpoint-down(md){
+			position: absolute;
+			z-index: 2;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0px;
 
-		font-weight: bold;
-		font-size: 10px;
-		line-height: (12/10);
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: $white;
+			text-transform: uppercase;
+			color: $white;
+			font-weight: bold;
+			font-size: 10px;
+			line-height: 1.2;
+			letter-spacing: 0.1em;
+			border-radius: 20px;
+			padding: 4px 7px;
+			background: $danger;
+		}
+		@include media-breakpoint-up(md){
+			display: inline-flex;
+			background: $danger;
+			border-radius: 20px;
+			padding: 4px 8px;
 
-		margin-bottom: 24px;
+			font-weight: bold;
+			font-size: 10px;
+			line-height: (12/10);
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: $white;
+
+			margin-bottom: 24px;
+		}
 	}
 	&__code{
 		font-size: 12px;
@@ -222,7 +247,11 @@
 	&__title{
 		font-size: 14px;
 		line-height: (20/14);
-		margin-bottom: 40px;
+
+		margin-bottom: 12px;
+		@include media-breakpoint-up(md){
+			margin-bottom: 40px;
+		}
 
 		display: flex;
 		align-items: center;
@@ -238,6 +267,12 @@
 		color: $danger;
 		margin-bottom: 4px;
 	}
+	&__price-col{
+		margin-bottom: 12px;
+		@include media-breakpoint-up(md){
+			margin-bottom: 0;
+		}
+	}
 	&__price--new{
 		font-size: 16px;
 		line-height: (19/16);
@@ -246,8 +281,17 @@
 		@extend .btn;
 		@extend .btn-primary;
 
-		min-width: 220px;
+		min-width: 100%;
+		@include media-breakpoint-up(md){
+			min-width: 220px;
+		}
 	}
-	&__{}
+	&__btn-col{
+		@include media-breakpoint-down(md){
+			margin: 0 calc(-1 * var(--pad-l, 15px));
+			width: calc(100% + var(--pad-l, 15px) * 2);
+			max-width: calc(100% + var(--pad-l, 15px) * 2);
+		}
+	}
 	&__{}
 }

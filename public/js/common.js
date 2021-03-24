@@ -12,6 +12,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+Dropzone.autoDiscover = false;
 var JSCCommon = {
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js, .burger--js")),
 	menuMobile: document.querySelector(".menu-mobile--js"),
@@ -117,44 +118,25 @@ var JSCCommon = {
 	// /mobileMenu
 	// tabs  .
 	tabscostume: function tabscostume(tab) {
-		var tabs = document.querySelectorAll(tab); // const indexOf = element => Array.from(element.parentNode.children).indexOf(element);
+		var tabs = {
+			Btn: [].slice.call(document.querySelectorAll(".".concat(tab, "__btn"))),
+			BtnParent: [].slice.call(document.querySelectorAll(".".concat(tab, "__caption"))),
+			Content: [].slice.call(document.querySelectorAll(".".concat(tab, "__content")))
+		};
+		tabs.Btn.forEach(function (element, index) {
+			element.addEventListener('click', function () {
+				if (!element.classList.contains('active')) {
+					//turn off old
+					var oldActiveEl = element.closest(".".concat(tab)).querySelector(".".concat(tab, "__btn.active"));
+					var oldActiveContent = tabs.Content[index].closest(".".concat(tab)).querySelector(".".concat(tab, "__content.active"));
+					oldActiveEl.classList.remove('active');
+					oldActiveContent.classList.remove('active'); //turn on new(cklicked el)
 
-		tabs.forEach(function (element) {
-			var tabs = element;
-			var tabsCaption = tabs.querySelector(".tabs__caption");
-			var tabsBtn = tabsCaption.querySelectorAll(".tabs__btn");
-			var tabsWrap = tabs.querySelector(".tabs__wrap");
-			var tabsContent = tabsWrap.querySelectorAll(".tabs__content");
-			var random = Math.trunc(Math.random() * 1000);
-			tabsBtn.forEach(function (el, index) {
-				var data = "tab-content-".concat(random, "-").concat(index);
-				el.dataset.tabBtn = data;
-				var content = tabsContent[index];
-				content.dataset.tabContent = data;
-				if (!content.dataset.tabContent == data) return;
-				var active = content.classList.contains('active') ? 'active' : '';
-				console.log(el.innerHTML);
-				content.insertAdjacentHTML("beforebegin", "<div class=\"tabs__btn-accordion  btn btn-primary d-block mb-1 ".concat(active, "\" data-tab-btn=\"").concat(data, "\">").concat(el.innerHTML, "</div>"));
+					element.classList.add('active');
+					tabs.Content[index].classList.add('active');
+				}
 			});
-			tabs.addEventListener('click', function (element) {
-				var btn = element.target.closest("[data-tab-btn]:not(.active)");
-				if (!btn) return;
-				var data = btn.dataset.tabBtn;
-				var tabsAllBtn = this.querySelectorAll("[data-tab-btn");
-				var content = this.querySelectorAll("[data-tab-content]");
-				tabsAllBtn.forEach(function (element) {
-					element.dataset.tabBtn == data ? element.classList.add('active') : element.classList.remove('active');
-				});
-				content.forEach(function (element) {
-					element.dataset.tabContent == data ? (element.classList.add('active'), element.previousSibling.classList.add('active')) : element.classList.remove('active');
-				});
-			});
-		}); // $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-		// 	$(this)
-		// 		.addClass('active').siblings().removeClass('active')
-		// 		.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-		// 		.eq($(this).index()).fadeIn().addClass('active');
-		// });
+		});
 	},
 	// /tabs
 	inputMask: function inputMask() {
@@ -327,7 +309,7 @@ var $ = jQuery;
 function eventHandler() {
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
-	JSCCommon.tabscostume('.tabs--js');
+	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
@@ -403,9 +385,11 @@ function eventHandler() {
 		}
 	};
 	var greenLine = document.querySelector(".green-line--js");
+	var topNav = document.querySelector(".top-nav--js");
 
 	function calcGreenLineHeight() {
 		document.documentElement.style.setProperty('--green-line-h', "".concat(greenLine.offsetHeight, "px"));
+		document.documentElement.style.setProperty('--top-nav-bot', "".concat(topNav.offsetHeight + greenLine.offsetHeight, "px"));
 	}
 
 	window.addEventListener('resize', calcGreenLineHeight, {
@@ -506,8 +490,12 @@ function eventHandler() {
 
 	window.addEventListener('resize', closeFiltersOnResize, {
 		passive: true
-	}); //
-	//end luckyone js
+	}); // dropzone
+
+	$("#props-dz").dropzone({
+		url: "/file/post",
+		dictDefaultMessage: 'Перенесите сюда файл или выберите на компьютере'
+	}); //end luckyone js
 	// todo
 	// 1 clean js file
 	// 2 search, cart, mob menu pp

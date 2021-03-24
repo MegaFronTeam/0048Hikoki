@@ -13,11 +13,11 @@ mixin input(placeholder,  t='text', label, name= t)
 				- for (var x = 1; x < 5; x++)
 					option(value=`placeholder ${x}`)=`placeholder ${x}`
 		else if t=='file'
-			+e.INPUT.input.form-control(name=name type=t)
+			+e.INPUT.input.form-control(name=name type=t)&attributes(attributes)
 		else if t=='number'
-			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder step='any')
+			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder step='any')&attributes(attributes)
 		else
-			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder)
+			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder)&attributes(attributes)
 	+e.input-wrap.form-group
 		if label
 			label
@@ -69,7 +69,15 @@ mixin add-file(n)
 		+e.SPAN.filename 
 
 
-mixin polite()
-	+e.polite
-		+in-c()(checked)
-			+e.SMALL.text.text-secondary Согласен на обработку и хранение моих персональных данных в соответствии с условиями
+mixin polite(addClasses)
+	+b.polite(class=addClasses)
+		| Нажимая на кнопку, вы подтверждаете своё совершеннолетие,
+		br
+		| соглашаетесь на обработку персональных данных в соответствии
+		br
+		| с
+		|
+		a(href='#') Условиями
+		|, а также с
+		|
+		a(href="#") Условиями продажи

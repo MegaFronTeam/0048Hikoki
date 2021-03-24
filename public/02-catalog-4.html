@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<!-- end modals--><!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -8,6 +9,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
 		<link rel="stylesheet" href="libs/ion-rangeslider/css/ion.rangeSlider.min.css"/>
+		<link rel="stylesheet" href="libs/dropzone/min/dropzone.min.css"/>
 		<link href="libs/swiper/css/swiper.min.css" rel="stylesheet"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
 	</head>
@@ -315,7 +317,7 @@
 				</div>
 			</div>
 			<!-- start top-nav-->
-			<div class="top-nav block-with-lazy">
+			<div class="top-nav top-nav--js block-with-lazy">
 				<div class="top-nav__container container">
 					<div class="row align-items-center">
 						<div class="top-nav__burger-col col-auto d-lg-none">
@@ -383,12 +385,115 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col-auto">
+						<div class="top-nav__search-col col-auto">
 							<div class="top-nav__search muted-down-md">
 								<svg class="icon icon-zoom ">
 									<use xlink:href="img/svg/sprite.svg#zoom"></use>
 								</svg>
 								<div class="top-nav__search-txt d-none d-xl-block">Поиск
+								</div>
+								<div class="search-dd">
+									<div class="search-dd__row row">
+										<div class="col">
+											<div class="search-dd__search-row row">
+												<div class="col-auto">
+													<div class="search-dd__input-wrap form-group">
+														<select class="search-dd__input form-select" name="look-for">
+															<option value="Искать везде">Искать везде</option>
+															<option value="placeholder 1">placeholder 1</option>
+															<option value="placeholder 2">placeholder 2</option>
+															<option value="placeholder 3">placeholder 3</option>
+															<option value="placeholder 4">placeholder 4</option>
+														</select>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+												<div class="col">
+													<div class="search-dd__input-wrap form-group"><input class="search-dd__input form-control" name="txt" type="text" placeholder=""/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="search-dd__categories mb-30"><a class="search-dd__c-item" href="#"><span class="search-dd__c-txt">Дрели-шуруповерты</span>
+												<svg class="icon icon-chevron-right ">
+													<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+												</svg></a><a class="search-dd__c-item" href="#"><span class="search-dd__c-txt">Ударные дрели-шуруповерты</span>
+												<svg class="icon icon-chevron-right ">
+													<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+												</svg></a>
+											</div>
+											<div class="search-dd__items-row row">
+												<div class="col-sm-6 col-lg-3">
+													<div class="prod-item">
+														<div class="prod-item__img-wrap">
+															<div class="prod-item__badge bg-red">Новинка
+															</div><a class="prod-item__img-link" href="#"><img loading="lazy" src="img/@2x/hit-1.jpg" alt=""/></a>
+														</div>
+														<div class="prod-item__box">
+															<div class="prod-item__code">VB3616DA
+															</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+															<div class="prod-item__price prod-item__price--old">18 500 ₽
+															</div>
+															<div class="prod-item__price prod-item__price--new">16 500 ₽
+															</div>
+														</div><a class="prod-item__btn" href="#">Купить</a>
+													</div>
+												</div>
+												<div class="col-sm-6 col-lg-3">
+													<div class="prod-item">
+														<div class="prod-item__img-wrap">
+															<div class="prod-item__badge bg-red">Новинка
+															</div><a class="prod-item__img-link" href="#"><img loading="lazy" src="img/@2x/hit-1.jpg" alt=""/></a>
+														</div>
+														<div class="prod-item__box">
+															<div class="prod-item__code">VB3616DA
+															</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+															<div class="prod-item__price prod-item__price--old">18 500 ₽
+															</div>
+															<div class="prod-item__price prod-item__price--new">16 500 ₽
+															</div>
+														</div><a class="prod-item__btn" href="#">Купить</a>
+													</div>
+												</div>
+												<div class="col-sm-6 col-lg-3">
+													<div class="prod-item">
+														<div class="prod-item__img-wrap">
+															<div class="prod-item__badge bg-red">Новинка
+															</div><a class="prod-item__img-link" href="#"><img loading="lazy" src="img/@2x/hit-1.jpg" alt=""/></a>
+														</div>
+														<div class="prod-item__box">
+															<div class="prod-item__code">VB3616DA
+															</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+															<div class="prod-item__price prod-item__price--old">18 500 ₽
+															</div>
+															<div class="prod-item__price prod-item__price--new">16 500 ₽
+															</div>
+														</div><a class="prod-item__btn" href="#">Купить</a>
+													</div>
+												</div>
+												<div class="col-sm-6 col-lg-3">
+													<div class="prod-item">
+														<div class="prod-item__img-wrap">
+															<div class="prod-item__badge bg-red">Новинка
+															</div><a class="prod-item__img-link" href="#"><img loading="lazy" src="img/@2x/hit-1.jpg" alt=""/></a>
+														</div>
+														<div class="prod-item__box">
+															<div class="prod-item__code">VB3616DA
+															</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+															<div class="prod-item__price prod-item__price--old">18 500 ₽
+															</div>
+															<div class="prod-item__price prod-item__price--new">16 500 ₽
+															</div>
+														</div><a class="prod-item__btn" href="#">Купить</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-auto">
+											<button class="search-dd__btn" type="button">Искать
+											</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -553,14 +658,21 @@
 									<div class="col-auto">
 										<div class="sCatalogPage__o-sub-row row">
 											<div class="col-auto">
-												<div class="sCatalogPage__icon-btn active">
+												<div class="sCatalogPage__icon-btn active d-none d-md-block">
 													<svg class="icon icon-6-dots ">
 														<use xlink:href="img/svg/sprite.svg#6-dots"></use>
 													</svg>
 												</div>
 											</div>
-											<div class="col-auto">
+											<div class="col-auto d-none d-md-block">
 												<div class="sCatalogPage__icon-btn">
+													<svg class="icon icon-9-dots ">
+														<use xlink:href="img/svg/sprite.svg#9-dots"></use>
+													</svg>
+												</div>
+											</div>
+											<div class="col-auto">
+												<div class="sCatalogPage__icon-btn active">
 													<svg class="icon icon-9-dots ">
 														<use xlink:href="img/svg/sprite.svg#9-dots"></use>
 													</svg>
@@ -570,159 +682,145 @@
 									</div>
 								</div>
 							</div>
-							<div class="sCatalogPage__row row pb-48 pb-md-60 d-md-none">
-								<div class="col-xsm-6 col-md-4">
-									<div class="prod-item">
-										<div class="prod-item__img-wrap">
-											<div class="prod-item__badge bg-red">Новинка
-											</div><a class="prod-item__img-link" href="#"><img loading="lazy" src="img/@2x/hit-1.jpg" alt=""/></a>
-										</div>
-										<div class="prod-item__box">
-											<div class="prod-item__code">VB3616DA
-											</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
-											<div class="prod-item__price prod-item__price--old">18 500 ₽
-											</div>
-											<div class="prod-item__price prod-item__price--new">16 500 ₽
-											</div>
-										</div><a class="prod-item__btn" href="#">Купить</a>
-									</div>
-								</div>
-								<div class="col-xsm-6 col-md-4">
-									<div class="prod-item">
-										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img loading="lazy" src="img/@2x/hit-2.jpg" alt=""/></a>
-										</div>
-										<div class="prod-item__box">
-											<div class="prod-item__code">CB18DBL
-											</div><a class="prod-item__title" href="#">Cordless Band Saw</a>
-											<div class="prod-item__price prod-item__price--old">18 500 ₽
-											</div>
-											<div class="prod-item__price prod-item__price--new">16 500 ₽
-											</div>
-										</div><a class="prod-item__btn" href="#">Купить</a>
-									</div>
-								</div>
-								<div class="col-xsm-6 col-md-4">
-									<div class="prod-item">
-										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img loading="lazy" src="img/@2x/hit-2.jpg" alt=""/></a>
-										</div>
-										<div class="prod-item__box">
-											<div class="prod-item__code">CB18DBL
-											</div><a class="prod-item__title" href="#">MULTI VOLT(36V) Cordless Metal Cutting Saw</a>
-											<div class="prod-item__price prod-item__price--new">22 600 ₽
-											</div>
-										</div><a class="prod-item__btn" href="#">Купить</a>
-									</div>
-								</div>
-								<div class="col-xsm-6 col-md-4">
-									<div class="prod-item">
-										<div class="prod-item__img-wrap">
-											<div class="prod-item__badge bg-red">Новинка
-											</div><a class="prod-item__img-link" href="#"><img loading="lazy" src="img/@2x/hit-1.jpg" alt=""/></a>
-										</div>
-										<div class="prod-item__box">
-											<div class="prod-item__code">VB3616DA
-											</div><a class="prod-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
-											<div class="prod-item__price prod-item__price--old">18 500 ₽
-											</div>
-											<div class="prod-item__price prod-item__price--new">16 500 ₽
-											</div>
-										</div><a class="prod-item__btn" href="#">Купить</a>
-									</div>
-								</div>
-								<div class="col-xsm-6 col-md-4">
-									<div class="prod-item">
-										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img loading="lazy" src="img/@2x/hit-2.jpg" alt=""/></a>
-										</div>
-										<div class="prod-item__box">
-											<div class="prod-item__code">CB18DBL
-											</div><a class="prod-item__title" href="#">Cordless Band Saw</a>
-											<div class="prod-item__price prod-item__price--old">18 500 ₽
-											</div>
-											<div class="prod-item__price prod-item__price--new">16 500 ₽
-											</div>
-										</div><a class="prod-item__btn" href="#">Купить</a>
-									</div>
-								</div>
-								<div class="col-xsm-6 col-md-4">
-									<div class="prod-item">
-										<div class="prod-item__img-wrap"><a class="prod-item__img-link" href="#"><img loading="lazy" src="img/@2x/hit-2.jpg" alt=""/></a>
-										</div>
-										<div class="prod-item__box">
-											<div class="prod-item__code">CB18DBL
-											</div><a class="prod-item__title" href="#">MULTI VOLT(36V) Cordless Metal Cutting Saw</a>
-											<div class="prod-item__price prod-item__price--new">22 600 ₽
-											</div>
-										</div><a class="prod-item__btn" href="#">Купить</a>
-									</div>
-								</div>
-							</div>
-							<div class="sCatalogPage__row row pb-48 pb-md-60 d-none d-md-flex">
-								<div class="col-12">
-									<div class="long-item">
+							<div class="sCatalogPage__row row pb-48 pb-md-60">
+								<div class="col-xsm-6 col-md-12">
+									<div class="long-item text-center text-md-start">
 										<div class="long-item__row row">
-											<div class="long-item__img-col col-auto"><a class="long-item__img" href="#"><img loading="lazy" src="img/@2x/lc-img.jpg" alt=""/></a>
+											<div class="long-item__img-col col-md-auto"><a class="long-item__img" href="#"><span class="long-item__tag d-md-none">Новинка</span><img loading="lazy" src="img/@2x/lc-img.jpg" alt=""/></a>
 											</div>
-											<div class="long-item__content-col col">
-												<div class="long-item__tag">Новинка
+											<div class="long-item__content-col col-md">
+												<div class="long-item__tag d-md-inline-flex d-none">Новинка
 												</div>
 												<div class="long-item__code">VB3616DA
 												</div><a class="long-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
 												<div class="long-item__lower-row row align-items-center">
-													<div class="col">
+													<div class="long-item__price-col col-md">
 														<div class="long-item__price long-item__price--old">18 500 ₽
 														</div>
 														<div class="long-item__price long-item__price--new">16 500 ₽
 														</div>
 													</div>
-													<div class="col-auto"><a class="long-item__btn" href="#">Купить</a>
+													<div class="long-item__btn-col col-md-auto"><a class="long-item__btn" href="#">Купить</a>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="col-12">
-									<div class="long-item">
+								<div class="col-xsm-6 col-md-12">
+									<div class="long-item text-center text-md-start">
 										<div class="long-item__row row">
-											<div class="long-item__img-col col-auto"><a class="long-item__img" href="#"><img loading="lazy" src="img/@2x/lc-img.jpg" alt=""/></a>
+											<div class="long-item__img-col col-md-auto"><a class="long-item__img" href="#"><span class="long-item__tag d-md-none">Новинка</span><img loading="lazy" src="img/@2x/lc-img.jpg" alt=""/></a>
 											</div>
-											<div class="long-item__content-col col">
-												<div class="long-item__tag">Новинка
+											<div class="long-item__content-col col-md">
+												<div class="long-item__tag d-md-inline-flex d-none">Новинка
 												</div>
 												<div class="long-item__code">VB3616DA
 												</div><a class="long-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
 												<div class="long-item__lower-row row align-items-center">
-													<div class="col">
+													<div class="long-item__price-col col-md">
 														<div class="long-item__price long-item__price--old">18 500 ₽
 														</div>
 														<div class="long-item__price long-item__price--new">16 500 ₽
 														</div>
 													</div>
-													<div class="col-auto"><a class="long-item__btn" href="#">Купить</a>
+													<div class="long-item__btn-col col-md-auto"><a class="long-item__btn" href="#">Купить</a>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="col-12">
-									<div class="long-item">
+								<div class="col-xsm-6 col-md-12">
+									<div class="long-item text-center text-md-start">
 										<div class="long-item__row row">
-											<div class="long-item__img-col col-auto"><a class="long-item__img" href="#"><img loading="lazy" src="img/@2x/lc-img.jpg" alt=""/></a>
+											<div class="long-item__img-col col-md-auto"><a class="long-item__img" href="#"><span class="long-item__tag d-md-none">Новинка</span><img loading="lazy" src="img/@2x/lc-img.jpg" alt=""/></a>
 											</div>
-											<div class="long-item__content-col col">
-												<div class="long-item__tag">Новинка
+											<div class="long-item__content-col col-md">
+												<div class="long-item__tag d-md-inline-flex d-none">Новинка
 												</div>
 												<div class="long-item__code">VB3616DA
 												</div><a class="long-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
 												<div class="long-item__lower-row row align-items-center">
-													<div class="col">
+													<div class="long-item__price-col col-md">
 														<div class="long-item__price long-item__price--old">18 500 ₽
 														</div>
 														<div class="long-item__price long-item__price--new">16 500 ₽
 														</div>
 													</div>
-													<div class="col-auto"><a class="long-item__btn" href="#">Купить</a>
+													<div class="long-item__btn-col col-md-auto"><a class="long-item__btn" href="#">Купить</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xsm-6 col-md-12">
+									<div class="long-item text-center text-md-start">
+										<div class="long-item__row row">
+											<div class="long-item__img-col col-md-auto"><a class="long-item__img" href="#"><span class="long-item__tag d-md-none">Новинка</span><img loading="lazy" src="img/@2x/lc-img.jpg" alt=""/></a>
+											</div>
+											<div class="long-item__content-col col-md">
+												<div class="long-item__tag d-md-inline-flex d-none">Новинка
+												</div>
+												<div class="long-item__code">VB3616DA
+												</div><a class="long-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+												<div class="long-item__lower-row row align-items-center">
+													<div class="long-item__price-col col-md">
+														<div class="long-item__price long-item__price--old">18 500 ₽
+														</div>
+														<div class="long-item__price long-item__price--new">16 500 ₽
+														</div>
+													</div>
+													<div class="long-item__btn-col col-md-auto"><a class="long-item__btn" href="#">Купить</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xsm-6 col-md-12">
+									<div class="long-item text-center text-md-start">
+										<div class="long-item__row row">
+											<div class="long-item__img-col col-md-auto"><a class="long-item__img" href="#"><span class="long-item__tag d-md-none">Новинка</span><img loading="lazy" src="img/@2x/lc-img.jpg" alt=""/></a>
+											</div>
+											<div class="long-item__content-col col-md">
+												<div class="long-item__tag d-md-inline-flex d-none">Новинка
+												</div>
+												<div class="long-item__code">VB3616DA
+												</div><a class="long-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+												<div class="long-item__lower-row row align-items-center">
+													<div class="long-item__price-col col-md">
+														<div class="long-item__price long-item__price--old">18 500 ₽
+														</div>
+														<div class="long-item__price long-item__price--new">16 500 ₽
+														</div>
+													</div>
+													<div class="long-item__btn-col col-md-auto"><a class="long-item__btn" href="#">Купить</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xsm-6 col-md-12">
+									<div class="long-item text-center text-md-start">
+										<div class="long-item__row row">
+											<div class="long-item__img-col col-md-auto"><a class="long-item__img" href="#"><span class="long-item__tag d-md-none">Новинка</span><img loading="lazy" src="img/@2x/lc-img.jpg" alt=""/></a>
+											</div>
+											<div class="long-item__content-col col-md">
+												<div class="long-item__tag d-md-inline-flex d-none">Новинка
+												</div>
+												<div class="long-item__code">VB3616DA
+												</div><a class="long-item__title" href="#">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender</a>
+												<div class="long-item__lower-row row align-items-center">
+													<div class="long-item__price-col col-md">
+														<div class="long-item__price long-item__price--old">18 500 ₽
+														</div>
+														<div class="long-item__price long-item__price--new">16 500 ₽
+														</div>
+													</div>
+													<div class="long-item__btn-col col-md-auto"><a class="long-item__btn" href="#">Купить</a>
 													</div>
 												</div>
 											</div>
@@ -848,32 +946,196 @@
 			</footer>
 		</div>
 		<!--  start modals-->
-		<div class="modal-win" id="modal-call" style="display: none">
-			<div class="form-wrap">
-				<form>
-					<div class="text-center">
-						<div class="form-wrap__title form-data h3 ttu">Обратный звонок
+		<div class="d-none">
+			<div class="modal-win text-center" id="modal-city">
+				<div class="modal-win__title">Ваш город Москва?
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<button class="modal-win__btn" type="button">Да
+						</button>
+					</div>
+					<div class="col-6">
+						<button class="modal-win__btn-outline" type="button">Нет
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- #modal-city-->
+			<div class="modal-win text-center" id="modal-prod-add">
+				<div class="modal-win__title">Товар добавлен в корзину
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<button class="modal-win__btn" type="button">Оформить
+						</button>
+					</div>
+					<div class="col-6">
+						<button class="modal-win__btn-outline" type="button">Продолжить
+						</button>
+					</div>
+				</div>
+			</div>
+			<!--#modal-prod-add-->
+			<div class="modal-win" id="modal-call">
+				<div class="form-wrap">
+					<form>
+						<div class="modal-win__title text-center mb-24">Заказ звонка</div>
+						<div class="form-wrap__inputs">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Телефон*</span><input class="form-wrap__input form-control valid" name="tel" type="tel" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Ваше Имя*</span><input class="form-wrap__input form-control invalid" name="text" type="text" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
 						</div>
-						<p class="after-headline">Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут</p>
-						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta at blanditiis error quis incidunt ratione. Expedita ullam repellendus possimus eos ex quidem quisquam quam voluptatum ipsa doloremque molestias accusamus rem deserunt tenetur incidunt exercitationem laboriosam consequuntur, repudiandae dolore odit earum voluptatibus autem amet! Eligendi omnis necessitatibus at accusamus excepturi, debitis magnam alias. Dolore voluptatum hic assumenda quo non facilis sed sint fugit ex quam. Natus eligendi sequi repellat earum doloremque vero consequatur repudiandae ipsam libero odit alias quia expedita magni fugit perspiciatis aperiam maxime illo, voluptatem omnis tenetur suscipit molestias beatae distinctio totam? Excepturi quaerat dolorum natus reprehenderit voluptas officiis totam recusandae harum autem ipsum laboriosam dolorem, tempore, maxime nam dignissimos aperiam cupiditate accusantium deleniti. Iusto harum facere blanditiis minima dolor assumenda error nisi soluta perferendis animi? Distinctio maxime, perspiciatis neque dignissimos reprehenderit obcaecati quo provident, dolores labore laborum adipisci at veniam reiciendis aliquam nemo minus cumque sequi quasi architecto aliquid magnam tempore expedita? Repellendus veniam est dicta nihil, aspernatur molestiae ducimus quibusdam voluptatibus saepe. Repudiandae itaque rem animi voluptas voluptate? Expedita numquam architecto totam quo quod quibusdam ut, rem earum, similique dolorum excepturi nobis quis, tempore et exercitationem repellendus! Ipsa, consequuntur praesentium quaerat excepturi voluptas, delectus maiores necessitatibus explicabo consequatur neque optio doloremque temporibus similique doloribus pariatur velit aliquam magni cum! Repellat mollitia quam saepe porro, culpa unde! Molestias laboriosam vitae nihil facere corporis cupiditate eos ea saepe dolorem, eaque laudantium quam distinctio, fugit placeat maxime enim dicta rem eligendi accusamus, eum id. Incidunt, illum quaerat ab modi iste quasi non laboriosam unde, atque fugit delectus cumque eligendi sapiente dolore autem omnis alias, adipisci dicta illo corrupti optio? Esse error numquam fugit itaque ipsam fugiat nostrum repudiandae recusandae, nobis repellat aperiam officiis labore possimus neque velit, a obcaecati illum quasi suscipit veritatis! Ea earum obcaecati impedit possimus adipisci vitae animi commodi consequatur omnis amet? Quod sed doloremque id nesciunt iure recusandae iste voluptatibus unde eligendi porro nulla architecto voluptates quasi temporibus, fugit asperiores quis! Facere non, illo quisquam cumque voluptate earum voluptatem corporis eum cum commodi omnis autem sequi nisi sit iure aperiam iusto dolor harum? Ex eligendi vero reiciendis culpa ipsa suscipit debitis, quam earum maxime. Nemo officia quasi consequuntur velit rem culpa ipsa quas earum excepturi amet fuga eum consequatur, repellendus commodi facere maxime. Magni voluptas consequatur facere dolores ut culpa, expedita fugit? Quae placeat asperiores est, fuga eligendi eius similique necessitatibus explicabo? Eveniet corporis tempora reiciendis, dolore ipsam quos aut ea alias amet nihil? Excepturi maiores mollitia inventore voluptate est ullam reprehenderit itaque iure quasi non molestias, vel veniam alias! Obcaecati laudantium ex incidunt autem ipsam a suscipit, in dolorem error deserunt minima laborum nulla facere officia sunt. Aliquid repellat rem sunt reprehenderit. Fugit perferendis officiis labore nesciunt pariatur optio minima aperiam et similique maxime odio laudantium eligendi deleniti culpa exercitationem impedit, fugiat magni vero temporibus eos obcaecati esse possimus asperiores dolores! Quod iure eius minus adipisci? Architecto sapiente corrupti error! Magni ea tempore laboriosam minus totam facilis iure voluptates nostrum officiis dignissimos nihil necessitatibus quam in, commodi molestiae expedita facere asperiores ad! Corporis delectus magnam, vel aspernatur rem laboriosam autem soluta aliquam iure impedit? Deserunt ad nam excepturi, quibusdam qui nisi necessitatibus, voluptatibus deleniti quo cumque ipsam cum repudiandae impedit in a laborum dignissimos ratione labore vitae officia quaerat magnam. Saepe ullam omnis harum reprehenderit beatae pariatur est? Animi dolores necessitatibus corrupti velit architecto obcaecati doloremque vero sapiente quaerat praesentium? Veniam illum iusto ea sunt deserunt, omnis consequatur est adipisci aliquid magnam quibusdam animi debitis magni excepturi accusamus vel facilis ipsa blanditiis expedita cumque fugiat! Aspernatur voluptatum quos corrupti blanditiis? Sapiente pariatur sunt culpa nesciunt consequatur eaque veritatis laborum possimus, saepe at nam amet exercitationem assumenda temporibus illo aliquid asperiores quae impedit beatae voluptatem? Vitae, totam quos odio nobis perferendis unde! Voluptates voluptatum, sint iure aliquid quis quod voluptatem saepe et similique, repellendus dolorum. Sed vel illo quisquam cum aut, ullam impedit quaerat a odit alias fugit repudiandae. Consequuntur voluptas explicabo eligendi, beatae esse nihil laborum illo rerum ab dolorum nemo iste est doloremque magnam. Repellendus in voluptates cumque ullam, cum odio quam deserunt optio doloremque modi nobis itaque cupiditate ea, neque exercitationem laborum, obcaecati mollitia earum debitis accusamus nisi dolorem autem libero dicta! Atque ad doloribus distinctio cumque nobis labore placeat? Necessitatibus, accusamus deleniti numquam asperiores distinctio tempora consectetur minus veritatis cum repellat architecto voluptatibus minima omnis aliquam fugit maiores eos veniam consequatur, rerum ex illo facere? Suscipit distinctio qui quae asperiores voluptates nobis unde, nisi soluta natus aspernatur tempore libero, nam iure? Modi, explicabo iusto tenetur placeat praesentium, sunt voluptatum soluta reiciendis quam atque hic dolorum in, esse consequuntur voluptate animi doloremque saepe expedita voluptates? Consectetur sint assumenda quaerat deleniti. Exercitationem, quas beatae. Ut ipsam eum nisi fugiat numquam saepe tempore dolorem necessitatibus consequatur, voluptatem eligendi magni laborum nostrum sed accusamus ducimus laudantium minus animi. Totam expedita vero voluptas libero ipsa! Facilis ullam vel libero aliquam sit itaque quasi delectus a rerum laborum, possimus, eos inventore nulla, excepturi exercitationem aliquid unde porro. Odio nulla labore repellat exercitationem cupiditate voluptates, obcaecati asperiores eligendi delectus commodi deserunt provident sit nam praesentium culpa cum amet explicabo, nisi dolores? Recusandae provident veritatis porro corporis voluptatem assumenda necessitatibus at. Sint quam in facere nihil hic cupiditate porro sapiente nisi, et ratione placeat commodi unde excepturi error repellat earum perspiciatis quisquam amet tempora. Expedita, ipsum? Molestias mollitia voluptatum sapiente inventore, perspiciatis ab laudantium, voluptatibus amet aliquid laborum autem? Adipisci aliquid voluptatum numquam quas quia ullam error sed illo, sit minima, consectetur temporibus unde? Rerum minima necessitatibus est expedita assumenda nesciunt, modi ea fugiat consectetur ad corporis velit ducimus quia aut cumque iusto voluptatibus et perferendis ipsum! Excepturi perferendis veritatis cumque quo, quod facere facilis impedit magnam numquam repellat ad tempora! Pariatur distinctio laborum, quaerat dolorem nostrum totam animi. Ipsa distinctio consectetur explicabo culpa, esse reprehenderit eveniet obcaecati, repudiandae dolorum vero expedita modi exercitationem iure aut provident sit cum adipisci consequatur id delectus voluptatum fuga ducimus natus. Cum, aperiam impedit error illo hic similique quo iure omnis ullam sapiente modi.</p>
-					</div>
-					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя"/> 
-					</div>
-					<!-- +e.input-wrap-->
-					<button class="form-wrap__btn btn" type="submit"> 
-					</button>
-					<div class="form-wrap__polite">
-						<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox"/><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
-						</label>
-					</div>
-				</form>
+						<div class="text-center"><input class="form-wrap__btn-light mb-12" type="submit" value="Перезвоните мне"/>
+							<div class="polite">Нажимая на кнопку, вы подтверждаете своё совершеннолетие,<br/>соглашаетесь на обработку персональных данных в соответствии<br/>с
+								<a href="#">Условиями</a>, а также с
+								<a href="#">Условиями продажи</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- #modal-call-->
+			<div class="modal-win" id="modal-inner">
+				<div class="form-wrap">
+					<form>
+						<div class="modal-win__title text-center mb-24">Авторизация</div>
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__input-title">Эл. почта*</span><input class="form-wrap__input form-control" name="email" type="email" placeholder="" required="required"/>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__input-title">Пароль*</span><input class="form-wrap__input form-control" name="password" type="password" placeholder="" required="required"/>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="text-center"><a class="form-wrap__forgot d-block mb-24" href="#">Забыли пароль?</a>
+							<button class="form-wrap__btn-enter" type="submit">Войти
+							</button>
+							<button class="form-wrap__btn-reg" type="submit">Регистрация
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- #modal-inner-->
+			<div class="modal-win" id="modal-reg">
+				<div class="form-wrap">
+					<form>
+						<div class="text-center">
+							<div class="modal-win__title mb-24">Регистрация</div>
+						</div>
+						<div class="form-wrap__inputs pb-60">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Эл. почта*</span><input class="form-wrap__input form-control" name="email" type="email" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Пароль*</span><input class="form-wrap__input form-control" name="password" type="password" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Повторить пароль*</span><input class="form-wrap__input form-control border-danger text-danger" name="password" type="password" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="invalid-alert text-danger small">Пароли не совпадают</div>
+						</div>
+						<div class="text-center">
+							<button class="form-wrap__btn-light" type="submit">Зарегистрироваться
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- #modal-reg-->
+			<div class="modal-win" id="modal-order-request">
+				<div class="form-wrap">
+					<form>
+						<div class="modal-win__title text-center mb-24">Запрос счёта</div>
+						<div class="form-wrap__inputs">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">ФИО*</span><input class="form-wrap__input form-control" name="user-name" type="text" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Телефон*</span><input class="form-wrap__input form-control" name="phone" type="tel" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Электронная почта*</span><input class="form-wrap__input form-control" name="email" type="email" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="tabs">
+							<div class="tabs__caption row">
+								<div class="col-6">
+									<div class="tabs__btn active">Заполнить реквизиты</div>
+								</div>
+								<div class="col-6">
+									<div class="tabs__btn">Загрузить реквизиты</div>
+								</div>
+							</div>
+							<div class="tabs__wrap">
+								<div class="tabs__content active">
+									<div class="form-wrap__inputs">
+										<div class="form-wrap__input-wrap form-group">
+											<label><span class="form-wrap__input-title">Корр. счёт</span><input class="form-wrap__input form-control" name="account-1" type="text" placeholder=""/>
+											</label>
+										</div>
+										<!-- +e.input-wrap-->
+										<div class="form-wrap__input-wrap form-group">
+											<label><span class="form-wrap__input-title">Расч. счёт</span><input class="form-wrap__input form-control" name="account-2" type="text" placeholder=""/>
+											</label>
+										</div>
+										<!-- +e.input-wrap-->
+										<div class="form-wrap__input-wrap form-group">
+											<label><span class="form-wrap__input-title">E-mail*</span><input class="form-wrap__input form-control" name="email" type="email" placeholder="" required="required"/>
+											</label>
+										</div>
+										<!-- +e.input-wrap-->
+									</div>
+								</div>
+								<div class="tabs__content pb-24">
+									<div class="form-wrap__headline file-headline pb-12">Прикрепить файл
+									</div>
+									<div class="dropzone" id="props-dz">
+										<div class="fallback">
+											<input name="file" type="file" multiple=""/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<button class="form-wrap__btn-light mb-12" type="submit">Отправить
+							</button>
+							<div class="polite">Нажимая на кнопку, вы подтверждаете своё совершеннолетие,<br/>соглашаетесь на обработку персональных данных в соответствии<br/>с
+								<a href="#">Условиями</a>, а также с
+								<a href="#">Условиями продажи</a>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
-		<!-- #modal-call-->
-		<!-- end modals-->
 		<link href="libs/@fancyapps/fancybox/jquery.fancybox.min.css" rel="stylesheet"/>
 		<!-- modal libs-->
 		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/dropzone/min/dropzone.min.js"></script>
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
 		<!-- modal libs-->

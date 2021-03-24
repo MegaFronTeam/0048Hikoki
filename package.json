@@ -68,6 +68,7 @@
     "jquery": "^3.5.1",
     "libvips": "^0.0.2",
     "ion-rangeslider": "^2.3.1",
+    "dropzone": "^5.7.0",
     "loading-attribute-polyfill": "^1.5.4",
     "sharp": "^0.23.4",
     "swiper": "^5.4.5"

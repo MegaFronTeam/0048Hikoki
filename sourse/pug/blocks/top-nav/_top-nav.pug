@@ -9,7 +9,7 @@ mixin mob-mnu()
 
 mixin top-nav() 
 	// start top-nav
-	+b.top-nav.block-with-lazy
+	+b.top-nav--js.block-with-lazy
 		+e.container.container
 			.row.align-items-center
 				+e.burger-col.col-auto.d-lg-none
@@ -30,10 +30,11 @@ mixin top-nav()
 						+e.LI.item: +e.link(href="#") Сервис
 						+e.LI.item: +e.link(href="#") Акции
 						+e.LI.item: +e.link(href="#") Контакты
-				.col-auto
+				+e.search-col.col-auto
 					+e.search.muted-down-md
 						+icon('zoom')
 						+e.search-txt.d-none.d-xl-block Поиск
+						+searchDD()
 					//-dd here
 					
 	// end top-nav
@@ -113,7 +114,6 @@ mixin lcDD()
 		+e.log-btn(href="#")
 			+icon('exit')
 			span Выйти
-
 mixin catalogDD()
 	+b.catalog-dd
 		ul.catalog-dd__list
@@ -135,7 +135,6 @@ mixin catalogDD()
 			li
 				span Аксессуары
 				+catalogSubDD('55')
-
 mixin catalogSubDD(diff="")
 	+e.sub-dd
 		+e.content
@@ -150,3 +149,34 @@ mixin catalogSubDD(diff="")
 			a(href='#') Пилы
 			a(href='#') Многофункциональные устройства
 			a(href='#') Отвертка
+mixin searchDD()
+	+b.search-dd
+		+e.row.row
+			.col
+				+e.search-row.row
+					.col-auto
+						+input('Искать везде', 'select', false, 'look-for')
+					.col
+						+input('', 'text', false, 'txt')
+				+e.categories.mb-30
+					+e.c-item(href='#')
+						+e.c-txt Дрели-шуруповерты
+						+icon('chevron-right')
+					+e.c-item(href='#')
+						+e.c-txt Ударные дрели-шуруповерты
+						+icon('chevron-right')
+				+e.items-row.row
+					.col-sm-6.col-lg-3
+						+item-prod('1', false, 'VB3616DA')
+							+e.badge.bg-red Новинка
+					.col-sm-6.col-lg-3
+						+item-prod('1', false, 'VB3616DA')
+							+e.badge.bg-red Новинка
+					.col-sm-6.col-lg-3
+						+item-prod('1', false, 'VB3616DA')
+							+e.badge.bg-red Новинка
+					.col-sm-6.col-lg-3
+						+item-prod('1', false, 'VB3616DA')
+							+e.badge.bg-red Новинка
+			.col-auto
+				+e.BUTTON.btn(type="button") Искать

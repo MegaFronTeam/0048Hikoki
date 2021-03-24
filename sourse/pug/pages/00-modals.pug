@@ -1,0 +1,42 @@
+extends layout/main.pug
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCategory/_sCategory.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sArticals/_sArticals.pug
+include ../blocks/sNewsBox/_sNewsBox.pug
+include ../blocks/sSeo/_sSeo.pug
+include ../blocks/sArticle/_sArticle.pug
+include ../blocks/sCatalogPage/_sCatalogPage.pug
+include ../blocks/sCart/_sCart.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= '00-modals'
+	title= title
+block pagecontent
+	//-+mob-mnu()
+	+header()
+	+greenLine()
+	+top-nav()
+	.container.pt-60.pb-60
+		.row
+			.col-auto.mb-3
+				a.btn.btn-primary.link-modal(href="#modal-city") Ваш город Москва?
+			.col-auto.mb-3
+				a.btn.btn-primary.link-modal(href="#modal-call") Заказ звонка
+			.col-auto.mb-3
+				a.btn.btn-primary.link-modal(href="#modal-prod-add") Товар добавлен в корзину
+			.col-auto.mb-3
+				a.btn.btn-primary.link-modal(href="#modal-inner") Авторизация
+			.col-auto.mb-3
+				a.btn.btn-primary.link-modal(href="#modal-reg") Регистрация
+			.col-auto.mb-3
+				a.btn.btn-primary.link-modal(href="#modal-prod-add") Товар добавлен в корзину
+			.col-auto.mb-3
+				a.btn.btn-primary.link-modal(href="#modal-order-request") Запрос счёта
+	+footer()

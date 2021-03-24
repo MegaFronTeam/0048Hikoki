@@ -720,3 +720,10 @@ body{
 		}
 	}
 }
+
+
+.form-select{
+	cursor: pointer;
+	background-image: url(../img/svg/chevron-down.svg) !important;
+	background-size: 14px;
+}
