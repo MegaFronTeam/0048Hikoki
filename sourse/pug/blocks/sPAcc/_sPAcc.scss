@@ -266,7 +266,7 @@
 		font-size: 20px;
 		line-height: 1.2;
 
-		margin-bottom: 18px;
+		margin-bottom: 20px;
 	}
 	&__items{
 
@@ -304,6 +304,7 @@
 		}
 	}
 	&__head{
+		min-height: 71px;
 		@include mt();
 		cursor: pointer;
 
@@ -385,7 +386,7 @@
 			padding: 36px var(--side-padding, 30px);
 		}
 		@include media-breakpoint-up(xl){
-			padding: 36px var(--side-padding, 30px);
+			padding: 36px var(--side-padding, 30px) 23px;
 		}
 		border-bottom: 1px solid $secondary;
 	}
@@ -397,8 +398,11 @@
 		padding-bottom: 36px;
 	}
 	&__tl-col{
+		@include media-breakpoint-up(md){
+			width: 50%;
+		}
 		@include media-breakpoint-up(lg){
-			width: 60%;
+			width: 58.3%;
 		}
 	}
 	&__tr-col{
@@ -415,46 +419,125 @@
 
 	}
 	&__ti-row{
+		@include roww(28px);
+		& > *{
+			margin-bottom: 4px;
+		}
+		margin-bottom: -4px;
 
+		padding-bottom: 12px;
+		&:last-child{
+			padding-bottom: 0;
+		}
 	}
 	&__ti-key-col{
-		width: 170px;
+		@include media-breakpoint-up(xl){
+			width: 165px!important;
+		}
+
+		font-size: 14px;
+		line-height: (17/14);
+		color: rgba(51, 51, 51, 0.5);
 	}
 	&__ti-val-col{
-
+		font-size: 14px;
+		line-height: (17/14);
 	}
 	//t-dates
 	&__t-dates{
 
 	}
 	&__td-row{
+		@include media-breakpoint-up(xl){
+			@include roww(26px);
+		}
 
+		& > *{
+			margin-bottom: 4px;
+		}
+		margin-bottom: -4px;
+
+		padding-bottom: 12px;
+		&:last-child{
+			padding-bottom: 0;
+		}
 	}
 	&__td-date-col{
-
+		@include media-breakpoint-up(xl){
+			width: 123px!important;
+		}
+		font-size: 14px;
+		line-height: (17/14);
+		color: rgba(51, 51, 51, 0.5);
+		display: flex;
+		align-items: center;
+	}
+	&__td-ball{
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		border: 1px solid;
+		margin-right: 13px;
 	}
 	&__td-status-col{
+		font-size: 14px;
+		line-height: (17/14);
 
+
+		@include media-breakpoint-down(xl){
+			padding-left: 40px;
+		}
 	}
 	//goods
 	&__goods{
 
 	}
 	&__g-title{
-		h4{}
+		border-top: 1px solid $primary;
+		&:before{
+			content: '';
+			display: block;
+			width: 165px;
+			height: 4px;
+			background-color: $primary;
+			margin-bottom: 20px;
+		}
+		h4{
+			font-weight: bold;
+			font-size: 14px;
+			line-height: (17/14);
+			margin-bottom: 12px;
+		}
 	}
 	&__g-items{
 
 	}
 	//foot
 	&__foot{
+		background-color: $light;
 
+		padding: 20px var(--side-padding, 20px);
+		@include media-breakpoint-up(md){
+			padding: 24px var(--side-padding, 30px);
+		}
 	}
 	&__f-data{
-
+		max-width: 300px;
 	}
 	&__fd-row{
+		& > *{
+			margin-bottom: 10px;
+		}
+		margin-bottom: -10px;
 
+		font-size: 14px;
+		line-height: (24/14);
+
+		&.huge-row{
+			font-weight: 300;
+			font-size: 24px;
+			line-height: (38/24);
+		}
 	}
 	&__fd-key-col{
 
@@ -466,17 +549,131 @@
 }
 
 .g-item{
-	&__row{}
-	&__img-col{}
-	&__img{
-		img{}
+	padding: 12px 0;
+	@include media-breakpoint-up(md){
+		padding: 12px 20px 12px 16px;
 	}
-	&__inner-row{}
-	&__tag{}
-	&__code{}
-	&__title{}
-	&__price--old{}
-	&__price--new{}
-	&__amount-col{}
+	@include media-breakpoint-up(xl){
+		padding: 12px 20px 12px 16px;
+	}
+
+	&__row{
+		@include roww(12px);
+		@include media-breakpoint-up(sm){
+			@include roww(30px);
+		}
+	}
+	&__img-col{
+		@include media-breakpoint-down(sm){
+			align-self: flex-start;
+		}
+	}
+	&__img{
+		width: 48px;
+		height: 48px;
+		@include media-breakpoint-up(sm){
+			width: 120px;
+			height: 120px;
+		}
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	//
+	&__col-with-row{
+		align-self: stretch;
+	}
+	&__inner-row{
+		min-height: 100%;
+	}
+	&__txt-col{
+		align-self: stretch;
+	}
+	&__tag{
+		display: inline-flex;
+		font-weight: bold;
+		color: $white;
+		background-color: $danger;
+		border-radius: 20px;
+
+		font-size: 8px;
+		line-height: (12/8);
+		padding: 0 4px;
+		margin-bottom: 10px;
+		@include media-breakpoint-up(sm){
+			font-size: 10px;
+			line-height: (12/10);
+			padding: 4px 7.5px;
+			margin-bottom: 16px;
+		}
+
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+	&__code{
+		font-size: 10px;
+		line-height: (14/10);
+		margin-bottom: 6px;
+		@include media-breakpoint-up(sm){
+			font-size: 12px;
+			line-height: (14/12);
+			margin-bottom: 8px;
+		}
+
+		color: $gray-570;
+	}
+	&__title{
+		display: block;
+
+		font-size: 12px;
+		line-height: (20/14);
+		@include media-breakpoint-up(sm){
+			font-size: 14px;
+			line-height: (20/14);
+		}
+
+		margin-bottom: 12px;
+		@include media-breakpoint-up(md){
+			margin-bottom: 0;
+		}
+
+		color: $primary;
+	}
+	&__price--old{
+		font-size: 12px;
+		line-height: (14/12);
+		text-decoration-line: line-through;
+
+		color: $danger;
+		margin-bottom: 4px;
+	}
+	&__price--new{
+		font-size: 16px;
+		line-height: (19/16);
+	}
+	&__amount-col{
+		text-align: right;
+		@include media-breakpoint-up(xsm){
+			min-width: 87px;
+		}
+		@include media-breakpoint-up(md){
+			min-width: 110px;
+		}
+		@include media-breakpoint-up(xl){
+			min-width: 149px;
+		}
+
+		font-size: 16px;
+		line-height: (19/16);
+	}
+	&__{}
+	&__{}
 	&__{}
 }

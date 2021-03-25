@@ -61,6 +61,7 @@ mixin pAccOrders()
 		+e.items.pa-orders-dd-js
 			+pAccOrdersItem()
 			+pAccOrdersItem()
+			+pAccOrdersItem()
 			+pAccOrdersItem('active')
 
 mixin pAccOrdersItem(activeClasses)
@@ -105,7 +106,7 @@ mixin pAccOrdersItem(activeClasses)
 						+goodsItem(2)
 						+goodsItem(33)
 			+e.foot
-				+e.f-data
+				+e.f-data.ms-auto
 					+fDataItem('Товары', '99')
 					+fDataItem('Вес', '30 кг')
 					+fDataItem('Скидка', '-11 890 ₽', 'text-primary pb-12')
@@ -115,19 +116,18 @@ mixin goodsItem(amount='1')
 	+b.g-item
 		+e.row.row.align-items-center
 			+e.img-col.col-auto
-				+e.img
+				+e.img(href='#' target="_blank")
 					img(loading="lazy" src="img/@2x/cart-img.jpg" alt="")
-			.col
+			+e.col-with-row.col
 				+e.inner-row.row.align-items-center
-					.col-md
+					+e.txt-col.col-md
 						+e.tag Новинка
 						+e.code VB3616DA
-						+e.title MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
+						+e.title(href='#' target="_blank") MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
 					.col-md-auto
 						+e.price--old 18 500 ₽
 						+e.price--new 16 500 ₽
 			+e.amount-col.col-auto=`× ${amount}`
-
 
 mixin tInfoItem(key,val)
 	+e.ti-row.row
@@ -136,10 +136,12 @@ mixin tInfoItem(key,val)
 
 mixin tDateItem(date,status)
 	+e.td-row.row
-		+e.td-date-col.col-md-auto=date
-		+e.td-status-col.col-md=status
+		+e.td-date-col.col-xl-auto
+			+e.td-ball(style="border-color: #067147;")
+			span=date
+		+e.td-status-col.col-xl=status
 
 mixin fDataItem(key,val, addClasses)
 	+e.fd-row.row(class=addClasses)
-		+e.fd-key-col.col-auto=key
-		+e.fd-val-col.col=val
+		+e.fd-key-col.col=key
+		+e.fd-val-col.col-auto=val

@@ -257,7 +257,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
-	let screenName = '06-768.png';
+	let screenName = '06-1-768.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
