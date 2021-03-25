@@ -1,14 +1,103 @@
 mixin mob-mnu()
-	+b.menu-mobile--js.d-lg-none
-		+b.toggle-menu-mobile--js.on
-			span
-		+e.inner
-			+mnu()
-			.text-right
-	//  мобильное меню
+	+b.mob-menu--js.d-lg-none
+		+e.search.d-md-none
+			+input('Поиск', 'text', 0, 'search')
+			+e.BUTTON.s-btn(type="button") Искать
+		+e.UL.menu
+			+e.LI.item
+				+e.link--has-dd.has-dd-js Каталог
+				+catalogMobMenu()
+			+e.LI.item: +e.link(href="#") Оплата и доставка
+			+e.LI.item: +e.link(href="#") Сервис
+			+e.LI.item: +e.link(href="#") Акции
+			+e.LI.item: +e.link(href="#") Контакты
+		//-
+		+e.dd-items.mob-menu-dd-js
+			//-cart
+			+e.dd-item
+				+e.dd-head(href='#')
+					//-+e.cart-box
+					+e.cart
+						+e.cart-icon
+							+icon('cart')
+							+e.number 99
+						+e.cart-txt Корзина
+					+e.cart-price 236 990 ₽
+			//-user
+			+e.dd-item
+				+e.dd-head.dd-head-js
+					+e.icon-link--user
+						+e.icon-box
+							+icon('user')
+						+e.il-txt Николай
+				+e.dd-content.dd-content-js
+					+lcMob()
+			//-
+			+e.dd-item
+				+e.dd-head(href='#')
+					+e.icon-link--heart
+						+e.icon-box
+							+icon('heart')
+						+e.il-txt Избранные товары
+			//-
+			+e.dd-item
+				+e.dd-head(href='#')
+					+e.icon-link--bars
+						+e.icon-box
+							+icon('bars')
+						+e.il-txt Список сравнения
+			//-
+			+e.dd-item
+				+e.dd-head.dd-head-js
+					+e.icon-link--loc
+						+e.icon-box
+							+icon('location')
+						+e.il-txt.text-primary Москва
+				+e.dd-content.dd-content-js
+					+e.UL.loc-menu
+						li: a(href='#') Москва
+						li: a(href='#') Санкт-Петербург
+						li: a(href='#') Нижний Новгород
+						li: a(href='#') Москва
+						li: a(href='#') Санкт-Петербург
+						li: a(href='#') Нижний Новгород
+						li: a(href='#') Москва
+						li: a(href='#') Санкт-Петербург
+						li: a(href='#') Нижний Новгород
+		+e.contacts
+			+e.c-item
+				+e.c-icon
+				+e.c-txt
+					| г. Москва,
+					br
+					| ул. Павловская, 27/29
+					br
+					| (м. Тульская)
+			+e.c-item
+				+e.c-icon
+					img(loading="lazy" src="img/svg/icon-tel.svg" alt="")
+				+e.c-txt
+					a(href="tel:84952155063") 8 495 215-50-63
+					a(href='tel:88003331892') 8 800 333-18-92
+			+e.c-item
+				+e.c-icon
+					img(loading="lazy" src="img/svg/icon-mail.svg" alt="")
+				+e.c-txt
+					a(href="mailto:info@husq.ru") info@husq.ru
+			+e.c-item
+				+e.c-icon
+					img(loading="lazy" src="img/svg/icon-clock.svg" alt="")
+				+e.c-txt
+					| пн - пт: 09:00 - 20:00
+					br
+					| сб - вс: 09:00 - 18:00
+		+e.oc-cont
+			+e.order-call.link-modal(href="#modal-call") Заказать звонок
+
 
 mixin top-nav() 
 	// start top-nav
+	+mob-mnu()
 	+b.top-nav--js.block-with-lazy
 		+e.container.container
 			.row.align-items-center
@@ -114,6 +203,14 @@ mixin lcDD()
 		+e.log-btn(href="#")
 			+icon('exit')
 			span Выйти
+mixin lcMob()
+	+b.lc-mob
+		+e.link(href='#') Мои заказы
+		+e.link(href='#') Избранное
+		+e.link(href='#') Профиль
+		+e.log-btn(href="#")
+			+icon('exit')
+			span Выйти
 mixin catalogDD()
 	+b.catalog-dd
 		ul.catalog-dd__list
@@ -180,3 +277,52 @@ mixin searchDD()
 							+e.badge.bg-red Новинка
 			.col-auto
 				+e.BUTTON.btn(type="button") Искать
+
+
+mixin catalogMobMenu()
+	+e.submenu.submenu-js
+		+e.back-link.mob-menu__link.back-link-js
+			+icon('chevron-left')
+			span Назад
+		ul.mob-menu__menu
+			li.mob-menu__item
+				span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Аккумуляторный инструмент
+				+catalogMobSubMenu()
+			li.mob-menu__item
+				span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Сетевой электроинструмент
+				+catalogMobSubMenu('11')
+			li.mob-menu__item
+				span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Садовая техника
+				+catalogMobSubMenu('22')
+			li.mob-menu__item
+				span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Алмазная резка
+				+catalogMobSubMenu('33')
+			li.mob-menu__item
+				span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Ручной инструмент
+				+catalogMobSubMenu('44')
+			li.mob-menu__item
+				span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Аксессуары
+				+catalogMobSubMenu('55')
+
+mixin catalogMobSubMenu(diff="")
+	+e.submenu.sub2menu-js
+		+e.back-link.mob-menu__link.back2-link-js
+			+icon('chevron-left')
+			span Назад
+		ul.mob-menu__menu
+			li.mob-menu__item: a.mob-menu__link(href='#') Дрели-шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные дрели-шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные гайковерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Дрели-шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные дрели-шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные гайковерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Дрели-шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные дрели-шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные гайковерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Дрели-шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные дрели-шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные шуруповерты
+			li.mob-menu__item: a.mob-menu__link(href='#') Ударные гайковерты

@@ -1,0 +1,145 @@
+mixin sPAcc(data)
+	// start sPAcc
+	+b.SECTION.sPAcc.section#sPAcc&attributes(attributes)
+		+e.container.container
+			block
+			+b.section-title.light.long
+				+e.row.row
+					.col
+						h2.p-0.m-0 Личный кабинет
+					.col-auto
+						+e.log-out(href='#')
+							+e.icon
+								img(loading="lazy" src="img/svg/exit2.svg" alt="")
+							span Выйти
+			+e.row.row.tabs
+				.col-lg-3.tabs__caption
+					+e.tab-btn.tabs__btn Профиль
+					+e.tab-btn.tabs__btn.active История заказов
+				.col-lg-9.tabs__wrap
+					+e.info-content.tabs__content
+						+e.profile-txt
+							+e.p-title Учётная запись
+							+e.p-data
+								+pDataItem('ФИО', 'Неретин Николай Игоревич')
+								+pDataItem('Телефон', '+7 (916) 176-05-12')
+								+pDataItem('Почта', 'nicolomelodini@gmail.com')
+								+pDataItem('Пароль', '•••••••••••••')
+							+e.change-btn(type="button") Изменить
+						+e.change-box
+							+form-wrap()
+								+e.inputs
+									+input('', 'text', 'ФИО', 'name', true)(value="Неретин Николай Игоревич")
+									+input('', 'tel', 'Телефон', 'tel', true)(value="79161760512")
+									+input('', 'email', 'Почта', 'mail', true)(value="nicolomelodini@gmail.com")
+									+input('', 'password', 'Пароль', 'pass', true)(value="1234567890111")
+									+input('', 'password', 'Потвторить пароль', 'pass-repeat', true)(value="1234567890111")
+								+e.btns-row.row
+									.col-sm-6.col-md-auto
+										+e.btn--save(type="submit") Сохранить
+									.col-sm-6.col-md-auto
+										+e.btn--cancel(type="button") Отмена
+						+e.profile-txt
+							+e.p-title Адрес доставки
+							+e.p-data
+								+pDataItem('Город', 'Москва')
+								+pDataItem('Адрес', '1117463, Паустовского, 4')
+							+e.change-btn(type="button") Изменить
+					.tabs__content.active
+						+pAccOrders()
+
+	// end sPAcc
+
+mixin pDataItem(name,val)
+	+e.pd-row.row
+		+e.pd-name.col-auto=name
+		+e.pd-val.col=val
+
+mixin pAccOrders()
+	+b.pa-orders
+		+e.title Заказы
+		+e.items.pa-orders-dd-js
+			+pAccOrdersItem()
+			+pAccOrdersItem()
+			+pAccOrdersItem('active')
+
+mixin pAccOrdersItem(activeClasses)
+	+e.item(class=activeClasses)
+		+e.head.dd-head-js
+			+e.h-main-row.row.align-items-center
+				.col
+					+e.h-sub-row.row.align-items-center
+						+e.num-col.col-md Заказ №121212
+						+e.date-col.col-md 12.03.2020
+						+e.price-col.col-md 33 294  ₽
+				+e.status-col.col-auto В работе
+				.col-auto
+					+e.chevron
+						+icon('chevron-down')
+		+e.content.dd-content-js(class=activeClasses)
+			+e.top-box
+				+e.t-row.row
+					+e.tl-col.col-md-auto
+						+e.t-title Информация о заказе
+						+e.t-info
+							+tInfoItem('Статус заказа', 'На доставке')
+							+tInfoItem('Способ доставки', 'Почтой России')
+							+tInfoItem('Стоимость доставки', '500 ₽')
+							+tInfoItem('Адрес доставки', '1117463, Москва, Паустовского, 4')
+							+tInfoItem('ФИО получателя', 'Неретин Николай Игоревич')
+							+tInfoItem('Телефон', '+7 (916) 176-05-12')
+							+tInfoItem('Телефон', 'nicolomelodini@gmail.com')
+					+e.tr-col.col-md
+						+e.t-title Статус доставки
+						+e.t-dates
+							+tDateItem('02.03.2020', 'Доставлен')
+							+tDateItem('02.03.2020', 'Ждёт в магазине')
+							+tDateItem('02.03.2020', 'В пути')
+							+tDateItem('02.03.2020', 'Отправляем')
+							+tDateItem('02.03.2020', 'Собираем')
+				+e.goods
+					+e.g-title
+						h4 Товары в заказе
+					+e.g-items
+						+goodsItem(1)
+						+goodsItem(2)
+						+goodsItem(33)
+			+e.foot
+				+e.f-data
+					+fDataItem('Товары', '99')
+					+fDataItem('Вес', '30 кг')
+					+fDataItem('Скидка', '-11 890 ₽', 'text-primary pb-12')
+					+fDataItem('ИТОГО', '33 294  ₽', 'huge-row')
+
+mixin goodsItem(amount='1')
+	+b.g-item
+		+e.row.row.align-items-center
+			+e.img-col.col-auto
+				+e.img
+					img(loading="lazy" src="img/@2x/cart-img.jpg" alt="")
+			.col
+				+e.inner-row.row.align-items-center
+					.col-md
+						+e.tag Новинка
+						+e.code VB3616DA
+						+e.title MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
+					.col-md-auto
+						+e.price--old 18 500 ₽
+						+e.price--new 16 500 ₽
+			+e.amount-col.col-auto=`× ${amount}`
+
+
+mixin tInfoItem(key,val)
+	+e.ti-row.row
+		+e.ti-key-col.col-xl-auto=key
+		+e.ti-val-col.col-xl=val
+
+mixin tDateItem(date,status)
+	+e.td-row.row
+		+e.td-date-col.col-md-auto=date
+		+e.td-status-col.col-md=status
+
+mixin fDataItem(key,val, addClasses)
+	+e.fd-row.row(class=addClasses)
+		+e.fd-key-col.col-auto=key
+		+e.fd-val-col.col=val

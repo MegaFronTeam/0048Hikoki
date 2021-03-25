@@ -1,7 +1,5 @@
 Dropzone.autoDiscover = false;
 const JSCCommon = {
-	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js, .burger--js")),
-	menuMobile: document.querySelector(".menu-mobile--js"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 
 	modalCall() {
@@ -55,40 +53,6 @@ const JSCCommon = {
 		if (linkModal) addData();
 	},
 	// /modalCall
-	toggleMenu() {
-		const toggle = this.btnToggleMenuMobile;
-		const menu = this.menuMobile;
-		document.addEventListener("click", function (event) {
-			const toggleEv = event.target.closest(".toggle-menu-mobile--js");
-			if (!toggleEv) return;
-			toggle.forEach(el => el.classList.toggle("on"));
-			menu.classList.toggle("active");
-			[document.body, document.querySelector('html')].forEach(el => el.classList.toggle("fixed"));
-
-		}, { passive: true });
-	},
-	closeMenu() {
-		if (!this.menuMobile) return;
-		this.btnToggleMenuMobile.forEach(element => element.classList.remove("on"));
-		this.menuMobile.classList.remove("active");
-		[document.body, document.querySelector('html')].forEach(el => el.classList.remove("fixed"));
-
-	},
-	mobileMenu() {
-		if (!this.menuMobileLink) return;
-		this.toggleMenu();
-		document.addEventListener('mouseup', (event) => {
-			let container = event.target.closest(".menu-mobile--js.active"); // (1)
-			let link = event.target.closest(".navMenu__link"); // (1)
-			if (!container || link) this.closeMenu();
-		}, { passive: true });
-
-		window.addEventListener('resize', () => {
-			if (window.matchMedia("(min-width: 992px)").matches) this.closeMenu();
-		}, { passive: true });
-	},
-	// /mobileMenu
-
 	// tabs  .
 	tabscostume(tab) {
 		let tabs = {
@@ -285,7 +249,6 @@ function eventHandler() {
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
@@ -294,65 +257,10 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
-	let screenName = '04-360.png';
+	let screenName = '06-768.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
-
-
-
-	function whenResize() {
-		let topNav = document.querySelector('.top-nav  ');
-		if (!topNav) return;
-		window.addEventListener('scroll', function (e) {
-			this.scrollY > 0
-				? topNav.classList.add('fixed')
-				: topNav.classList.remove('fixed');
-		}, { passive: true })
-
-	}
-
-	window.addEventListener('resize', () => {
-		whenResize();
-
-	}, { passive: true });
-
-	whenResize();
-
-
-	// let defaultSl = {
-	// 	spaceBetween: 0,
-	// 	lazy: {
-	// 		loadPrevNext: true,
-	// 	},
-	// 	watchOverflow: true,
-	// 	spaceBetween: 0,
-	// 	loop: true,
-	// 	navigation: {
-	// 		nextEl: '.swiper-button-next',
-	// 		prevEl: '.swiper-button-prev',
-	// 	},
-	// 	pagination: {
-	// 		el: ' .swiper-pagination',
-	// 		type: 'bullets',
-	// 		clickable: true,
-	// 		// renderBullet: function (index, className) {
-	// 		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-	// 		// }
-	// 	},
-	// }
-	//
-	// const swiper4 = new Swiper('.sBanners__slider--js', {
-	// 	// slidesPerView: 5,
-	// 	...defaultSl,
-	// 	slidesPerView: 'auto',
-	// 	freeMode: true,
-	// 	loopFillGroupWithBlank: true,
-	// 	touchRatio: 0.2,
-	// 	slideToClickedSlide: true,
-	// 	freeModeMomentum: true,
-	//
-	// });
 	// modal window
 
 	//luckyone js
@@ -365,15 +273,42 @@ function eventHandler() {
 		},
 	};
 
+	//ccs vars
 	let greenLine = document.querySelector(".green-line--js");
 	let topNav = document.querySelector(".top-nav--js");
+
 	function calcGreenLineHeight() {
 		document.documentElement.style.setProperty('--green-line-h', `${greenLine.offsetHeight}px`);
 		document.documentElement.style.setProperty('--top-nav-bot', `${topNav.offsetHeight + greenLine.offsetHeight}px`);
 	}
+
 	window.addEventListener('resize', calcGreenLineHeight, { passive: true });
 	window.addEventListener('scroll', calcGreenLineHeight, { passive: true });
 	calcGreenLineHeight();
+
+	//mob menu
+	$('.burger--js').click(function (){
+		$(this).toggleClass('active');
+		$('body').toggleClass('fixed2');
+		$('.mob-menu--js').toggleClass('active');
+		calcGreenLineHeight();
+	});
+	//submenu
+	$('.has-dd-js').click(function (){
+		$(this.parentElement).find('.submenu-js').addClass('active');
+		$('.mob-menu--js').addClass('overflow-hidden');
+	});
+	$('.has-subdd-js').click(function (){
+		$(this.parentElement).find('.sub2menu-js').addClass('active');
+	});
+	$('.back-link-js').click(function (){
+		$(this).closest('.submenu-js').removeClass('active');
+		$('.mob-menu--js').removeClass('overflow-hidden');
+	})
+	$('.back2-link-js').click(function (){
+		$(this).closest('.sub2menu-js').removeClass('active');
+	})
+
 	//
 	let galleryTop = new Swiper('.gallery-top', {
 		...defaultSl,
@@ -437,7 +372,7 @@ function eventHandler() {
 
 		}
 	}
-	makeDDGroup(['.footer-dd-group-js', '.cat-aside-dd-js']);
+	makeDDGroup(['.footer-dd-group-js', '.cat-aside-dd-js', '.mob-menu-dd-js', '.pa-orders-dd-js']);
 
 	//filter custom pop-up
 	$('.filter-bar-btns .filter-bar-btns__filter-btn').click(function () {
@@ -470,6 +405,11 @@ function eventHandler() {
 	// todo
 	// 1 clean js file
 	// 2 search, cart, mob menu pp
+
+	// conut 1 project
+	// try to make new optimization
+	// remake inp type date ph js on tavrida
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
