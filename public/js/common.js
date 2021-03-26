@@ -287,10 +287,15 @@ function eventHandler() {
 
 	var greenLine = document.querySelector(".green-line--js");
 	var topNav = document.querySelector(".top-nav--js");
+	var buyBl = document.querySelector(".buy-bl--js");
 
 	function calcGreenLineHeight() {
 		document.documentElement.style.setProperty('--green-line-h', "".concat(greenLine.offsetHeight, "px"));
 		document.documentElement.style.setProperty('--top-nav-bot', "".concat(topNav.offsetHeight + greenLine.offsetHeight, "px"));
+
+		if (buyBl) {
+			document.documentElement.style.setProperty('--buy-bl-h', "".concat(buyBl.offsetHeight, "px"));
+		}
 	}
 
 	window.addEventListener('resize', calcGreenLineHeight, {
@@ -390,7 +395,7 @@ function eventHandler() {
 		}
 	}
 
-	makeDDGroup(['.footer-dd-group-js', '.cat-aside-dd-js', '.mob-menu-dd-js', '.pa-orders-dd-js']); //filter custom pop-up
+	makeDDGroup(['.footer-dd-group-js', '.cat-aside-dd-js', '.mob-menu-dd-js', '.pa-orders-dd-js', '.delivery-group-dd-js', '.order-content-dd-js']); //filter custom pop-up
 
 	$('.filter-bar-btns .filter-bar-btns__filter-btn').click(function () {
 		$('body').addClass('stop-scrolling');
@@ -418,13 +423,71 @@ function eventHandler() {
 	$("#props-dz").dropzone({
 		url: "/file/post",
 		dictDefaultMessage: 'Перенесите сюда файл или выберите на компьютере'
+	}); //prodCard
+
+	$('.pc-sliders--js').each(function () {
+		var self = this;
+		var prodCardThumb = new Swiper($(self).find('.sProdCard-thumb-js'), {
+			slidesPerView: 'auto',
+			breakpoints: {
+				0: {
+					direction: 'horizontal',
+					spaceBetween: 16
+				},
+				768: {
+					direction: 'vertical',
+					spaceBetween: 20
+				}
+			},
+			//lazy
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 6
+			}
+		});
+		var prodCardSlider = new Swiper($(self).find('.sProdCard-slider-js'), {
+			spaceBetween: 30,
+			thumbs: {
+				swiper: prodCardThumb
+			},
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 3
+			},
+			loop: true
+		});
+	}); //minislider
+
+	var miniSlider = new Swiper('.mini-slider-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		spaceBetween: 20,
+		slidesPerView: 1,
+		//
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			type: 'bullets',
+			clickable: true
+		}
+	})); //floating bar
+
+	$('.buy-bl-toggle-js').click(function () {
+		$('.buy-bl--js').toggleClass('open');
+	});
+	var captionSlider = new Swiper('.prodTabs-caption-slider-js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		freeModeMomentum: true,
+		watchOverflow: true
+	});
+	$('.plus-btn-js').click(function () {
+		$(this).fadeOut();
+		$('.has-plus-btn').removeClass('has-plus-btn');
 	}); //end luckyone js
 	// todo
 	// 1 clean js file
 	// 2 search, cart, mob menu pp
-	// conut 1 project
 	// try to make new optimization
 	// remake inp type date ph js on tavrida
+	// ask about 3 things to starter template
 }
 
 ;

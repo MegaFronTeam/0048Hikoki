@@ -61,11 +61,12 @@ mixin form-wrap(inp)
 mixin in-c(typ="checkbox", text, name= typ )
 	+b.LABEL.custom-input.form-check
 		+e.INPUT.input.form-check-input(name=name, type=typ)
+		.square
 		if block
 			block 
 		else
-			+e.SPAN.text.form-check-label= text
- 
+			+e.SPAN.text.form-check-label=text
+
 mixin add-file(n)
 	+b.add-file
 		label

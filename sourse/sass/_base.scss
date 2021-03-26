@@ -1,6 +1,6 @@
 .pixel-perfect {
 	top: 0;
-	top: 25px;
+	//top: 25px;
 	display: block;
 	@include a-cent(x);
 	pointer-events: none;
@@ -332,7 +332,7 @@ ul {
 
 		&-active,
 		&:hover {
-			background-color: var(--bs-primary) ;
+			background-color: var(--bs-primary);
 		}
 	}
 }
@@ -665,7 +665,7 @@ h2{
 }
 
 .container{
-	@media (min-width: 350px) and (max-width: 370px){
+	@include media-breakpoint-between(xsm, sm){
 		padding-left: 20px;
 		padding-right: 20px;
 	}
@@ -730,7 +730,6 @@ body{
 		}
 	}
 }
-
 
 .form-select{
 	cursor: pointer;

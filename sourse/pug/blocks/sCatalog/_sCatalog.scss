@@ -1,5 +1,75 @@
 // start .sCatalog
 .sCatalog {
+	&.sCatalog--also{
+		.sCatalog__slide{
+			@include media-breakpoint-up(lg){
+				width: calc((100% / 3) - (30px * 2 / 3));
+			}
+		}
+		.section-title{
+			&:before{
+				margin-bottom: 16px!important;
+			}
+		}
+	}
+	&.sCatalog--similar{
+		.swiper-wrapper{
+			@include media-breakpoint-up(lg){
+				transform: none!important;
+				flex-wrap: wrap!important;
+			}
+
+			&.has-plus-btn{
+				.swiper-slide{
+					@include media-breakpoint-up(lg){
+						&:nth-child(n + 9) {// 5looped slides + 3 visiable
+							display: none;
+						}
+					}
+				}
+			}
+
+		}
+		.sCatalog__slide{
+			&.swiper-slide-duplicate{
+				@include media-breakpoint-up(lg){
+					display: none;
+				}
+			}
+			@include media-breakpoint-up(lg){
+				width: 100%;
+				margin-bottom: 30px;
+			}
+		}
+
+		.section-title{
+			&:before{
+				margin-bottom: 16px!important;
+			}
+		}
+	}
+	&__plus-btn{
+		@extend .btn;
+		@extend .btn-light;
+		padding: 0;
+
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		.icon{
+			stroke: $primary;
+			stroke-width: 2px;
+			font-size: 22px;
+		}
+	}
+	//
+
+
 	.section-title {
 		padding-bottom: rem(20);
 	}
@@ -180,8 +250,20 @@
 .long-item{
 	border: 1px solid $gray-310;
 
+	@include media-breakpoint-down(lg){
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
 	&__row{
 		@include roww(0);
+		@include media-breakpoint-down(lg){
+			//background-color: red;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+		}
 	}
 	&__img-col{
 		width: 262px!important;
@@ -196,16 +278,22 @@
 		padding-top: (180/222) * 100%;
 	}
 	&__content-col{
+		@include media-breakpoint-down(lg){
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+		}
+
 		background-color: $light;
 
 		--pad-l: 15px;
 		padding: 12px var(--pad-l, 15px) 0;
-		@include media-breakpoint-up(md){
+		@include media-breakpoint-up(lg){
 			padding: 20px 20px 20px 30px;
 		}
 	}
 	&__tag{
-		@include media-breakpoint-down(md){
+		@include media-breakpoint-down(lg){
 			position: absolute;
 			z-index: 2;
 			left: 50%;
@@ -222,7 +310,7 @@
 			padding: 4px 7px;
 			background: $danger;
 		}
-		@include media-breakpoint-up(md){
+		@include media-breakpoint-up(lg){
 			display: inline-flex;
 			background: $danger;
 			border-radius: 20px;
@@ -249,8 +337,10 @@
 		line-height: (20/14);
 
 		margin-bottom: 12px;
-		@include media-breakpoint-up(md){
+		justify-content: center;
+		@include media-breakpoint-up(lg){
 			margin-bottom: 40px;
+			justify-content: flex-start;
 		}
 
 		display: flex;
@@ -259,8 +349,16 @@
 	}
 	&__lower-row{
 		margin-top: auto;
+
+		@include media-breakpoint-up(lg){
+			& > *{
+				margin-bottom: 12px;
+			}
+			margin-bottom: -12px;
+		}
 	}
 	&__price--old{
+		white-space: nowrap;
 		font-size: 12px;
 		line-height: (14/12);
 		text-decoration-line: line-through;
@@ -268,12 +366,12 @@
 		margin-bottom: 4px;
 	}
 	&__price-col{
-		margin-bottom: 12px;
-		@include media-breakpoint-up(md){
-			margin-bottom: 0;
+		@include media-breakpoint-down(lg){
+			margin-bottom: 12px;
 		}
 	}
 	&__price--new{
+		white-space: nowrap;
 		font-size: 16px;
 		line-height: (19/16);
 	}
@@ -282,12 +380,12 @@
 		@extend .btn-primary;
 
 		min-width: 100%;
-		@include media-breakpoint-up(md){
+		@include media-breakpoint-up(lg){
 			min-width: 220px;
 		}
 	}
 	&__btn-col{
-		@include media-breakpoint-down(md){
+		@include media-breakpoint-down(lg){
 			margin: 0 calc(-1 * var(--pad-l, 15px));
 			width: calc(100% + var(--pad-l, 15px) * 2);
 			max-width: calc(100% + var(--pad-l, 15px) * 2);

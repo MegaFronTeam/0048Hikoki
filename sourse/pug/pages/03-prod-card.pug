@@ -1,0 +1,31 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCategory/_sCategory.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sArticals/_sArticals.pug
+include ../blocks/sNewsBox/_sNewsBox.pug
+include ../blocks/sSeo/_sSeo.pug
+include ../blocks/sArticle/_sArticle.pug
+include ../blocks/sCatalogPage/_sCatalogPage.pug
+include ../blocks/sCart/_sCart.pug
+include ../blocks/sPAcc/_sPAcc.pug
+include ../blocks/sProdCard/_sProdCard.pug
+
+block variables
+	- let  mainPage='prod-card-page'
+	- let  bg= null
+
+block title
+	- let  title= '03-prod-card'
+	title= title
+block pagecontent
+	//-+mob-mnu()
+	+header()
+	+greenLine()
+	+top-nav()
+	+sProdCard()
+		+breadcrumb('Главная', 'Каталог', 'AC Brushless', 'Screw-driving / Drilling', 'Ударная дрель-шуруповерт DS12DA')
+	+footer()

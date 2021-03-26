@@ -1,0 +1,32 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCategory/_sCategory.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sArticals/_sArticals.pug
+include ../blocks/sNewsBox/_sNewsBox.pug
+include ../blocks/sSeo/_sSeo.pug
+include ../blocks/sArticle/_sArticle.pug
+include ../blocks/sCatalogPage/_sCatalogPage.pug
+include ../blocks/sCart/_sCart.pug
+include ../blocks/sPAcc/_sPAcc.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sConfirm/_sConfirm.pug
+
+block variables
+	- let  mainPage= null
+	- let  bg= null
+
+block title
+	- let  title= '05-order-2'
+	title= title
+block pagecontent
+	//-+mob-mnu()
+	+header()
+	+greenLine()
+	+top-nav()
+	+sConfirm()
+		+breadcrumb('Главная', 'Оформление')
+	+footer()

@@ -1,0 +1,44 @@
+mixin sConfirm(data)
+	// start sConfirm
+	+b.SECTION.sConfirm.section#sConfirm&attributes(attributes)
+		.container
+			block
+			+b.section-title.light.long
+				h2 Оформление
+			+e.box.text-center
+				+e.logo.d-none.d-md-block
+					img(loading="lazy" src="img/svg/logo-vertical-white.svg" alt="")
+				+e.title Заказ оформлен
+				+e.txt
+					+e.txt-item
+						| Номер Вашего заказа:
+						|
+						span.text-primary № 121212
+					+e.txt-item  Итоговая сумма заказа: 33 294 ₽
+				+e.btn(href='#') Перейти к оплате
+	// end sConfirm
+
+mixin sConfirm2(data)
+	// start sConfirm
+	+b.SECTION.sConfirm.section#sConfirm&attributes(attributes)
+		.container
+			block
+			+b.section-title.light.long
+				h2 Оформление
+			+e.box--green.text-center.mb-36
+				+e.logo.d-none.d-md-block
+					img(loading="lazy" src="img/svg/logo-vertical-gray.svg" alt="")
+				+e.title Заказ  оплачен
+				+e.txt.mb-12
+					+e.txt-item Ваш заказ: № 121212
+				+e.await.mb-24
+					| Ожидайте подтверждения заказа в ближайшее время.
+					|
+					br.d-none.d-sm-block
+					| Спасибо за покупку!
+				+e.btns-row.row.justify-content-center
+					.col-12
+						+e.btn-white(href='#') Перейти в личный кабинет
+					.col-12
+						+e.btn-white(href='#') Вернуться в каталог
+			+sCatalogMayNeed()

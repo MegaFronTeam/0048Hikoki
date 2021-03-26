@@ -1,0 +1,150 @@
+mixin sOrder(data)
+	// start sOrder
+	+b.SECTION.sOrder.section#sOrder&attributes(attributes)
+		.container
+			block
+			+b.section-title.light.long
+				h2 Оформление
+			+e.row.row
+				.col-lg-8
+					+e.login-txt Авторизация
+					+e.login-sm
+						| Если у Вас есть аккаунт авторизуйтесь на сайте. Мы сохраним всю информацию по заказу
+						|
+						br.d-none.d-sm-block
+						| и автоматически заполним ваши контактные данные.
+					+e.login-btn(href='#') Авторизоваться
+					//-1
+					+e.big-title Контактные данные
+					+e.content
+						+form-wrap
+							+input('', 'text', 'ФИО*', 'name')
+							+input('', 'tel', 'Телефон*')(class="border-primary")
+							+input('', 'email', 'E-mail*', '')(class="border-danger")
+					//-2
+					+e.big-title Способ получения
+					+e.content
+						+form-wrap
+							+input('', 'text', 'Город*', 'city')
+							+in-c('checkbox', 'Моего города нет в списке')
+							+e.delivery.delivery-group-dd-js
+								+e.del-row.row
+									+e.del-title.col-auto Варианты доставки
+									.col
+										+deliveryItem({
+											icon: 'car',
+											price: '500 ₽',
+											time: '1-2 дня',
+										})
+											| Курьерская доставка по Москве
+										+deliveryItem({
+											icon: 'plane',
+											price: '500 ₽',
+											time: 'от 1-2 дней',
+										})
+											| Доставка по России
+										+deliveryItem({
+											icon: 'house',
+											price: '0 ₽',
+											time: '',
+										})
+											| Самовывоз
+										+deliveryItem({
+											img: 'dpd',
+											price: 'от 250 ₽',
+											time: 'от 1-2 дней',
+										})
+											| Доставка DPD
+											br
+											| до пункта самовывоза
+							+input('', 'text', 'Адрес*', 'address')
+							+input('', 'textarea', 'Ваше сообщение', 'message')
+							//-+input('', '', '', '')
+					//-
+					+e.big-title Способ оплаты
+					+e.content
+						+form-wrap
+							+e.ways-row.row
+								+wayToPay('coins', 'cash')
+									| Наличный расчет
+								+wayToPay('card', 'online')(checked)
+									| Оплата online
+								+wayToPay('blank', 'account')
+									| Оплата по счёту
+									br
+									| для юр. лиц
+					+e.foot
+						+e.f-row.row.align-items-center
+							.col
+								+e.polite
+									| Нажимая кнопку «Оформить заказ», вы соглашаетесь с
+									|
+									br.d-sm-block.d-none
+									a(href="#") Политикой конфиденциальности.
+							.col-auto
+								+e.f-btn(href='#') Оформить
+				.col-lg-4
+					+orderContent()
+	// end sOrder
+
+mixin deliveryItem(data)
+	+e.d-item
+		+e.d-head.dd-head-js
+			+e.d-row.row.align-items-center
+				.col-auto
+					+e.logo
+						if data.icon
+							+icon(data.icon)
+						if data.img
+							img(loading="lazy" src=`img/svg/${data.img}.svg`)
+				+e.name-col.col
+					block
+				.col.col-sm-auto
+					+e.d-sub-row.row.align-items-center
+						+e.d-price.col-sm-auto=data.price
+						+e.d-time.col-sm-auto=data.time
+		+e.d-content.dd-content-js
+			+e.d-btn(type="button") Выбрать ПВЗ
+
+mixin wayToPay(icon,val)
+	+e.way-col.col-md-4
+		+e.LABEL.way-label
+			input(type="radio" name="way-to-pay" value=val class="d-none")&attributes(attributes)
+			+e.way
+				+e.w-icon
+					+icon(icon)
+				+e.w-txt
+					block
+
+mixin orderContent()
+	+b.order-content
+		+e.box.order-content-dd-js
+			+e.dd-item
+				+e.dd-head.dd-head-js Состав заказа
+				+e.dd-content.dd-content-js.active
+					+e.items
+						+goodsItemAlt()
+						+goodsItemAlt()
+					+e.edit-btn(href='#') Редактировать заказ
+			+e.f-data
+				+fDataItem('Товары', '99')
+				+fDataItem('Вес', '30 кг')
+				+fDataItem('Скидка', '-11 890 ₽', 'text-primary pb-12')
+				+fDataItem('ИТОГО', '33 294  ₽', 'huge-row')
+
+mixin goodsItemAlt(amount='1')
+	+b.g-item-alt
+		+e.row.row
+			+e.img-col.col-auto
+				+e.img(href='#' target="_blank")
+					img(loading="lazy" src="img/@2x/cart-img-tp.png" alt="")
+			+e.col-with-row.col
+				+e.inner-row.row.align-items-center
+					+e.txt-col.col-md
+						+e.tag Новинка
+						+e.code VB3616DA
+						+e.title(href='#' target="_blank") MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
+					.col-md-auto
+						+e.price--old 18 500 ₽
+						+e.price--new 16 500 ₽
+			+e.amount-col.col-auto.align-self-center=`× ${amount}`

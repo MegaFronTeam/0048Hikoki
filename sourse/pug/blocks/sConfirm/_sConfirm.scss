@@ -1,0 +1,114 @@
+// start .sConfirm
+.sConfirm {
+	--sTPB: 24px;
+
+	--sPT: 12px;
+	--sPB: 60px;
+	@include media-breakpoint-up(md){
+		--sPT: 24px;
+		--sPB: 72px;
+	}
+	@include media-breakpoint-up(xl){
+		--sPB: 96px;
+	}
+
+	&__box{
+		border: 1px solid $secondary;
+		position: relative;
+		z-index: 1;
+
+		padding: 24px 15px;
+		@include media-breakpoint-up(xsm){
+			padding: 24px 20px;
+		}
+		@include media-breakpoint-up(sm){
+			padding: 48px 24px;
+		}
+
+		&--green{
+			color: $white!important;
+			*{
+				color: $white!important;
+			}
+
+			background-color: $primary;
+			border-color: $primary;
+		}
+	}
+	&__logo{
+		position: absolute;
+
+		left: 15px;
+		@include media-breakpoint-up(xsm){
+			left: 20px;
+		}
+		top: 24px;
+		height: calc(100% - 48px);
+		@include media-breakpoint-up(sm){
+			left: 24px;
+			top: 24px;
+		}
+
+		img{
+			width: auto;
+			height: 100%;
+		}
+
+	}
+	&__title{
+		font-weight: 300;
+		line-height: (43/36);
+		color: $primary;
+
+		font-size: 24px;
+		margin-bottom: 36px;
+		@include media-breakpoint-up(md){
+			font-size: 36px;
+			margin-bottom: 48px;
+		}
+	}
+	&__txt{
+
+		font-size: 14px;
+		font-size: 14px;
+		@include media-breakpoint-up(md){
+			font-size: 24px;
+		}
+		line-height: (34/24);
+		margin-bottom: 24px;
+	}
+	&__await{
+		font-size: 14px;
+		line-height: (20/14);
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-primary;
+		min-width: 263px;
+	}
+	&__btn-white{
+		@extend .btn;
+		@extend .btn-outline-white;
+		padding: 15px 20px;
+
+		color: $white!important;
+		background-color: transparent!important;
+		&:hover{
+			color: $primary!important;
+			background-color: $white!important;
+		}
+
+		width: 100%;
+		@include media-breakpoint-up(md){
+			width: 262px;
+		}
+	}
+	&__btns-row{
+		& > *{
+			margin-bottom: 12px;
+		}
+		margin-bottom: -12px;
+	}
+	&__{}
+	&__{}
+} // end.sConfirm

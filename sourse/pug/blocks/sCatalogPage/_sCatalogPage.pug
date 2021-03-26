@@ -154,12 +154,12 @@ mixin sCatalogPage4(data)
 							.col-auto
 								+e.o-sub-row.row
 									.col-auto
-										+e.icon-btn.active.d-none.d-md-block
+										+e.icon-btn.active.d-none.d-lg-block
 											+icon('6-dots')
-									.col-auto.d-none.d-md-block
+									.col-auto.d-none.d-lg-block
 										+e.icon-btn
 											+icon('9-dots')
-									.col-auto
+									.col-auto.d-lg-none
 										+e.icon-btn.active
 											+icon('9-dots')
 					+longProdItemsRow()
@@ -188,17 +188,17 @@ mixin sqprodItemsRow(addClasses)
 
 mixin longProdItemsRow(addClasses)
 	+e.row.row.pb-48.pb-md-60(class=addClasses)
-		.col-xsm-6.col-md-12
+		.col-xsm-6.col-md-4.col-lg-12
 			+itemProdLong()
-		.col-xsm-6.col-md-12
+		.col-xsm-6.col-md-4.col-lg-12
 			+itemProdLong()
-		.col-xsm-6.col-md-12
+		.col-xsm-6.col-md-4.col-lg-12
+			+itemProdLong('asdasd')
+		.col-xsm-6.col-md-4.col-lg-12
 			+itemProdLong()
-		.col-xsm-6.col-md-12
+		.col-xsm-6.col-md-4.col-lg-12
 			+itemProdLong()
-		.col-xsm-6.col-md-12
-			+itemProdLong()
-		.col-xsm-6.col-md-12
+		.col-xsm-6.col-md-4.col-lg-12
 			+itemProdLong()
 
 mixin filterBtnsBar()
@@ -276,20 +276,23 @@ mixin in-r(name='radio-btn-group', checked=false)
 			+e.INPUT.radio-input(type="radio", name = name)
 			block
 
-mixin itemProdLong()
-	+b.long-item.text-center.text-md-start
+mixin itemProdLong(title)
+	+b.long-item.text-center.text-lg-start
 		+e.row.row
-			+e.img-col.col-md-auto
+			+e.img-col.col-lg-auto
 				+e.img(href="#")
-					+e.tag.d-md-none Новинка
+					+e.tag.d-lg-none Новинка
 					img(loading='lazy' src=`img/@2x/lc-img.jpg` alt="")
-			+e.content-col.col-md
-				+e.tag.d-md-inline-flex.d-none Новинка
+			+e.content-col.col-lg
+				+e.tag.d-lg-inline-flex.d-none Новинка
 				+e.code VB3616DA
-				+e.title(href="#") MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
+				if title
+					+e.title(href="#")=title
+				else
+					+e.title(href="#") MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
 				+e.lower-row.row.align-items-center
-					+e.price-col.col-md
+					+e.price-col.col-lg
 						+e.price--old 18 500 ₽
 						+e.price--new 16 500 ₽
-					+e.btn-col.col-md-auto
+					+e.btn-col.col-lg-auto
 						+e.btn(href='#') Купить
