@@ -11,6 +11,7 @@
 1. <https://luckyone1221.github.io/0048Hikoki/public/05-order-2.html>
 1. <https://luckyone1221.github.io/0048Hikoki/public/05-order-3.html>
 1. <https://luckyone1221.github.io/0048Hikoki/public/06-personal-account.html>
+1. <https://luckyone1221.github.io/0048Hikoki/public/07-compare.html>
 1. <https://luckyone1221.github.io/0048Hikoki/public/09-contacts.html>
 1. <https://luckyone1221.github.io/0048Hikoki/public/010-news.html>
 1. <https://luckyone1221.github.io/0048Hikoki/public/011-article.html>

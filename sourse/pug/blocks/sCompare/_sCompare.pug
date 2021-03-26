@@ -1,0 +1,61 @@
+mixin sCompare(data)
+	// start sCompare
+	+b.SECTION.sCompare.section#sCompare&attributes(attributes)
+		.container
+			block
+			+b.section-title.light.long
+				h2 Результаты сравнения
+			+e.row.row
+				+e.title-col
+					+e.t-header Товары
+					+e.t-slide-spacer
+					+e.t-header Двигатель
+					+e.t-table
+						+e.t-item HUS Usage
+						+e.t-item Рабочий объем двигателя
+						+e.t-item Рабочий объем цилиндра
+						+e.t-item Номинальная мощность
+					+e.t-header Трансмиссия
+					+e.t-table
+						+e.t-item HUS Usage
+						+e.t-item Рабочий объем двигателя
+						+e.t-item Рабочий объем цилиндра
+						+e.t-item Номинальная мощность
+				+e.slider-col.col-md-8.col-lg-9.ms-auto
+					+e.slider-wrap
+						.swiper-container.sCompare-slider-js
+							.swiper-wrapper
+								+sCompareSlide(1, true, 'VB3616DA', 'MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender')
+								+sCompareSlide()
+								+sCompareSlide()
+								+sCompareSlide()
+						+arrow('d-none d-md-flex')
+	// end sCompare
+
+mixin sCompareSlide(imgNum='2', tag=false, code='CB18DBL',name='Cordless Band Saw')
+	.swiper-slide
+		+e.item
+			+e.img(href="#")
+				img(loading="lazy" src=`img/@2x/compare-${imgNum}.jpg` alt="")
+				if tag
+					+e.tag Новинка
+			+e.code=code
+			+e.name(href='#')=name
+			+e.price-bl
+				+e.price--old 18 500 ₽
+				+e.price--new 16 500 ₽
+			+e.btn(href='#') Купить
+		+e.content
+			if block
+				block
+			else
+				+e.s-table
+					+e.s-item Occasional use
+					+e.s-item 21.7 см³
+					+e.s-item 1.3 куб. дюйм
+					+e.s-item 0.6 кВт
+				+e.s-table
+					+e.s-item Occasional use
+					+e.s-item 21.7 см³
+					+e.s-item 1.3 куб. дюйм
+					+e.s-item 0.6 кВт

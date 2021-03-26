@@ -481,6 +481,17 @@ function eventHandler() {
 	$('.plus-btn-js').click(function () {
 		$(this).fadeOut();
 		$('.has-plus-btn').removeClass('has-plus-btn');
+	}); //comparation
+
+	var compareSlider = new Swiper('.sCompare-slider-js', {
+		slidesPerView: 'auto',
+		navigation: {
+			nextEl: $(this).find('.swiper-next'),
+			prevEl: $(this).find('.swiper-prev')
+		} // freeMode: true,
+		// freeModeMomentum: true,
+		// watchOverflow: true,
+
 	}); //end luckyone js
 	// todo
 	// 1 clean js file

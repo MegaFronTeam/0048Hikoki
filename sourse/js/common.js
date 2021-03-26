@@ -476,6 +476,17 @@ function eventHandler() {
 		$(this).fadeOut();
 		$('.has-plus-btn').removeClass('has-plus-btn');
 	});
+	//comparation
+	let compareSlider = new Swiper('.sCompare-slider-js', {
+		slidesPerView: 'auto',
+		navigation: {
+			nextEl: $(this).find('.swiper-next'),
+			prevEl: $(this).find('.swiper-prev'),
+		},
+		// freeMode: true,
+		// freeModeMomentum: true,
+		// watchOverflow: true,
+	});
 
 
 	//end luckyone js
