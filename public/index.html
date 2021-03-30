@@ -920,12 +920,12 @@
 								</div>
 							</div>
 						</div>
-						<div class="swiper-prev d-none d-lg-flex">
+						<div class="swiper-prev d-none d-sm-flex">
 							<svg class="icon icon-chevron-left ">
 								<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
 							</svg>
 						</div>
-						<div class="swiper-next d-none d-lg-flex">
+						<div class="swiper-next d-none d-sm-flex">
 							<svg class="icon icon-chevron-right ">
 								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
 							</svg>
@@ -1016,12 +1016,12 @@
 								</div>
 							</div>
 						</div>
-						<div class="swiper-prev d-none d-lg-flex">
+						<div class="swiper-prev d-none d-sm-flex">
 							<svg class="icon icon-chevron-left ">
 								<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
 							</svg>
 						</div>
-						<div class="swiper-next d-none d-lg-flex">
+						<div class="swiper-next d-none d-sm-flex">
 							<svg class="icon icon-chevron-right ">
 								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
 							</svg>
@@ -1030,7 +1030,7 @@
 				</div>
 			</div>
 			<!-- start sArticals-->
-			<section class="sArticals d-none d-lg-block section" id="sArticals">
+			<section class="sArticals section" id="sArticals">
 				<div class="container">
 					<div class="section-title">
 						<div class="row align-items-center">
@@ -1045,11 +1045,11 @@
 						</div>
 					</div>
 					<div class="sArticals__row row">
-						<div class="sArticals__col col-sm-6 col-lg-4"><a class="sArticals__img-wrap" href="#"><img loading="lazy" src="img/@2x/artical-1.jpg" alt=""/></a><a class="sArticals__title" href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
+						<div class="sArticals__col col-md-4"><a class="sArticals__img-wrap" href="#"><img loading="lazy" src="img/@2x/artical-1.jpg" alt=""/></a><a class="sArticals__title" href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
 						</div>
-						<div class="sArticals__col col-sm-6 col-lg-4"><a class="sArticals__img-wrap" href="#"><img loading="lazy" src="img/@2x/artical-2.jpg" alt=""/></a><a class="sArticals__title" href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
+						<div class="sArticals__col col-md-4"><a class="sArticals__img-wrap" href="#"><img loading="lazy" src="img/@2x/artical-2.jpg" alt=""/></a><a class="sArticals__title" href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
 						</div>
-						<div class="sArticals__col col-sm-6 col-lg-4"><a class="sArticals__img-wrap" href="#"><img loading="lazy" src="img/@2x/artical-3.jpg" alt=""/></a><a class="sArticals__title" href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
+						<div class="sArticals__col col-md-4"><a class="sArticals__img-wrap" href="#"><img loading="lazy" src="img/@2x/artical-3.jpg" alt=""/></a><a class="sArticals__title" href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
 						</div>
 					</div>
 				</div>
@@ -1227,7 +1227,8 @@
 							</div>
 							<!-- +e.input-wrap-->
 						</div>
-						<div class="text-center"><input class="form-wrap__btn-light mb-12" type="submit" value="Перезвоните мне"/>
+						<div class="text-center">
+							<input class="btn btn-primary disabled mb-12" type="submit" value="Перезвоните мне"/>
 							<div class="polite">Нажимая на кнопку, вы подтверждаете своё совершеннолетие,<br/>соглашаетесь на обработку персональных данных в соответствии<br/>с
 								<a href="#">Условиями</a>, а также с
 								<a href="#">Условиями продажи</a>
@@ -1252,9 +1253,9 @@
 						</div>
 						<!-- +e.input-wrap-->
 						<div class="text-center"><a class="form-wrap__forgot d-block mb-24" href="#">Забыли пароль?</a>
-							<button class="form-wrap__btn-enter" type="submit">Войти
+							<button class="form-wrap__btn-enter disabled" type="submit">Войти
 							</button>
-							<button class="form-wrap__btn-reg" type="submit">Регистрация
+							<button class="form-wrap__btn-reg disabled" type="submit">Регистрация
 							</button>
 						</div>
 					</form>
@@ -1286,8 +1287,7 @@
 							<div class="invalid-alert text-danger small">Пароли не совпадают</div>
 						</div>
 						<div class="text-center">
-							<button class="form-wrap__btn-light" type="submit">Зарегистрироваться
-							</button>
+							<button class="btn btn-primary disabled" type="submit">Зарегистрироваться</button>
 						</div>
 					</form>
 				</div>
@@ -1344,7 +1344,7 @@
 									</div>
 								</div>
 								<div class="tabs__content pb-24">
-									<div class="form-wrap__headline file-headline pb-12">Прикрепить файл
+									<div class="form-wrap__input-title file-headline">Прикрепить файл
 									</div>
 									<div class="dropzone" id="props-dz">
 										<div class="fallback">
@@ -1355,8 +1355,7 @@
 							</div>
 						</div>
 						<div class="text-center">
-							<button class="form-wrap__btn-light mb-12" type="submit">Отправить
-							</button>
+							<button class="btn btn-primary disabled mb-12" type="submit">Отправить</button>
 							<div class="polite">Нажимая на кнопку, вы подтверждаете своё совершеннолетие,<br/>соглашаетесь на обработку персональных данных в соответствии<br/>с
 								<a href="#">Условиями</a>, а также с
 								<a href="#">Условиями продажи</a>

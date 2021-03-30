@@ -144,6 +144,7 @@
 }
 
 .burger{
+	cursor: pointer;
 	@include mt();
 	width: 20px;
 	height: 20px;
@@ -152,6 +153,7 @@
 	span,
 	span:before,
 	span:after{
+		@include mt();
 		position: absolute;
 		left: 0;
 		display: block;
@@ -170,6 +172,21 @@
 	}
 	span:after{
 		top: 5px;
+	}
+
+	&.active{
+		span{
+			background-color: transparent;
+		}
+
+		span:before{
+			top: 0;
+			transform: rotate(45deg);
+		}
+		span:after{
+			top: 0;
+			transform: rotate(-45deg);
+		}
 	}
 }
 
@@ -313,7 +330,7 @@
 	&__cart{
 		//padding: 6px 0;
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		color: $white;
 		&:hover{
 			color: rgba($white, .9);

@@ -14,14 +14,14 @@
 	}
 	&.sCatalog--similar{
 		.swiper-wrapper{
-			@include media-breakpoint-up(lg){
+			@include media-breakpoint-up(md){
 				transform: none!important;
 				flex-wrap: wrap!important;
 			}
 
 			&.has-plus-btn{
 				.swiper-slide{
-					@include media-breakpoint-up(lg){
+					@include media-breakpoint-up(md){
 						&:nth-child(n + 9) {// 5looped slides + 3 visiable
 							display: none;
 						}
@@ -32,11 +32,11 @@
 		}
 		.sCatalog__slide{
 			&.swiper-slide-duplicate{
-				@include media-breakpoint-up(lg){
+				@include media-breakpoint-up(md){
 					display: none;
 				}
 			}
-			@include media-breakpoint-up(lg){
+			@include media-breakpoint-up(md){
 				width: 100%;
 				margin-bottom: 30px;
 			}
@@ -250,7 +250,7 @@
 .long-item{
 	border: 1px solid $gray-310;
 
-	@include media-breakpoint-down(lg){
+	@include media-breakpoint-down(md){
 		min-height: 100%;
 		display: flex;
 		flex-direction: column;
@@ -258,7 +258,7 @@
 
 	&__row{
 		@include roww(0);
-		@include media-breakpoint-down(lg){
+		@include media-breakpoint-down(md){
 			//background-color: red;
 			flex-grow: 1;
 			display: flex;
@@ -278,7 +278,7 @@
 		padding-top: (180/222) * 100%;
 	}
 	&__content-col{
-		@include media-breakpoint-down(lg){
+		@include media-breakpoint-down(md){
 			flex-grow: 1;
 			display: flex;
 			flex-direction: column;
@@ -288,12 +288,12 @@
 
 		--pad-l: 15px;
 		padding: 12px var(--pad-l, 15px) 0;
-		@include media-breakpoint-up(lg){
+		@include media-breakpoint-up(md){
 			padding: 20px 20px 20px 30px;
 		}
 	}
 	&__tag{
-		@include media-breakpoint-down(lg){
+		@include media-breakpoint-down(md){
 			position: absolute;
 			z-index: 2;
 			left: 50%;
@@ -310,7 +310,7 @@
 			padding: 4px 7px;
 			background: $danger;
 		}
-		@include media-breakpoint-up(lg){
+		@include media-breakpoint-up(md){
 			display: inline-flex;
 			background: $danger;
 			border-radius: 20px;
@@ -338,7 +338,7 @@
 
 		margin-bottom: 12px;
 		justify-content: center;
-		@include media-breakpoint-up(lg){
+		@include media-breakpoint-up(md){
 			margin-bottom: 40px;
 			justify-content: flex-start;
 		}
@@ -350,7 +350,7 @@
 	&__lower-row{
 		margin-top: auto;
 
-		@include media-breakpoint-up(lg){
+		@include media-breakpoint-up(md){
 			& > *{
 				margin-bottom: 12px;
 			}
@@ -366,7 +366,7 @@
 		margin-bottom: 4px;
 	}
 	&__price-col{
-		@include media-breakpoint-down(lg){
+		@include media-breakpoint-down(md){
 			margin-bottom: 12px;
 		}
 	}
@@ -380,12 +380,12 @@
 		@extend .btn-primary;
 
 		min-width: 100%;
-		@include media-breakpoint-up(lg){
+		@include media-breakpoint-up(md){
 			min-width: 220px;
 		}
 	}
 	&__btn-col{
-		@include media-breakpoint-down(lg){
+		@include media-breakpoint-down(md){
 			margin: 0 calc(-1 * var(--pad-l, 15px));
 			width: calc(100% + var(--pad-l, 15px) * 2);
 			max-width: calc(100% + var(--pad-l, 15px) * 2);

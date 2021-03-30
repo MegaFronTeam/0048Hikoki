@@ -43,10 +43,6 @@
 			@extend .btn;
 			@extend .btn-primary;
 		}
-		&__btn-light{
-			@extend .btn;
-			@extend .btn-light;
-		}
 		&__btn-outline-light{
 			@extend .btn;
 			@extend .btn-outline-light;
@@ -54,14 +50,14 @@
 
 		&__btn-enter{
 			@extend .btn;
-			@extend .btn-light;
+			@extend .btn-primary;
 			display: block;
 			width: 165px;
 			margin: 0 auto 12px auto;
 		}
 		&__btn-reg{
 			@extend .btn;
-			@extend .btn-outline-light;
+			@extend .btn-outline-primary;
 			color: $body-color!important;
 
 			display: block;
@@ -162,13 +158,13 @@ a {
 	}
 }
 .dropzone {
-	border: 1px dashed $light;
+	border: 1px dashed $primary;
 	min-height: rem(100px);
 	padding: 0;
 	text-align: center;
 }
 .dz-button {
-	color: $body-color;
+	color: $primary!important;
 	font-size: rem(16px);
 	line-height: rem(19px);
 	font-weight: 300;

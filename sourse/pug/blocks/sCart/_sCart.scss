@@ -227,10 +227,24 @@
 		text-align: center;
 
 		font-size: 16px;
-		color: $body-color!important;
 
 		@extend .btn;
 		@extend .btn-outline-secondary;
+
+		background-color: $white!important;
+		border-color: $secondary!important;
+		color: $black!important;
+		&:hover{
+			position: relative;
+			z-index: 1;
+			background-color: $white!important;
+			border-color: $primary!important;
+			color: $black!important;
+		}
+		&:active{
+			color: $white!important;
+			background-color: $primary!important;
+		}
 
 		&--min{
 			margin-right: -1px;

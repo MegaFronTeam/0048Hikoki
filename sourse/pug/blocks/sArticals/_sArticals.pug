@@ -1,6 +1,6 @@
 mixin sArticals()
 	// start sArticals
-	+b.SECTION.sArticals.d-none.d-lg-block.section#sArticals&attributes(attributes)
+	+b.SECTION.sArticals.section#sArticals&attributes(attributes)
 		.container
 			+b.section-title
 				.row.align-items-center
@@ -11,13 +11,13 @@ mixin sArticals()
 							span Все статьи
 							+icon('chevron-right')
 			+e.row.row
-				+itemNews("1")
-				+itemNews("2")
-				+itemNews("3")
+				+itemNews("1", undefined, 'col-md-4')
+				+itemNews("2", undefined, 'col-md-4')
+				+itemNews("3", undefined, 'col-md-4')
 	// end sArticals
 
-mixin itemNews(i ,t="Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой")
-	+e.col.col-sm-6.col-lg-4&attributes(attributes)
+mixin itemNews(i ,t="Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой", bootClasses='col-sm-6 col-lg-4')
+	+e.col(class=bootClasses)&attributes(attributes)
 		+e.img-wrap(href="#")
 			img(loading="lazy" src=`img/@2x/artical-${i}.jpg` alt="")
 		+e.title(href="#")=t

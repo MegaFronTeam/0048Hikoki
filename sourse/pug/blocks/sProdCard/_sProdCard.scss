@@ -70,6 +70,11 @@
 			flex-direction: row;
 		}
 	}
+
+	&__side-col{
+		position: relative;
+		z-index: 2;
+	}
 	//table-descr
 	&__table-descr{
 		margin-bottom: 24px;
@@ -431,9 +436,15 @@
 		border-color: $secondary!important;
 		color: $black!important;
 		&:hover{
+			position: relative;
+			z-index: 1;
 			background-color: $white!important;
 			border-color: $primary!important;
 			color: $black!important;
+		}
+		&:active{
+			color: $white!important;
+			background-color: $primary!important;
 		}
 
 		width: 48px;
@@ -523,7 +534,7 @@
 		left: unset!important;
 		&-bullet {
 			background-color: $secondary!important;
-			@include media-breakpoint-down(sm){
+			@include media-breakpoint-down(xl){
 				width: 30px!important;
 			}
 
@@ -544,7 +555,9 @@
 	&__caption{
 		margin-bottom: 38px;
 		.swiper-container{
-
+			@include media-breakpoint-down(xl){
+				overflow: visible!important;
+			}
 		}
 		.swiper-wrapper{
 
@@ -555,7 +568,10 @@
 		}
 	}
 	&__btn{
-		padding: 10px 19px;
+		padding: 10px 12px;
+		@include media-breakpoint-up(xl){
+			padding: 10px 19px;
+		}
 
 		color: $primary;
 		background-color: $white;

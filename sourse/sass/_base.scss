@@ -736,3 +736,15 @@ body{
 	background-image: url(../img/svg/chevron-down.svg) !important;
 	background-size: 14px;
 }
+
+.btn-primary.disabled{
+	background-color: $secondary!important;
+	color: $body-color!important;
+	border-color: $secondary!important;
+}
+
+.btn-outline-primary.disabled{
+	background-color: $white!important;
+	color: $body-color!important;
+	border-color: $secondary!important;
+}

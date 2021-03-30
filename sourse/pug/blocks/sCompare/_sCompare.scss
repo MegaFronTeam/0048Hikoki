@@ -49,9 +49,11 @@
 	&__t-slide-spacer{
 		background-color: $light;
 
-		height: var(--slide-i-h, 360px);
+		margin-bottom: 24px;
+		height: calc(var(--slide-i-h, 360px) + 0px);
 		width: 0;
 		@include media-breakpoint-up(md){
+			margin-bottom: 0;
 			flex-grow: 1;
 			height: auto;
 			width: 33.33%;
@@ -155,6 +157,11 @@
 	&__slider-wrap{
 		position: relative;
 
+		//padding-bottom: 24px;
+		//@include media-breakpoint-up(lg){
+		//	padding-bottom: 0;
+		//}
+
 		.swiper-container{
 			@include media-breakpoint-down(md){
 				overflow: visible!important;
@@ -194,8 +201,11 @@
 		width: 100%;
 		border: 1px solid $secondary;
 
+
+		margin-bottom: 24px;
 		height: var(--slide-i-h, 360px);
 		@include media-breakpoint-up(md){
+			margin-bottom: 0;
 			flex-grow: 1;
 			height: auto;
 		}

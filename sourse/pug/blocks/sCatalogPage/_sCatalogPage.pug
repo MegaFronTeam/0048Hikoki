@@ -188,17 +188,17 @@ mixin sqprodItemsRow(addClasses)
 
 mixin longProdItemsRow(addClasses)
 	+e.row.row.pb-48.pb-md-60(class=addClasses)
-		.col-xsm-6.col-md-4.col-lg-12
+		.col-xsm-6.col-md-12
 			+itemProdLong()
-		.col-xsm-6.col-md-4.col-lg-12
+		.col-xsm-6.col-md-12
 			+itemProdLong()
-		.col-xsm-6.col-md-4.col-lg-12
+		.col-xsm-6.col-md-12
 			+itemProdLong('asdasd')
-		.col-xsm-6.col-md-4.col-lg-12
+		.col-xsm-6.col-md-12
 			+itemProdLong()
-		.col-xsm-6.col-md-4.col-lg-12
+		.col-xsm-6.col-md-12
 			+itemProdLong()
-		.col-xsm-6.col-md-4.col-lg-12
+		.col-xsm-6.col-md-12
 			+itemProdLong()
 
 mixin filterBtnsBar()
@@ -207,8 +207,9 @@ mixin filterBtnsBar()
 			+icon('filter-bar-icon')
 			span ФИЛЬТР парамтеров
 			.filter-number 3
-		+e.cross-btn.d-none.d-sm-flex
+		+e.cross-btn
 			+icon('cross')
+
 mixin FiltersBlock()
 	+b.filter-bl
 		+e.pop-up-controll-panel.d-flex.d-lg-none
@@ -277,22 +278,22 @@ mixin in-r(name='radio-btn-group', checked=false)
 			block
 
 mixin itemProdLong(title)
-	+b.long-item.text-center.text-lg-start
+	+b.long-item.text-center.text-md-start
 		+e.row.row
-			+e.img-col.col-lg-auto
+			+e.img-col.col-md-auto
 				+e.img(href="#")
-					+e.tag.d-lg-none Новинка
+					+e.tag.d-md-none Новинка
 					img(loading='lazy' src=`img/@2x/lc-img.jpg` alt="")
-			+e.content-col.col-lg
-				+e.tag.d-lg-inline-flex.d-none Новинка
+			+e.content-col.col-md
+				+e.tag.d-md-inline-flex.d-none Новинка
 				+e.code VB3616DA
 				if title
 					+e.title(href="#")=title
 				else
 					+e.title(href="#") MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
 				+e.lower-row.row.align-items-center
-					+e.price-col.col-lg
+					+e.price-col.col-md
 						+e.price--old 18 500 ₽
 						+e.price--new 16 500 ₽
-					+e.btn-col.col-lg-auto
+					+e.btn-col.col-md-auto
 						+e.btn(href='#') Купить

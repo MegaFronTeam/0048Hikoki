@@ -393,6 +393,7 @@
 				background-color: $primary;
 			}
 			.custom-input__lab{
+				position: static;
 				background-color: transparent;
 				border: 1px solid $primary;
 				box-shadow: inset 0px 0px 0px 2px white;
@@ -583,10 +584,10 @@
 					margin-left: 0;
 					margin-right: 2px;
 					left: 2px;
-					top: 1px;
+					top: 0px;
 					opacity: 1;
 					width: 14px;
-					height: 14px;
+					height: calc(100% - 4px);
 					border-radius: 50%;
 					background-color: $primary;
 				}

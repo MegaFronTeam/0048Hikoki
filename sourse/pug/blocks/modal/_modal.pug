@@ -24,7 +24,7 @@ mixin modal()
 					+input("","tel",'Телефон*')(required class="valid")
 					+input("","text",'Ваше Имя*')(required class="invalid")
 				.text-center
-					+e.INPUT.btn-light.mb-12(type="submit" value="Перезвоните мне")
+					input.btn.btn-primary.disabled.mb-12(type="submit" value="Перезвоните мне")
 					+polite()
 		// #modal-call
 		+b.modal-win(id="modal-inner")
@@ -34,8 +34,8 @@ mixin modal()
 				+input("","password",'Пароль*')(required)
 				.text-center
 					+e.forgot.d-block.mb-24(href="#") Забыли пароль?
-					+e.BUTTON.btn-enter(type="submit") Войти
-					+e.BUTTON.btn-reg(type="submit") Регистрация
+					+e.BUTTON.btn-enter.disabled(type="submit") Войти
+					+e.BUTTON.btn-reg.disabled(type="submit") Регистрация
 		// #modal-inner
 		+b.modal-win(id="modal-reg")
 			+form-wrap()
@@ -47,7 +47,7 @@ mixin modal()
 					+input("","password",'Повторить пароль*')(required)(class="border-danger text-danger")
 					.invalid-alert.text-danger.small Пароли не совпадают
 				.text-center
-					+e.BUTTON.btn-light(type="submit") Зарегистрироваться
+					button.btn.btn-primary.disabled(type="submit") Зарегистрироваться
 		// #modal-reg
 		+b.modal-win(id="modal-order-request")
 			+form-wrap()
@@ -69,11 +69,11 @@ mixin modal()
 								+input('', 'text', 'Расч. счёт', 'account-2')
 								+input('', 'email', 'E-mail*')(required)
 						.tabs__content.pb-24
-							+e.headline.file-headline.pb-12 Прикрепить файл
+							+e.input-title.file-headline Прикрепить файл
 							#props-dz.dropzone()
 								.fallback
 									input(name='file', type='file', multiple='')
 				.text-center
-					+e.BUTTON.btn-light.mb-12(type="submit") Отправить
+					button.btn.btn-primary.disabled.mb-12(type="submit") Отправить
 					+polite()
 // end modals

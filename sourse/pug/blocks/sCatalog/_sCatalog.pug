@@ -26,7 +26,7 @@ mixin sCatalogHit()
 							+item-prod('2', 'slider', 'CD3605DA')
 						+e.slide.swiper-slide
 							+item-prod('2', 'slider')
-				+arrow('d-none d-lg-flex')
+				+arrow('d-none d-sm-flex')
 
 mixin sCatalogNew()
 	// start sCatalog
@@ -48,7 +48,7 @@ mixin sCatalogNew()
 							+item-prod('2', 'slider', 'CD3605DA')
 						+e.slide.swiper-slide
 							+item-prod('2', 'slider')
-				+arrow('d-none d-lg-flex')
+				+arrow('d-none d-sm-flex')
 
 mixin item-prod(i, slider, code='VB3616DA', t="MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender", hasOldPrice=true)
 	+b.prod-item&attributes(attributes)
@@ -88,7 +88,7 @@ mixin sCatalogFromArticle()
 						+item-prod('2', 'slider', 'CD3605DA')
 					+e.slide.swiper-slide
 						+item-prod('2', 'slider')
-			+arrow('d-none d-lg-flex')
+			+arrow('d-none d-sm-flex')
 
 mixin sCatalogAlso()
 	// start sCatalog
@@ -113,7 +113,7 @@ mixin sCatalogAlso()
 					+e.slide.swiper-slide
 						+item-prod('2', 'slider')
 							+e.badge.bg-red Новинка
-			+arrow('d-none d-md-flex')
+			+arrow('d-none d-sm-flex')
 
 mixin sCatalogSimilar()
 	// start sCatalog
@@ -126,8 +126,8 @@ mixin sCatalogSimilar()
 					-for (var i=0; i < 6; i++)
 						+e.slide.swiper-slide
 							+itemProdLong()
-			+arrow('d-none d-md-flex d-lg-none')
-		.text-center.d-none.d-lg-block
+			+arrow('d-none d-sm-flex d-md-none')
+		.text-center.d-none.d-md-block
 			+e.plus-btn.plus-btn-js
 				+icon('plus')
 

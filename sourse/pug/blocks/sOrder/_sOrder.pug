@@ -81,13 +81,13 @@ mixin sOrder(data)
 									| для юр. лиц
 					+e.foot
 						+e.f-row.row.align-items-center
-							.col
-								+e.polite
+							.col-sm
+								+e.polite.text-center.text-sm-start
 									| Нажимая кнопку «Оформить заказ», вы соглашаетесь с
 									|
 									br.d-sm-block.d-none
 									a(href="#") Политикой конфиденциальности.
-							.col-auto
+							.col-sm-auto
 								+e.f-btn(href='#') Оформить
 				.col-lg-4
 					+orderContent()
