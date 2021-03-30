@@ -35,25 +35,31 @@ mixin sOrder(data)
 											icon: 'car',
 											price: '500 ₽',
 											time: '1-2 дня',
+											value: 'value1',
 										})
 											| Курьерская доставка по Москве
 										+deliveryItem({
 											icon: 'plane',
 											price: '500 ₽',
 											time: 'от 1-2 дней',
+											value: 'value2',
 										})
 											| Доставка по России
 										+deliveryItem({
 											icon: 'house',
 											price: '0 ₽',
 											time: '',
+											value: 'value3',
 										})
 											| Самовывоз
 										+deliveryItem({
+											addClasses: 'active',
 											img: 'dpd',
 											price: 'от 250 ₽',
 											time: 'от 1-2 дней',
-										})
+											ddContent: true,
+											value: 'value4',
+										})(checked)
 											| Доставка DPD
 											br
 											| до пункта самовывоза
@@ -88,23 +94,26 @@ mixin sOrder(data)
 	// end sOrder
 
 mixin deliveryItem(data)
-	+e.d-item
-		+e.d-head.dd-head-js
-			+e.d-row.row.align-items-center
-				.col-auto
-					+e.logo
-						if data.icon
-							+icon(data.icon)
-						if data.img
-							img(loading="lazy" src=`img/svg/${data.img}.svg`)
-				+e.name-col.col
-					block
-				.col.col-sm-auto
-					+e.d-sub-row.row.align-items-center
-						+e.d-price.col-sm-auto=data.price
-						+e.d-time.col-sm-auto=data.time
-		+e.d-content.dd-content-js
-			+e.d-btn(type="button") Выбрать ПВЗ
+	+e.LABEL.d-label
+		input(type="radio" class="d-none" name='delivery' value=data.value)&attributes(attributes)
+		+e.d-item(class=`${data.addClasses || ''}`)
+			+e.d-head
+				+e.d-row.row.align-items-center
+					.col-auto.d-block
+						+e.logo
+							if data.icon
+								+icon(data.icon)
+							if data.img
+								img(loading="lazy" src=`img/svg/${data.img}.svg`)
+					+e.name-col.col.d-block
+						block
+					.col.col-sm-auto.d-block
+						+e.d-sub-row.row.align-items-center
+							+e.d-price.col-sm-auto=data.price
+							+e.d-time.col-sm-auto=data.time
+			if data.ddContent
+				+e.d-content.active
+					+e.d-btn(type="button") Выбрать ПВЗ
 
 mixin wayToPay(icon,val)
 	+e.way-col.col-md-4

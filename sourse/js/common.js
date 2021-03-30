@@ -429,9 +429,6 @@ function eventHandler() {
 	});
 	//end luckyone js
 
-	// try to make new optimization
-	// remake inp type date ph js on tavrida
-	// ask about 3 things to starter template
 
 };
 if (document.readyState !== 'loading') {

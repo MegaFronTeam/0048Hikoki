@@ -434,9 +434,6 @@ function eventHandler() {
 			prevEl: $(this).find('.swiper-prev')
 		}
 	}); //end luckyone js
-	// try to make new optimization
-	// remake inp type date ph js on tavrida
-	// ask about 3 things to starter template
 }
 
 ;

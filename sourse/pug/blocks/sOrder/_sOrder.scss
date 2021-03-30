@@ -117,12 +117,24 @@
 		&__del-row{
 
 		}
-		&__d-item{
-			@include mt();
+
+		&__d-label{
+			display: block;
+
+			input:checked + .form-wrap__d-item{
+				border: 1px solid $primary;
+				background-color: $primary;
+				color: $white;
+			}
+
 			margin-bottom: 12px;
 			&:last-child{
 				margin-bottom: 0;
 			}
+		}
+		&__d-item{
+			display: block;
+			@include mt();
 
 			border: 1px solid $secondary;
 			background-color: $white;
@@ -139,10 +151,12 @@
 			}
 		}
 		&__d-head{
+			display: block;
 			cursor: pointer;
 			padding: 14px 21px 14px 12px;
 		}
 		&__d-row{
+			display: flex;
 			@include roww(15px);
 		}
 		&__logo{
@@ -180,6 +194,8 @@
 			}
 		}
 		&__d-sub-row{
+			display: flex;
+
 			@include media-breakpoint-down(sm){
 				text-align: right;
 			}
@@ -190,15 +206,17 @@
 			}
 		}
 		&__d-price{
-
+			display: block;
 		}
 		&__d-time{
+			display: block;
 			@include media-breakpoint-up(sm){
 				min-width: 125px;
 				text-align: right;
 			}
 		}
 		&__d-content{
+
 			padding: 0 21px 14px 12px;
 			display: none;
 			&.active{
@@ -206,6 +224,7 @@
 			}
 		}
 		&__d-btn{
+			display: inline-block;
 			@extend .btn;
 			@extend .btn-white;
 			width: 100%;
