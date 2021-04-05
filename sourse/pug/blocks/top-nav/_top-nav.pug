@@ -211,6 +211,7 @@ mixin lcMob()
 		+e.log-btn(href="#")
 			+icon('exit')
 			span Выйти
+
 mixin catalogDD()
 	+b.catalog-dd
 		ul.catalog-dd__list
@@ -232,9 +233,21 @@ mixin catalogDD()
 			li
 				span Аксессуары
 				+catalogSubDD('55')
+
 mixin catalogSubDD(diff="")
 	+e.sub-dd
 		+e.content
+			a(href='#')=`Дрели-шуруповерты ${diff}`
+			a(href='#') Ударные дрели-шуруповерты
+			a(href='#') Ударные шуруповерты
+			a(href='#') Ударные гайковерты
+			a(href='#') Перфораторы SDS+
+			a(href='#') Перфораторы SDS-Max
+			a(href='#') Перфораторы SDS-Max
+			a(href='#') УШМ
+			a(href='#') Пилы
+			a(href='#') Многофункциональные устройства
+			a(href='#') Отвертка
 			a(href='#')=`Дрели-шуруповерты ${diff}`
 			a(href='#') Ударные дрели-шуруповерты
 			a(href='#') Ударные шуруповерты

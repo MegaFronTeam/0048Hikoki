@@ -615,6 +615,7 @@
 		left: var(--list-w);
 		width: calc(100% - var(--list-w));
 		height: 100%;
+		overflow-y: auto;
 	}
 	&__content{
 		padding: 30px 30px 6px;
