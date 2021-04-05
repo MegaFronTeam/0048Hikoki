@@ -748,3 +748,7 @@ body{
 	color: $body-color!important;
 	border-color: $secondary!important;
 }
+
+.bx-sls .bx-ui-sls-container .bx-ui-sls-fake, .bx-sls .bx-ui-sls-container .bx-ui-sls-route {
+	height: 40px;
+}
