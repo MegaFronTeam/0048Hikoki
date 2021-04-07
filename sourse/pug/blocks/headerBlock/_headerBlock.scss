@@ -35,13 +35,20 @@
 		}
 	}
 	&__slide-link{
-		@extend .accept-ratio-frame;
-		padding-top: (152/360) * 100%;
+		//@extend .accept-ratio-frame;
+		display: block;
+		img{
+			width: 100%;
+			height: auto;
+		}
+
+
+		//padding-top: (152/360) * 100%;
 		@include media-breakpoint-up(md){
-			padding-top: (324/768) * 100%;
+			//padding-top: (324/768) * 100%;
 		}
 		@include media-breakpoint-up(lg){
-			padding-top: (480/1140) * 100%;
+			//padding-top: (480/1140) * 100%;
 		}
 
 	}

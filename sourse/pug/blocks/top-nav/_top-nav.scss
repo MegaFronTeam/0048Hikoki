@@ -121,7 +121,7 @@
 			padding: 20px 25px;
 		}
 		--dd-scale: 0;
-		&:hover{
+		&.active{
 			--dd-scale: 1;
 			@include media-breakpoint-up(xl){
 				background-color: $primary;

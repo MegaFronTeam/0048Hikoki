@@ -120,7 +120,7 @@ mixin top-nav()
 						+e.LI.item: +e.link(href="#") Акции
 						+e.LI.item: +e.link(href="#") Контакты
 				+e.search-col.col-auto
-					+e.search.muted-down-md
+					+e.search.search-btn-js.muted-down-md
 						+icon('zoom')
 						+e.search-txt.d-none.d-xl-block Поиск
 						+searchDD()
@@ -261,7 +261,7 @@ mixin catalogSubDD(diff="")
 			a(href='#') Отвертка
 
 mixin searchDD()
-	+b.search-dd
+	+b.search-dd--js
 		+e.row.row
 			.col
 				+e.search-row.row

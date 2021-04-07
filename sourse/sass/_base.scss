@@ -325,14 +325,14 @@ ul {
 		width: 8px;
 		height: 8px;
 		border-radius: 50%;
-		background-color: $secondary;
+		background-color: $secondary!important;
 		outline: none !important;
 		@include mt;
 		margin: 0 2px !important;
 
 		&-active,
 		&:hover {
-			background-color: var(--bs-primary);
+			background-color: var(--bs-primary) !important;
 		}
 	}
 }

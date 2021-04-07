@@ -6,7 +6,7 @@ mixin headerBlock()
 				.swiper-container.gallery-top
 					.swiper-wrapper
 						+headerBlockSlide()
-						+headerBlockSlide()
+						+headerBlockSlide(2)
 						+headerBlockSlide()
 						+headerBlockSlide()
 						+headerBlockSlide()
@@ -15,7 +15,7 @@ mixin headerBlock()
 
 	// end headerBlock
 
-mixin headerBlockSlide()
+mixin headerBlockSlide(imgNum='1')
 	+e.slide.swiper-slide.bg-wrap
 		+e.slide-link(href='#')
-			img.swiper-lazy(src="#" data-src="img/@2x/header-slide-1.png", alt="")
+			img.swiper-lazy(src="#" data-src=`img/@2x/header-slide-${imgNum}.png`, alt="")

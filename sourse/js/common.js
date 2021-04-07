@@ -427,6 +427,33 @@ function eventHandler() {
 			prevEl: $(this).find('.swiper-prev'),
 		},
 	});
+	//new search
+	let searchBtn = document.querySelector('.search-btn-js');
+	$(searchBtn).click(function (){
+		document.body.removeEventListener('click', removeSearchMissClick);
+
+		if (this.classList.contains('active') && !event.target.closest('.search-dd--js')){
+			$(this).removeClass('active');
+		}
+		else{
+			$(this).addClass('active');
+		}
+		event.stopPropagation();
+		document.body.addEventListener('click', removeSearchMissClick);
+	});
+	function removeSearchMissClick(){
+		let target = event.target;
+
+		if (!target.closest('.search-dd--js')){
+			$(searchBtn).removeClass('active');
+			document.body.removeEventListener('click', removeSearchMissClick);
+		}
+	}
+	window.addEventListener('scroll', function (){
+		$(searchBtn).removeClass('active');
+	}, {passive: true});
+
+
 	//end luckyone js
 
 

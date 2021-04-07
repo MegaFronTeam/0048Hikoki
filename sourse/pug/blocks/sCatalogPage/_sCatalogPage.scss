@@ -166,6 +166,7 @@
 	&__item{
 		@include mt();
 		padding: 0 19px;
+
 		border-bottom: 1px solid $gray-310;
 		&:last-child{
 			border-none: 1px solid $gray-310;
@@ -177,6 +178,15 @@
 			background-color: $white;
 			--plus-aft-o: 0;
 		}
+
+		&.current{
+			background-color: $body-color!important;
+			color: $white!important;
+			--head-bb-col: #{$body-color}!important;
+			--plus-o: 0;
+			--link-color: #{$white};
+			--link-color-hover: #{$light};
+		}
 	}
 	&__i-head{
 		cursor: pointer;
@@ -184,7 +194,7 @@
 		display: flex;
 		align-items: center;
 
-		border-bottom: 1px solid $light;
+		border-bottom: 1px solid var(--head-bb-col,#{$light});
 
 		font-size: 14px;
 		line-height: 17/14;
@@ -197,6 +207,7 @@
 		height: 14px;
 		margin-left: auto;
 		flex-shrink: 0;
+		opacity: var(--plus-o, 1);
 
 		position: relative;
 
@@ -237,9 +248,9 @@
 		font-size: 14px;
 		line-height: 1.7;
 
-		color: $body-color;
+		color: var(--link-color, #{$body-color});
 		&:hover{
-			color: $primary;
+			color: var(--link-color-hover, #{$primary});
 		}
 	}
 	&__{}
