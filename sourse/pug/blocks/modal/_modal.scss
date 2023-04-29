@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .modal-win {
 	max-width: 555px!important;
 	width: 100% !important;
@@ -37,7 +39,7 @@
 			display: block;
 			margin-bottom: 6px;
 			font-size: 14px;
-			line-height: (17/14);
+			line-height: math.div(17, 14);
 		}
 		&__btn-pirmary{
 			@extend .btn;
@@ -76,7 +78,7 @@
 		}
 		&__btn{
 			font-size: 14px;
-			line-height: (18/14);
+			line-height: math.div(18, 14);
 			padding: 6px 0;
 			&.active{
 				color: $primary;
@@ -96,7 +98,7 @@
 
 .polite{
 	font-size: 12px;
-	line-height: (17/12);
+	line-height: math.div(17, 12);
 }
 
 a {

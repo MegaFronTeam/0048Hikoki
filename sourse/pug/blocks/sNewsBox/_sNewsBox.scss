@@ -1,4 +1,6 @@
 // start .sNewsBox
+@use "sass:math";
+
 .sNewsBox {
 	&__box{
 
@@ -28,7 +30,7 @@
 		}
 
 		font-size: 14px;
-		line-height: (17/14);
+		line-height: math.div(17, 14);
 
 		.icon{
 			font-size: 12px;
@@ -80,7 +82,7 @@
 		width: 137px;
 
 		font-size: 14px;
-		line-height: (17/14);
+		line-height: math.div(17, 14);
 		color: var(--date-col, #{$gray-310});
 
 		margin-bottom: 12px;
@@ -107,7 +109,7 @@
 		margin-bottom: 12px;
 		line-height: 1.37;
 		@include media-breakpoint-up(md){
-			line-height: (17/14);
+			line-height: math.div(17, 14);
 			margin-bottom: 0;
 		}
 	}

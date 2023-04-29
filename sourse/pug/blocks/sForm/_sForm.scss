@@ -1,4 +1,6 @@
 // start .sForm
+@use "sass:math";
+
 .sForm {
 	--sPB: 60px;
 	--sTPB: 24px;
@@ -63,7 +65,7 @@
 			padding-top: 12px;
 
 			font-size: 14px;
-			line-height: (17/14);
+			line-height: math.div(17, 14);
 
 			@include media-breakpoint-up(md){
 				width: 123px;
@@ -100,7 +102,7 @@
 				width: 262px;
 			}
 			font-size: 14px;
-			line-height: (20/14);
+			line-height: math.div(20, 14);
 
 		}
 	}

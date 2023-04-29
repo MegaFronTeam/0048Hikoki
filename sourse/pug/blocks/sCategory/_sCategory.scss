@@ -1,4 +1,6 @@
 // start .sCategory
+@use "sass:math";
+
 .sCategory {
 
 	.row{
@@ -80,7 +82,7 @@
 	}
 	&__title{
 		font-size: 14px;
-		line-height: (17/14);
+		line-height: math.div(17, 14);
 
 		display: flex;
 		align-items: center;

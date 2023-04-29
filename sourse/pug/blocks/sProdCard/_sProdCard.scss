@@ -1,4 +1,6 @@
 // start .sProdCard
+@use "sass:math";
+
 .sProdCard {
 	--sTPB: 24px;
 
@@ -84,7 +86,7 @@
 		padding: 15px 20px;
 
 		font-size: 14px;
-		line-height: (17/14);
+		line-height: math.div(17, 14);
 		color: $white;
 	}
 	&__t-items{
@@ -106,7 +108,7 @@
 			font-size: 14px;
 			padding: 15px 10px 15px 20px;
 		}
-		line-height: (22/14);
+		line-height: math.div(22, 14);
 	}
 	&__t-val-col{
 		display: flex;
@@ -149,13 +151,13 @@
 	}
 	&__t-country-txt{
 		font-size: 14px;
-		line-height: (22/14);
+		line-height: math.div(22, 14);
 	}
 	//
 	&__det-link{
 		padding-left: 16px;
 		font-size: 14px;
-		line-height: (17/14);
+		line-height: math.div(17, 14);
 
 		margin-bottom: 36px;
 
@@ -291,7 +293,7 @@
 		width: 100%;
 		height: 0;
 		position: relative;
-		padding-top: (649/652) * 100%;
+		padding-top: math.div(649, 652) * 100%;
 
 		display: flex;
 		align-items: center;
@@ -414,7 +416,7 @@
 		@include media-breakpoint-up(md){
 			font-size: 30px;
 		}
-		line-height: (36/30);
+		line-height: math.div(36, 30);
 	}
 
 	&__inputs-col{
@@ -547,7 +549,7 @@
 
 	&__img{
 		@extend .accept-ratio-frame;
-		padding-top: (170/360) * 100%;
+		padding-top: math.div(170, 360) * 100%;
 	}
 }
 
@@ -598,7 +600,7 @@
 			padding: 10px 20px;
 			font-size: 14px;
 		}
-		line-height: (20/14);
+		line-height: math.div(20, 14);
 		color: rgba(51, 51, 51, 0.5);
 	}
 	&__t-val-col{
@@ -608,7 +610,7 @@
 			padding: 10px 20px;
 			font-size: 14px;
 		}
-		line-height: (20/14);
+		line-height: math.div(20, 14);
 	}
 	&__wrap{
 		margin-bottom: 60px;

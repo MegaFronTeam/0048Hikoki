@@ -1,4 +1,6 @@
 // start .sArticle
+@use "sass:math";
+
 .sArticle {
 	--sPT: 12px;
 	--sPB: 60px;
@@ -27,7 +29,7 @@
 	}
 	&__baner{
 		@extend .accept-ratio-frame-nh;
-		padding-top: (360/750) * 100%;
+		padding-top: math.div(360, 750) * 100%;
 
 		margin-bottom: 24px;
 		@include media-breakpoint-up(md){
@@ -36,7 +38,7 @@
 	}
 	&__date{
 		font-size: 14px;
-		line-height: (17/14);
+		line-height: math.div(17, 14);
 		color: rgba(51, 51, 51, 0.5);
 		margin-bottom: 12px;
 	}
@@ -88,7 +90,7 @@
 		@include mt();
 		display: block;
 		font-size: 14px;
-		line-height: (17/14);
+		line-height: math.div(17, 14);
 		color: rgba(51, 51, 51, 0.5);
 		margin-bottom: 12px;
 	}

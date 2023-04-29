@@ -1,4 +1,6 @@
 // start .sOrder
+@use "sass:math";
+
 .sOrder {
 	--title-w: 100px;
 
@@ -34,12 +36,12 @@
 	&__login-txt{
 		font-weight: bold;
 		font-size: 20px;
-		line-height: (24/20);
+		line-height: (24*0.05);
 		margin-bottom: 12px;
 	}
 	&__login-sm{
 		font-size: 14px;
-		line-height: (24/14);
+		line-height: math.div(24, 14);
 		margin-bottom: 24px;
 	}
 	&__login-btn{
@@ -80,7 +82,7 @@
 			display: block;
 			flex-shrink: 0;
 			font-size: 14px;
-			line-height: (17/14);
+			line-height: math.div(17, 14);
 
 			width: 100%;
 			margin-bottom: 6px;
@@ -110,7 +112,7 @@
 		&__del-title{
 			flex-shrink: 0;
 			font-size: 14px;
-			line-height: (17/14);
+			line-height: math.div(17, 14);
 
 			width: 100%;
 			margin-bottom: 12px;
@@ -228,6 +230,7 @@
 				display: block;
 			}
 		}
+		.form-wrap__d-label .btn,
 		&__d-btn{
 			display: inline-block;
 			@extend .btn;
@@ -316,7 +319,7 @@
 			}
 			@include mt();
 			font-size: 14px;
-			line-height: (17/14);
+			line-height: math.div(17, 14);
 			color: var(--txt-col, black);
 		}
 		&__{}
@@ -334,7 +337,7 @@
 	}
 	&__polite{
 		font-size: 14px;
-		line-height: (20/14);
+		line-height: math.div(20, 14);
 	}
 	&__f-btn{
 		@extend .btn;
@@ -465,12 +468,12 @@
 		margin-bottom: -10px;
 
 		font-size: 14px;
-		line-height: (24/14);
+		line-height: math.div(24, 14);
 
 		&.huge-row{
 			font-weight: 300;
 			font-size: 24px;
-			line-height: (38/24);
+			line-height: math.div(38, 24);
 		}
 	}
 
@@ -530,12 +533,12 @@
 		border-radius: 20px;
 
 		font-size: 8px;
-		line-height: (12/8);
+		line-height: (12*0.125);
 		padding: 0 4px;
 		margin-bottom: 10px;
 		@include media-breakpoint-up(sm){
 			font-size: 10px;
-			line-height: (12/10);
+			line-height: (12*0.1);
 			padding: 4px 7.5px;
 			margin-bottom: 16px;
 		}
@@ -545,11 +548,11 @@
 	}
 	&__code{
 		font-size: 10px;
-		line-height: (14/10);
+		line-height: (14*0.1);
 		margin-bottom: 6px;
 		@include media-breakpoint-up(sm){
 			font-size: 12px;
-			line-height: (14/12);
+			line-height: math.div(14, 12);
 			margin-bottom: 8px;
 		}
 
@@ -559,10 +562,10 @@
 		display: block;
 
 		font-size: 12px;
-		line-height: (20/14);
+		line-height: math.div(20, 14);
 		@include media-breakpoint-up(sm){
 			font-size: 14px;
-			line-height: (20/14);
+			line-height: math.div(20, 14);
 		}
 
 		margin-bottom: 12px;
@@ -574,7 +577,7 @@
 	}
 	&__price--old{
 		font-size: 12px;
-		line-height: (14/12);
+		line-height: math.div(14, 12);
 		text-decoration-line: line-through;
 
 		color: $danger;
@@ -582,7 +585,7 @@
 	}
 	&__price--new{
 		font-size: 16px;
-		line-height: (19/16);
+		line-height: math.div(19, 16);
 	}
 	&__amount-col{
 		text-align: right;
@@ -594,7 +597,7 @@
 		}
 
 		font-size: 16px;
-		line-height: (19/16);
+		line-height: math.div(19, 16);
 	}
 	&__{}
 	&__{}

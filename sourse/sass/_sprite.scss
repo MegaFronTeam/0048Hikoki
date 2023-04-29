@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .icon {
 	display: inline-block;
 	width: 1em;
@@ -6,98 +8,98 @@
 }
 
 .icon-6-dots {
-	font-size:(19/10)*1rem;
-	width:(18/19)*1em;
+	font-size:math.div(19,10)*1rem;
+	width: math.div(18,19)*1em;
 }
 .icon-9-dots {
-	font-size:(19/10)*1rem;
-	width:(18/19)*1em;
+	font-size:math.div(19,10)*1rem;
+	width: math.div(18,19)*1em;
 }
 .icon-angle-left {
-	font-size:(14/10)*1rem;
-	width:(8/14)*1em;
+	font-size:math.div(14,10)*1rem;
+	width: math.div(8,14)*1em;
 }
 .icon-bars {
-	font-size:(18/10)*1rem;
-	width:(16/18)*1em;
+	font-size:math.div(18,10)*1rem;
+	width: math.div(16,18)*1em;
 }
 .icon-blank {
-	font-size:(41/10)*1rem;
-	width:(30/41)*1em;
+	font-size:math.div(41,10)*1rem;
+	width: math.div(30,41)*1em;
 }
 .icon-car {
-	font-size:(18/10)*1rem;
-	width:(31/18)*1em;
+	font-size:math.div(18,10)*1rem;
+	width: math.div(31,18)*1em;
 }
 .icon-card {
-	font-size:(31/10)*1rem;
-	width:(42/31)*1em;
+	font-size:math.div(31,10)*1rem;
+	width: math.div(42,31)*1em;
 }
 .icon-cart {
-	font-size:(21/10)*1rem;
-	width:(24/21)*1em;
+	font-size:math.div(21,10)*1rem;
+	width: math.div(24,21)*1em;
 }
 .icon-chevron-down {
-	font-size:(8/10)*1rem;
-	width:(14/8)*1em;
+	font-size:math.div(8,10)*1rem;
+	width: math.div(14,8)*1em;
 }
 .icon-chevron-left {
-	font-size:(18/10)*1rem;
-	width:(11/18)*1em;
+	font-size:math.div(18,10)*1rem;
+	width: math.div(11,18)*1em;
 }
 .icon-chevron-right {
-	font-size:(18/10)*1rem;
-	width:(11/18)*1em;
+	font-size:math.div(18,10)*1rem;
+	width: math.div(11,18)*1em;
 }
 .icon-coins {
-	font-size:(40/10)*1rem;
-	width:(41/40)*1em;
+	font-size:math.div(40,10)*1rem;
+	width: math.div(41,40)*1em;
 }
 .icon-cross {
-	font-size:(22/10)*1rem;
-	width:(22/22)*1em;
+	font-size:math.div(22,10)*1rem;
+	width: math.div(22,22)*1em;
 }
 .icon-enter {
-	font-size:(12/10)*1rem;
-	width:(19/12)*1em;
+	font-size:math.div(12,10)*1rem;
+	width: math.div(19,12)*1em;
 }
 .icon-exit {
-	font-size:(15/10)*1rem;
-	width:(15/15)*1em;
+	font-size:math.div(15,10)*1rem;
+	width: math.div(15,15)*1em;
 }
 .icon-filter-bar-icon {
-	font-size:(25/10)*1rem;
-	width:(30/25)*1em;
+	font-size:math.div(25,10)*1rem;
+	width: math.div(30,25)*1em;
 }
 .icon-heart {
-	font-size:(17/10)*1rem;
-	width:(18/17)*1em;
+	font-size:math.div(17,10)*1rem;
+	width: math.div(18,17)*1em;
 }
 .icon-house {
-	font-size:(22/10)*1rem;
-	width:(22/22)*1em;
+	font-size:math.div(22,10)*1rem;
+	width: math.div(22,22)*1em;
 }
 .icon-location {
-	font-size:(20/10)*1rem;
-	width:(12/20)*1em;
+	font-size:math.div(20,10)*1rem;
+	width: math.div(12,20)*1em;
 }
 .icon-plane {
-	font-size:(24/10)*1rem;
-	width:(23/24)*1em;
+	font-size:math.div(24,10)*1rem;
+	width: math.div(23,24)*1em;
 }
 .icon-plus {
-	font-size:(24/10)*1rem;
-	width:(24/24)*1em;
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
 }
 .icon-tel {
-	font-size:(16/10)*1rem;
-	width:(17/16)*1em;
+	font-size:math.div(16,10)*1rem;
+	width: math.div(17,16)*1em;
 }
 .icon-user {
-	font-size:(25/10)*1rem;
-	width:(24/25)*1em;
+	font-size:math.div(25,10)*1rem;
+	width: math.div(24,25)*1em;
 }
 .icon-zoom {
-	font-size:(20/10)*1rem;
-	width:(20/20)*1em;
+	font-size:math.div(20,10)*1rem;
+	width: math.div(20,20)*1em;
 }

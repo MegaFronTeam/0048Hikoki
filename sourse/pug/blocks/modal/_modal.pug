@@ -44,7 +44,7 @@ mixin modal()
 				+e.inputs.pb-60
 					+input("","email",'Эл. почта*')(required)
 					+input("","password",'Пароль*')(required)
-					+input("","password",'Повторить пароль*')(required)(class="border-danger text-danger")
+					+input("","password",'Повторить пароль*')(required class="border-danger text-danger")
 					.invalid-alert.text-danger.small Пароли не совпадают
 				.text-center
 					button.btn.btn-primary.disabled(type="submit") Зарегистрироваться

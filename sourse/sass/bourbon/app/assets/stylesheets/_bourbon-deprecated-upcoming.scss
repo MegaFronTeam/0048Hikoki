@@ -1,5 +1,7 @@
 // The following features have been deprecated and will be removed in the next MAJOR version release
 
+@use "sass:math";
+
 @mixin inline-block {
   @include _bourbon-deprecate("inline-block");
 
@@ -384,7 +386,7 @@
 
   $width: $columns * $fg-column + ($columns - 1) * $fg-gutter;
   $container-width: $container-columns * $fg-column + ($container-columns - 1) * $fg-gutter;
-  @return percentage($width / $container-width);
+  @return percentage(math.div($width, $container-width));
 }
 
 // Flexible gutter
@@ -396,7 +398,7 @@
   }
 
   $container-width: $container-columns * $fg-column + ($container-columns - 1) * $fg-gutter;
-  @return percentage($gutter / $container-width);
+  @return percentage(math.div($gutter, $container-width));
 }
 
 @function grid-width($n) {

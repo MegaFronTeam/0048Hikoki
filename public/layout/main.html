@@ -1,0 +1,219 @@
+
+<!-- end modals--><!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>title</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link rel="stylesheet" href="libs/ion-rangeslider/css/ion.rangeSlider.min.css"/>
+		<link rel="stylesheet" href="libs/dropzone/min/dropzone.min.css"/>
+		<link href="libs/swiper/css/swiper.min.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="main-wrapper">
+			<h3>content</h3>
+		</div>
+		<!--  start modals-->
+		<div class="d-none">
+			<div class="modal-win text-center" id="modal-city">
+				<div class="modal-win__title">Ваш город Москва?
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<button class="modal-win__btn" type="button">Да
+						</button>
+					</div>
+					<div class="col-6">
+						<button class="modal-win__btn-outline" type="button">Нет
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- #modal-city-->
+			<div class="modal-win text-center" id="modal-prod-add">
+				<div class="modal-win__title">Товар добавлен в корзину
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<button class="modal-win__btn" type="button">Оформить
+						</button>
+					</div>
+					<div class="col-6">
+						<button class="modal-win__btn-outline" type="button">Продолжить
+						</button>
+					</div>
+				</div>
+			</div>
+			<!--#modal-prod-add-->
+			<div class="modal-win" id="modal-call">
+				<div class="form-wrap">
+					<form>
+						<div class="modal-win__title text-center mb-24">Заказ звонка</div>
+						<div class="form-wrap__inputs">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Телефон*</span><input class="form-wrap__input form-control valid" name="tel" type="tel" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Ваше Имя*</span><input class="form-wrap__input form-control invalid" name="text" type="text" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="text-center">
+							<input class="btn btn-primary disabled mb-12" type="submit" value="Перезвоните мне"/>
+							<div class="polite">Нажимая на кнопку, вы подтверждаете своё совершеннолетие,<br/>соглашаетесь на обработку персональных данных в соответствии<br/>с
+								<a href="#">Условиями</a>, а также с
+								<a href="#">Условиями продажи</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- #modal-call-->
+			<div class="modal-win" id="modal-inner">
+				<div class="form-wrap">
+					<form>
+						<div class="modal-win__title text-center mb-24">Авторизация</div>
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__input-title">Эл. почта*</span><input class="form-wrap__input form-control" name="email" type="email" placeholder="" required="required"/>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__input-title">Пароль*</span><input class="form-wrap__input form-control" name="password" type="password" placeholder="" required="required"/>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="text-center"><a class="form-wrap__forgot d-block mb-24" href="#">Забыли пароль?</a>
+							<button class="form-wrap__btn-enter disabled" type="submit">Войти
+							</button>
+							<button class="form-wrap__btn-reg disabled" type="submit">Регистрация
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- #modal-inner-->
+			<div class="modal-win" id="modal-reg">
+				<div class="form-wrap">
+					<form>
+						<div class="text-center">
+							<div class="modal-win__title mb-24">Регистрация</div>
+						</div>
+						<div class="form-wrap__inputs pb-60">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Эл. почта*</span><input class="form-wrap__input form-control" name="email" type="email" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Пароль*</span><input class="form-wrap__input form-control" name="password" type="password" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Повторить пароль*</span><input class="form-wrap__input form-control border-danger text-danger" name="password" type="password" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="invalid-alert text-danger small">Пароли не совпадают</div>
+						</div>
+						<div class="text-center">
+							<button class="btn btn-primary disabled" type="submit">Зарегистрироваться</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- #modal-reg-->
+			<div class="modal-win" id="modal-order-request">
+				<div class="form-wrap">
+					<form>
+						<div class="modal-win__title text-center mb-24">Запрос счёта</div>
+						<div class="form-wrap__inputs">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">ФИО*</span><input class="form-wrap__input form-control" name="user-name" type="text" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Телефон*</span><input class="form-wrap__input form-control" name="phone" type="tel" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Электронная почта*</span><input class="form-wrap__input form-control" name="email" type="email" placeholder="" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="tabs">
+							<div class="tabs__caption row">
+								<div class="col-6">
+									<div class="tabs__btn active">Заполнить реквизиты</div>
+								</div>
+								<div class="col-6">
+									<div class="tabs__btn">Загрузить реквизиты</div>
+								</div>
+							</div>
+							<div class="tabs__wrap">
+								<div class="tabs__content active">
+									<div class="form-wrap__inputs">
+										<div class="form-wrap__input-wrap form-group">
+											<label><span class="form-wrap__input-title">Корр. счёт</span><input class="form-wrap__input form-control" name="account-1" type="text" placeholder=""/>
+											</label>
+										</div>
+										<!-- +e.input-wrap-->
+										<div class="form-wrap__input-wrap form-group">
+											<label><span class="form-wrap__input-title">Расч. счёт</span><input class="form-wrap__input form-control" name="account-2" type="text" placeholder=""/>
+											</label>
+										</div>
+										<!-- +e.input-wrap-->
+										<div class="form-wrap__input-wrap form-group">
+											<label><span class="form-wrap__input-title">E-mail*</span><input class="form-wrap__input form-control" name="email" type="email" placeholder="" required="required"/>
+											</label>
+										</div>
+										<!-- +e.input-wrap-->
+									</div>
+								</div>
+								<div class="tabs__content pb-24">
+									<div class="form-wrap__input-title file-headline">Прикрепить файл
+									</div>
+									<div class="dropzone" id="props-dz">
+										<div class="fallback">
+											<input name="file" type="file" multiple=""/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<button class="btn btn-primary disabled mb-12" type="submit">Отправить</button>
+							<div class="polite">Нажимая на кнопку, вы подтверждаете своё совершеннолетие,<br/>соглашаетесь на обработку персональных данных в соответствии<br/>с
+								<a href="#">Условиями</a>, а также с
+								<a href="#">Условиями продажи</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<link href="libs/@fancyapps/fancybox/jquery.fancybox.min.css" rel="stylesheet"/>
+		<!-- modal libs-->
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/dropzone/min/dropzone.min.js"></script>
+		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+		<!-- modal libs-->
+		<!-- slider libs-->
+		<script src="libs/swiper/js/swiper.min.js"> </script>
+		<!-- /slider libs-->
+		<script src="libs/inputmask/inputmask.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

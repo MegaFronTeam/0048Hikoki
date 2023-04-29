@@ -2,6 +2,8 @@
 // eg. for a relational value of 12px write rem(12)
 // Assumes $em-base is the font-size of <html>
 
+@use "sass:math";
+
 @function rem($pxval) {
   @if $output-bourbon-deprecation-warnings == true {
     @warn "[Bourbon] [Deprecation] `rem` is deprecated and will be " +
@@ -22,5 +24,5 @@
 
   $output-bourbon-deprecation-warnings: $user-deprecation-warnings-setting !global;
 
-  @return ($pxval / $base) * 1rem;
+  @return math.div($pxval, $base) * 1rem;
 }

@@ -1,4 +1,6 @@
 // start .sConfirm
+@use "sass:math";
+
 .sConfirm {
 	--sTPB: 24px;
 
@@ -57,7 +59,7 @@
 	}
 	&__title{
 		font-weight: 300;
-		line-height: (43/36);
+		line-height: math.div(43, 36);
 		color: $primary;
 
 		font-size: 24px;
@@ -74,12 +76,12 @@
 		@include media-breakpoint-up(md){
 			font-size: 24px;
 		}
-		line-height: (34/24);
+		line-height: math.div(34, 24);
 		margin-bottom: 24px;
 	}
 	&__await{
 		font-size: 14px;
-		line-height: (20/14);
+		line-height: math.div(20, 14);
 	}
 	&__btn{
 		@extend .btn;
